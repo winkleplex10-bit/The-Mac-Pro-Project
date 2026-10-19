@@ -157,3 +157,10 @@ Status: placement stage done (14:32), next = HS router.
 - Tune FACEP/FACES/MCU → work/bp_u1, bp_u2: FACES −6.3 → 0.000; FACEP −17.9 → −6.5; MCU −5.0 → −2.7 (segments exhausted).
 - USB2_FACEP_N ripped + RIP=0 re-route → FACEP 78.63/78.29, skew +0.34, 2/2 vias. MCU_N / MCU_P re-route tries: −6.7 (3/7) / −2.5 (5/5) → kept −2.7 (3/5). → work/bp_u3.
 - 21:57 backplane.kicad_pcb = work/bp_u3: DRC 0 / 0 unconnected / parity 0. All 44 HS/SATA/SPARE pairs unchanged (0 skew). jlc_out re-run. README USB2 line updated.
+- 21:57 zips rebuilt (scratch/mkzips.py): backplane zip + sync zip. USB2 touch-up DONE.
+
+## 2026-10-19 12:15 ET: DRU unit fix (local only, not pushed)
+- KiCad 9.0.2 rejected the whole .kicad_dru because the values had no units, so the custom pour rules never ran in DRC or zone fills. Values now in mm. The pour rule now applies to tracks only (`A.Type == 'Track'`); as written it cut the J1 GND vias off every plane.
+- Refilled the board. Pour to 85R pairs is now >= 0.50 mm and pour to 90R pairs >= 0.40 mm (measured). It was 0.20 mm before (zone clearance only).
+- Fixes: J7 pad 45 GND: 0.2 mm stub plus a GND via at (123.95,131.75). 3V3_SB: a 0.2 mm L3 bridge (131.85,122.35)->(132.05,122.10) restores the Q2/R34 feed (A1/A2 only).
+- DRC 0 / 0 unconnected. jlc/ regenerated: copper and drill changed, BOM/CPL unchanged. Backup: /workspace/backups/<board>-predru-20261019-1157.tgz

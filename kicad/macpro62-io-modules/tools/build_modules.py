@@ -252,8 +252,8 @@ def build(name, kind, title):
         x = dict(base); x.update(name=nm, track_width=w, clearance=c, via_diameter=VIA_P, via_drill=VIA_D, diff_pair_width=dw, diff_pair_gap=dg, priority=0 if nm != "Default" else 2147483647); return x
     d["net_settings"]["classes"] = [cls("Default", TMIN, TMIN), cls("HS", 0.09, TMIN), cls("SE", 0.1, TMIN), cls("PWR", 0.35, TMIN), cls("GNDC", 0.2, TMIN)]
     d["board"]["design_settings"]["rules"].update(min_track_width=TMIN, min_clearance=TMIN, min_via_diameter=0.4, min_through_hole_diameter=0.2, min_copper_edge_clearance=0.3, min_text_height=0.5)
-    open(fn.replace(".kicad_pcb", ".kicad_dru"), "w").write('(version 1)\n(rule "diff pair gap (90/100 ohm lanes + 0.078 paddle)"\n  (condition "A.inDiffPair(\'*\')")\n  (constraint diff_pair_gap (min 0.078) (opt 0.1) (max 0.16)))\n'
-        '(rule "via to track (JLC FPC 0.1)"\n  (condition "A.Type == \'Via\' && B.Type == \'Track\'")\n  (constraint clearance (min 0.1)))\n')
+    open(fn.replace(".kicad_pcb", ".kicad_dru"), "w").write('(version 1)\n(rule "diff pair gap (90/100 ohm lanes + 0.078 paddle)"\n  (condition "A.inDiffPair(\'*\') && !A.intersectsCourtyard(\'J*\') && !A.intersectsCourtyard(\'*TP*\') && !A.inDiffPair(\'T/*\') && !A.inDiffPair(\'/T/*\')")\n  (constraint diff_pair_gap (min 0.078mm) (opt 0.1mm) (max 0.16mm)))\n'
+        '(rule "via to track (JLC FPC 0.1)"\n  (condition "A.Type == \'Via\' && B.Type == \'Track\'")\n  (constraint clearance (min 0.1mm)))\n')
     d["net_settings"]["netclass_patterns"] = [dict(netclass="HS", pattern=p_) for p_ in ("SS*", "D[0-2]_*", "CK_*", "D_P", "D_N")] + \
         [dict(netclass="SE", pattern=p_) for p_ in ("CC*", "SBU*", "DDC_*", "HPD", "ID_*", "3V3_MOD")] + [dict(netclass="PWR", pattern="VBUS"), dict(netclass="GNDC", pattern="GND")]
     d["net_settings"]["netclass_assignments"] = None

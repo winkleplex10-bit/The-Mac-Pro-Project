@@ -138,3 +138,14 @@ Rules: 4 layers, existing HS/SATA/USB2 untouched (0 skew, 2/2 vias), no rip-up /
 
 ## 03:45 ET: ICD v3 check
 - /workspace/macpro62-interface-control-v3.md: rev-3 audit row 'RSVD ×13' (no ×14 left); v3 row 'GND ×78, RSVD ×4'. Board J1 matches: 78 numbered GND pins (+4 BL lock pads), 4 RSVD (RSVD_HS_A1/A2 P/N); BIOS_SEL B89 and RSTBTN# A104 NC on the BP (moved).
+
+## 03:45 ET: sync zip
+- mkzips.py backplane-v3 am5-v3 backplane-v2 lga1700-v2 + DOCS (ICD v3, parked ICD rev4) -> /workspace/macpro62-sync-icd.zip: kept 402 (all old entries byte-identical, 0 missing), added 445, total 847, testzip OK, no work/ entries. Pre-run copy: /workspace/scratch/macpro62-sync-icd.pre_v3final.zip.
+- v1/AM5 originals: sha256sum -c v2_baseline/{originals,am5_original}: 273 OK; the only mismatch is the sync zip itself (expected, entries added).
+- Not pushed.
+
+## 2026-10-19 12:15 ET: DRU unit fix (local only, not pushed)
+- KiCad 9.0.2 rejected the whole .kicad_dru because the values had no units, so the custom pour rules never ran in DRC or zone fills. Values now in mm. The pour rule now applies to tracks only (`A.Type == 'Track'`); as written it cut the J1 GND vias off every plane.
+- Refilled the board. Pour to 85R pairs is now >= 0.50 mm and pour to 90R pairs >= 0.40 mm (measured). It was 0.20 mm before (zone clearance only).
+- Fixes: J7 pad 45 GND: 0.2 mm stub plus a GND via at (123.95,131.75).
+- DRC 0 / 0 unconnected. jlc/ regenerated: copper and drill changed, BOM/CPL unchanged. Backup: /workspace/backups/<board>-predru-20261019-1157.tgz

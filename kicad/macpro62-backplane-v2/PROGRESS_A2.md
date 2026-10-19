@@ -15,3 +15,9 @@ State at park: copy of A1 only. No board/schematic/tool edits made. Routing stud
 FP lanes 8-11 -> J10 lanes 4-7 route has no planar path except AROUND J9 + over the J4 apex + down J10's outer side, which
 crosses ~12 Face S AUX LS nets (3V3_AUX_S, FS_SMB_SDA/SCL, FS_PWR_EN/GOOD, FS_MOD_LED_N, FS_THERM_*, FS_PRSNT_N) and the
 USB2_FACES L3/L4 stack; est. 120-130 mm per lane. Not started. Superseded by v3 (kicad/macpro62-backplane-v3).
+
+## 2026-10-19 12:15 ET: DRU unit fix (local only, not pushed)
+- KiCad 9.0.2 rejected the whole .kicad_dru because the values had no units, so the custom pour rules never ran in DRC or zone fills. Values now in mm. The pour rule now applies to tracks only (`A.Type == 'Track'`); as written it cut the J1 GND vias off every plane.
+- Refilled the board. Pour to 85R pairs is now >= 0.50 mm and pour to 90R pairs >= 0.40 mm (measured). It was 0.20 mm before (zone clearance only).
+- Fixes: J7 pad 45 GND: 0.2 mm stub plus a GND via at (123.95,131.75). 3V3_SB: a 0.2 mm L3 bridge (131.85,122.35)->(132.05,122.10) restores the Q2/R34 feed (A1/A2 only).
+- DRC 0 / 0 unconnected. jlc/ regenerated: copper and drill changed, BOM/CPL unchanged. Backup: /workspace/backups/<board>-predru-20261019-1157.tgz

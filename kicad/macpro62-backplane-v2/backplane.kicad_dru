@@ -1,8 +1,9 @@
 (version 1)
 # BP A1: keep GND pours >= 3w away from the coupled 85R / 90R pairs (impedance solved without coplanar ground)
+# Track-only: applying it to pads/vias cut the J1 GND vias off every plane (2026-10-19 DRU audit). Units required (KiCad 9 rejects unitless files whole).
 (rule "hs_pour_clearance"
-  (constraint clearance (min 0.5))
-  (condition "A.hasNetclass('PCIE_85R') && B.Type == 'Zone'"))
+  (constraint clearance (min 0.5mm))
+  (condition "A.hasNetclass('PCIE_85R') && A.Type == 'Track' && B.Type == 'Zone'"))
 (rule "usb_pour_clearance"
-  (constraint clearance (min 0.4))
-  (condition "A.hasNetclass('USB2_SATA_90R') && B.Type == 'Zone'"))
+  (constraint clearance (min 0.4mm))
+  (condition "A.hasNetclass('USB2_SATA_90R') && A.Type == 'Track' && B.Type == 'Zone'"))

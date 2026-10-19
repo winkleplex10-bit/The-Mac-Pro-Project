@@ -160,3 +160,7 @@ for m in mod_usbc mod_usba mod_hdmi; do python3 tools/plot_copper.py $m; done   
 - **Placeholders:** none on the modules any more (DF40C-50DP and HYC79 real since 2026-10-04 ≈ 10:40 ET). The USB-C pattern (HYCW417, EasyEDA, checked against the HOAUC drawing) is real. The USB-A pattern comes from the HC drawing and still needs checking against it.
 - **EEPROM part:** the WLCSP-4 EEPROM (AT24CSW020-UUM0B class) has no LCSC number yet. If the paddle can grow by 1.5 mm, fall back to a SOT-23-5 24C02.
 - **Geometry basis:** the geometry is for the default build (axis normal to the plate). Re-run `modules_geom.py` on the `_tilt12p5` features to get the stock-tilt variant.
+
+## 2026-10-19: DRU unit fix (local only, not pushed)
+- The KiCad 9.0.2 rules files in mod_hdmi, mod_usba, mod_usbc, panel_a25 and panel_c50 were rejected whole because the values had no units, so the rules never ran. Values now in mm. The diff-pair gap window exempts connector (J*) and test-point (*TP*) courtyards and the T/* TDR coupon pairs; without that, pad breakouts gave 9–123 false errors per board. tools/build_modules.py updated to match.
+- Copper and fills are unchanged, and so are the fab outputs (a re-run gave identical content). DRC: 0 errors; the same silkscreen warnings as before.

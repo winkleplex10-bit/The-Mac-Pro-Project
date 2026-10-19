@@ -126,3 +126,8 @@ Rules: small checkpoints, log every step, never touch kicad/macpro62-storage-fac
 ## 18:31 ET: step 5b, previews + docs + sync zip
 - Previews (docs/): preview_2X_B.png (B copper + fab), preview_2X_L1.png, preview_2X_L2.png, preview_2X_L3.png (3V3 islands), preview_2X_HS.png (HS routing, from work/s2x_hs).
 - README.md + docs/ICD_CHANGES.md (host changes, D-2X-1, D-2X-2 polarity inversion, D-S1, INA238/INA226, AC caps). ICD / CB / BP files NOT modified.
+- 18:31 sync: mkzips -> kicad/macpro62-storage-face-2x.zip (73 files, no work/) + 74 entries added to /workspace/macpro62-sync-icd.zip (402 total, testzip OK). Not pushed.
+
+## 2026-10-19 12:15 ET: DRU unit fix (local only, not pushed)
+- KiCad 9.0.2 rejected the whole .kicad_dru because the value had no units, so the 0.4 mm pour clearance never ran in DRC or zone fills. Value now 0.4mm, applied to tracks only. tools/make_pro.py updated to match.
+- Refilled the board: F.Cu/B.Cu pour to PCIE_85R is now >= 0.40 mm (measured; it was 0.20 mm). In1/In2 unchanged. DRC 0 / 0 unconnected. jlc/: F_Cu and B_Cu gerbers changed, BOM/CPL unchanged.

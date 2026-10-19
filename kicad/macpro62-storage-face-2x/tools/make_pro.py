@@ -27,9 +27,10 @@ pro.setdefault("text_variables", {})["STACKUP"] = "JLC04161H-7628 4L 1.6mm"
 json.dump(pro, open(os.path.join(PRJ, NAME + ".kicad_pro"), "w"), indent=2)
 open(os.path.join(PRJ, NAME + ".kicad_dru"), "w").write('''(version 1)
 # S2X: keep pours >= ~3w away from the 85R pairs (impedance solved as edge-coupled microstrip, no coplanar ground)
+# Track-only + mm units (2026-10-19 DRU audit; KiCad 9 rejects unitless files whole).
 (rule "hs_pour_clearance"
-  (constraint clearance (min 0.4))
-  (condition "A.hasNetclass('PCIE_85R') && B.Type == 'Zone'"))
+  (constraint clearance (min 0.4mm))
+  (condition "A.hasNetclass('PCIE_85R') && A.Type == 'Track' && B.Type == 'Zone'"))
 # exposed thermal copper: mask openings intentionally over GND pours
 ''')
 open(os.path.join(PRJ, "fp-lib-table"), "w").write('(fp_lib_table\n  (version 7)\n  (lib (name "MP62_S2X")(type "KiCad")(uri "${KIPRJMOD}/MP62_S2X.pretty")(options "")(descr "MP62 S2X footprints"))\n)\n')

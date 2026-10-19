@@ -1,7 +1,8 @@
 (version 1)
+# Units required (KiCad 9 rejects unitless files whole). Connector / test-point breakouts and T/* TDR coupon launches are exempt from the coupled-gap window (2026-10-19 DRU audit).
 (rule "diff pair gap (90/100 ohm lanes + 0.078 paddle)"
-  (condition "A.inDiffPair('*')")
-  (constraint diff_pair_gap (min 0.078) (opt 0.1) (max 0.16)))
+  (condition "A.inDiffPair('*') && !A.intersectsCourtyard('J*') && !A.intersectsCourtyard('*TP*') && !A.inDiffPair('T/*') && !A.inDiffPair('/T/*')")
+  (constraint diff_pair_gap (min 0.078mm) (opt 0.1mm) (max 0.16mm)))
 (rule "via to track (JLC FPC 0.1)"
   (condition "A.Type == 'Via' && B.Type == 'Track'")
-  (constraint clearance (min 0.1)))
+  (constraint clearance (min 0.1mm)))
