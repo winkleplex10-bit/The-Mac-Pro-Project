@@ -39,7 +39,7 @@
 
 | Version | Date | Changes |
 |---|---|---|
-| **MP62-FACE v0.2 draft** | 2026-10-21 | DISPLAY-LINK = 4 links × 4 lanes; link 3 4-lane to C3 on the former link-4 pins (no pin moves); AUX4/HPD4 spare (§9). Draft, not pushed. |
+| **MP62-FACE v0.2 draft** | 2026-10-21 | DISPLAY-LINK = three live 4-lane links (C1, C2, HDMI); link 3 (DPD) spare and unrouted, C3 USB-only (Aidan 2026-10-22); link 4 removed, AUX3/4 and HPD3/4 spare; no pin moves (§9). |
 | v0.1 (sections in the architecture spec) | 2026-09 | Card-edge (SFF-TA-1002) concept, withdrawn in v0.2 |
 | v0.2 (§7 of the architecture spec) | 2026-10-01 | MCIO 124 + GH14 AUX + bus-bar lugs; OCP FLEXIO logical map; IPMI FRU EEPROM; display TBD (OD-2) |
 | **MP62-FACE v0.1 (this standalone spec)** | 2026-10-01 | First standalone release. Mechanical frame, outline, holes and keep-outs defined (§3), including core contact zones traced from the core scan and the measured 4.5 mm core gap. MCIO 124 confirmed as **one 16i connector per face**, SFF-9402 sideband positions (§4). AUX moves to **GH15** (adds MOD_LED#; USB2 primary) (§5). Power budget **Face P 150 W / Face S 40 W**, new classes, eFuse and sequencing rules (§6). Binary MP62 descriptor EEPROM (§8). **DISPLAY-LINK = second MCIO (74-pin, 8i) on the module with a twinax cable to the IOB** (§9). KiCad template, DXF and drawings. |
@@ -588,10 +588,10 @@ Main pairs (100 Ω, AC-coupled **on the module**):
 | 1 | B5 / B6 | ML0p_1 / ML0n_1 | A5 / A6 | ML2p_1 / ML2n_1 |
 | 2 | B14 / B15 | ML0p_2 / ML0n_2 | A14 / A15 | ML2p_2 / ML2n_2 |
 | 3 | B17 / B18 | ML0p_3 / ML0n_3 | A17 / A18 | ML2p_3 / ML2n_3 |
-| 4 | B20 / B21 | ML1p_0 / ML1n_0 | A20 / A21 | ML3p_0 / ML3n_0 |
-| 5 | B23 / B24 | ML1p_1 / ML1n_1 | A23 / A24 | ML3p_1 / ML3n_1 |
-| 6 | B32 / B33 | ML1p_2 / ML1n_2 | A32 / A33 | ML3p_2 / ML3n_2 |
-| 7 | B35 / B36 | ML1p_3 / ML1n_3 | A35 / A36 | ML3p_3 / ML3n_3 |
+| 4 | B20 / B21 | ML1p_0 / ML1n_0 | A20 / A21 | SPARE (was ML3p_0 / ML3n_0) |
+| 5 | B23 / B24 | ML1p_1 / ML1n_1 | A23 / A24 | SPARE (was ML3p_1 / ML3n_1) |
+| 6 | B32 / B33 | ML1p_2 / ML1n_2 | A32 / A33 | SPARE (was ML3p_2 / ML3n_2) |
+| 7 | B35 / B36 | ML1p_3 / ML1n_3 | A35 / A36 | SPARE (was ML3p_3 / ML3n_3) |
 
 Sideband (AUX ±, HPD, presence):
 
@@ -608,19 +608,19 @@ Sideband (AUX ±, HPD, presence):
 | B11 | AUX1+ | Bi | DP AUX link 1 |
 | B12 | AUX1- | Bi |  |
 | A26 | HPD2 | In |  |
-| A27 | HPD3 | In |  |
+| A27 | SPARE (was HPD3) | — | v0.2 |
 | A28 | GND | - |  |
 | A29 | SPARE (was HPD4) | — | v0.2 |
 | A30 | DLINK_PRSNT# | Out | Module ties to GND; IOB detects the display cable |
-| B26 | AUX3+ | Bi | DP AUX link 3 (to IOB PD/alt-mode controller path) |
-| B27 | AUX3- | Bi |  |
+| B26 | SPARE (was AUX3+) | — | v0.2 |
+| B27 | SPARE (was AUX3-) | — | v0.2 |
 | B28 | GND | - |  |
 | B29 | SPARE (was AUX4+) | — | v0.2 |
 | B30 | SPARE (was AUX4-) | — | v0.2 |
 
 - **Link 0** = DP 1.4 4-lane (rear DP #1). **Link 1** = DP 1.4 4-lane (rear DP #2).
 - **Link 2** = HDMI 2.1 / DP++ 4-lane (rear HDMI, through the IOB retimer). Its AUX pins carry DDC under the DP++ convention.
-- **[v0.2 draft]** **Link 3** = DP alt-mode **4-lane** to USB-C C3 (lanes 2/3 on the former link-4 contacts A/B32–36; pins unchanged). **Link 4 is removed**: AUX4/HPD4 contacts are spare. C4 is USB-only or fed from the CPU iGPU. Four links × 4 lanes (Master Bot sign-off 2026-10-21).
+- **[v0.2]** **Three live links (Aidan, 2026-10-22):** link 0 (DPA) → C1 and link 1 (DPB) → C2, 4-lane DP alt-mode each; link 2 (DPC) → HDMI via TDP158. **Link 3 (DPD) is a spare, left unrouted** on the module; its lanes, AUX3 and HPD3 are spare contacts. Link 4 is removed (AUX4/HPD4 spare). All other USB-C ports, including C3, are USB-only.
 - **DLINK_PRSNT#** (A30): the module ties it to GND, so the IOB can detect the cable.
 - Full contact list: `pinouts/mp62-face-v0.1_mcio74_displaylink_module-end.csv`.
 - Navi 23 has 5 display PHYs (DCN 3.0.2), [Sourced: Linux amdgpu `dcn302`]; v0.2 uses 4 links × 4 lanes, since the GPU face routes 4 links (GPU Board, 2026-10-21). Many MXM cards route fewer (`disp_count`).
@@ -645,14 +645,14 @@ Sideband (AUX ±, HPD, presence):
 ### 9.6 IOB side (informative, host-side spec)
 
 > **IOB rev A0 (2026-10-01):**
-> - Links 0–3 are used: link 0 → C1 (4-lane), link 1 → C2 (4-lane), link 2 → HDMI via TDP158 (DP++ to TMDS, HDMI 2.0 class), link 3 → C3 (4-lane). [v0.2 draft: link 4 removed; C4 USB-only or iGPU]
-> - The TUSB1046A mux plus TPS65994AD PD handle USB-C. HPD0/1 come from PD #1, HPD3/4 from PD #2, HPD2 from the TDP158.
+> - Links 0–2 are used: link 0 → C1 (4-lane), link 1 → C2 (4-lane), link 2 → HDMI via TDP158 (DP++ to TMDS, HDMI 2.0 class), link 3 spare (unrouted). [v0.2: three live links; C3 and C4 USB-only]
+> - The TUSB1046A mux plus TPS65994AD PD handle USB-C. HPD0/1 come from PD #1, (HPD3/4 spare in v0.2), HPD2 from the TDP158.
 > - See `/workspace/macpro62-io-board-plan.md` §5.2.
 > - **IOB-end contact table (2026-10-02, ICD):** `kicad/macpro62-io-board/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` = §9.3 with rows A/B exchanged; IOB J2 is wired to it.
 
 - HDMI 2.1 retimer on Link 2 (TI TDP2004-class [Unverified]); ESD on every port.
 - DP_PWR and HDMI 5 V with current limit.
-- USB-C: a DP alt-mode mux (TUSB1046-class) + PD controller, which takes Link 3/4 and the USB data.
+- USB-C: a DP alt-mode mux (TUSB1046-class) + PD controller, which takes Link 0/1 and the USB data (v0.2).
 - **Source selection** between the iGPU and the face GPU (architecture spec OD-2) stays an open host decision. DISPLAY-LINK does not depend on it.
 - The IOB connector footprint is the same MCIO 74 RA. Row A on the module meets row B on the IOB (straight cable, SFF-9402 convention). Lay out the IOB from the row-swapped CSV.
 

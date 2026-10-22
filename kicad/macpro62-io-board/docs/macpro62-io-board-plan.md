@@ -28,7 +28,7 @@ Coordinates use the stock **back-view frame**: origin at the board's bottom-left
 
 1. **Ports.** Same layout as stock. Each old Thunderbolt rectangle gets 3 USB-C ports (6 in total), all with **DP alt mode**:
    - C1 and C2: Face P GPU links 0 and 1, 4-lane each.
-   - C3 and C4: GPU links 3 and 4, 2-lane each.
+   - C3 and C4: USB-only (v0.2, Aidan 2026-10-22). GPU link 3 (DPD) is a spare, unrouted; link 4 removed.
    - C5 and C6: iGPU DDI-B (4-lane) and DDI-C (**2-lane since 2026-10-02**, its ML2/ML3 pair slot now carries the second i226). **macOS cannot use these.**
    - HDMI: GPU link 2 (DP++) through a TDP158.
    - 4 × USB-A 10 G, with a TUSB1002A redriver on each port.
@@ -1230,10 +1230,10 @@ Z790 Flex-I/O map [Sourced: Intel 700-series PCH datasheet vol. 1, 743835, "Desk
 | Link 0 (4-lane) | C1 | |
 | Link 1 (4-lane) | C2 | |
 | Link 2 (DP++) | HDMI | Via TDP158. Lanes ML0→D2, ML1→D1, ML2→D0, ML3→CLK; AUX± = DDC SCL/SDA. |
-| Link 3 (2-lane) | C3 | Can be 4-lane if link 4 is unused. |
-| Link 4 (2-lane) | C4 | |
+| Link 3 (DPD) | — | Spare, unrouted (v0.2). C3 is USB-only. |
+| Link 4 | — | Removed (v0.2). C4 is USB-only. |
 
-- HPD0/1 come from PD #1 GPIO0/1. HPD3/4 come from PD #2. HPD2 comes from the TDP158.
+- HPD0/1 come from PD #1 GPIO0/1. HPD2 comes from the TDP158. HPD3/4 are spare in v0.2 (C3/C4 USB-only). HPD2 to J2 goes through a 5 V-tolerant buffer to 3.3 V with a 100 kΩ pull-down at the IOB end (part TBD).
 - DLINK_PRSNT# is read on PD #2 GPIO2. The GPU drives at most about 4 displays.
 - **IOB end is row-swapped (ICD 2026-10-02).** The straight MCIO 74 cable crosses the rows (face spec §9.3), so J2 uses the module-end table with rows A and B exchanged: `kicad/macpro62-io-board/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` (written by `build_sch.py`, with the module-end contact alongside). Before this fix J2 used the module-end contacts directly, which put the GPU TX pairs on the wrong row. Net names are unchanged. See `/workspace/macpro62-interface-control.md` §4.
 
