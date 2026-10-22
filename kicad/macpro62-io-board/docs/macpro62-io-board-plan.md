@@ -1233,7 +1233,7 @@ Z790 Flex-I/O map [Sourced: Intel 700-series PCH datasheet vol. 1, 743835, "Desk
 | Link 3 (DPD) | — | Spare, unrouted (v0.2). C3 is USB-only. |
 | Link 4 | — | Removed (v0.2). C4 is USB-only. |
 
-- HPD0/1 come from PD #1 GPIO0/1. HPD2 comes from the TDP158. HPD3/4 are spare in v0.2 (C3/C4 USB-only). HPD2 to J2 goes through a 5 V-tolerant buffer to 3.3 V with a 100 kΩ pull-down at the IOB end (part TBD).
+- HPD0/1 come from PD #1 GPIO0/1. HPD2 comes from the TDP158. HPD3/4 are spare in v0.2 (C3/C4 USB-only). HPD2 to J2 goes through a 5 V-tolerant buffer to 3.3 V with a 100 kΩ pull-down at the IOB end (part TBD). HPD ESD diode at the HDMI connector (part TBD). Buffer drives J2 HPD2 at 3.3 V into the GPU face's level shifter.
 - DLINK_PRSNT# is read on PD #2 GPIO2. The GPU drives at most about 4 displays.
 - **IOB end is row-swapped (ICD 2026-10-02).** The straight MCIO 74 cable crosses the rows (face spec §9.3), so J2 uses the module-end table with rows A and B exchanged: `kicad/macpro62-io-board/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` (written by `build_sch.py`, with the module-end contact alongside). Before this fix J2 used the module-end contacts directly, which put the GPU TX pairs on the wrong row. Net names are unchanged. See `/workspace/macpro62-interface-control.md` §4.
 
