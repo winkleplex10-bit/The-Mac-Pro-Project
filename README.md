@@ -7,3 +7,6 @@ An open PCB redesign of the Mac Pro (Late 2013, "trashcan"). It keeps the enclos
 - `mechanical/`: board outlines (DXF), scan traces and 3D-print test parts
 
 Status: early design. The CPU board is our own LGA1700 socket board with an Apple-style contact frame. The faces are an open module spec (GPU on Face P, storage on Face S).
+
+## Current status
+See [docs/STATUS-2026-10-26.md](docs/STATUS-2026-10-26.md) (AM5 baseline, firmware, power, thermal, connector research).

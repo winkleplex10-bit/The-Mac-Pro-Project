@@ -1,0 +1,27 @@
+# AM5 (Ryzen 7000/9000 + PROM21) CPU board: public-source gap map
+2026-10-21 (ET). Only public sources are used: no leaked or NDA material. Research only; no KiCad edits.
+Legend: **COVERED** = a reliable public source is enough to design from. **PARTIAL** = the public source covers part of the block. **GAP** = no reliable public source.
+
+| Block | Status | What is public | Missing | Sources |
+|---|---|---|---|---|
+| Socket LGA1718 pinout / land map | **PARTIAL** (was GAP) | Full 1718-ball land map with net names and signal groups: Wikimedia Commons `Socket_AM5_pinmap.svg` (QuietRub, public domain, from WikiChip), extracted to `am5-pinmap-table.csv`. 33 GPIO/sideband names cross-checked against coreboot `soc/amd/phoenix` gpio.h (function only, not ball). PROCHOT_L = AW19 (map-only) | Community redraw, not AMD; ball positions unverified by a second source; no electrical spec; socket footprint/keep-outs still missing | commons.wikimedia.org/wiki/File:Socket_AM5_pinmap.svg; coreboot src/soc/amd/phoenix/include/soc/gpio.h |
+| Socket mechanicals / cooler / ILM | PARTIAL | Cooler hole pattern (AM4-compatible 54 × 90) and IHS size from AMD/cooler-vendor public material | Socket/ILM drawing, load spec, backplate | AMD product pages; cooler vendor AM5 bracket drawings |
+| PROM21 pinout / rails | **GAP** | Features: 19 × 19 FCBGA, ~7 W, Gen4 x4 up, 2 × Gen4 x4 down, 4 × Gen3/SATA, 6 × 10G USB, 6 × USB2 | Ballout, rail list, straps, SPI image, refclk scheme | Tom's Hardware X670/B650 overview; WePC; Notebookcheck |
+| SVI3 VRM controller | PARTIAL | **Renesas RAA229139** short-form DS (triple-rail X+Y+Z ≤ 8, SVI3, PMBus). **TI TPS53685** full public DS (SVI3, N+M ≤ 8). MPS MP2856/MP2857 register-level interface via the Linux hwmon driver | SVI3 bus specification, AMD VR design guide (load line, IccMax/EDC tables, OCP), RAA229139 full DS and PowerNavigator config. **TI TPS53685 is the only fully public option** (dual-rail; MISC would need a separate rail) | renesas.com R16DO0057EU0100; ti.com/lit/ds/tps53685.pdf; docs.kernel.org/hwmon/mp2856 |
+| Power stages | **COVERED** | Vishay SiC654 50 A DrMOS full DS (efficiency/loss curves, pinout, footprint); Eaton FP4 inductors | – | vishay.com/docs/77062 |
+| DDR5 UDIMM interface | PARTIAL | JEDEC DDR5 UDIMM connector pinout (JESD308 family; free registration at JEDEC), PMIC5100 (JESD301), UMAX/Amphenol socket drawings | CPU-side DDR5 ballout, AMD routing rules (topology, length matching, 2DPC) | jedec.org; UMAX C-90414 drawing |
+| PCIe / USB / display lane mapping | PARTIAL | AMD public lane counts (24 usable Gen5 on Raphael, x16 + x4 + x4 + x4 chipset); DP/HDMI counts; coreboot `soc/amd/phoenix` + Dasharo `msi/ms7e56` devicetree show MPIO/DXIO descriptors and USB port maps **for Phoenix** | Raphael/Granite Ridge pin-to-lane assignment and lane reversal/polarity options; PHY electrical rules | AMD product pages; github.com/Dasharo/coreboot (mainboard/msi/ms7e56, PR #870); blog.3mdeb.com 2026-03-06 |
+| Clocks | PARTIAL | Crystal frequencies (48 MHz / 32.768 kHz) from coreboot/Phoenix code and vendor boards [Inference] | GPP_CLK pin indices, refclk electrical spec, the external clock generator requirement (if any) | coreboot soc/amd/phoenix; ICD v3 U-12 |
+| Power sequencing (S5/S3/S0, RSMRST_L, PWROK, SLP_S3/S5) | PARTIAL | Signal names and FCH behaviour in coreboot `soc/amd/common` (ACPI/PM code); general sequence order in Dasharo docs | Rail timing diagram, rail list (VDD_18_S5, VDD_33_S5, MISC_S5, VDDIO_MEM_S3) and currents (A-11) | coreboot source |
+| SPI / eSPI / EC | PARTIAL | FCH SPI flash usage, eSPI/LPC code and PSP flash layout (amdfwtool) in coreboot; RP2350 EC fully public (RP2350 DS) | FCH SPI/eSPI pin locations and electrical rules; PROM21 own flash | coreboot util/amdfwtool, soc/amd/common/block/spi; raspberrypi.com RP2350 DS |
+| Boot firmware | **GAP for 7000/9000**, PARTIAL for 8000G | **Phoenix (8000G):** AMD openSIL `phoenix_poc` (public GitHub) + Dasharo coreboot fork, MSI PRO B850-P port (v0.9.0, 2026-07-30); PSP/SMU blobs are redistributable binaries | **No public openSIL or coreboot support for Raphael/Granite Ridge**; AGESA is vendor-licensed only. A 7000/9000 board needs either an AMD/IBV AGESA licence or a future openSIL release | docs.dasharo.com/variants/msi_b850/releases; github.com/Dasharo/coreboot PR #870; blog.3mdeb.com 2026-04-03 |
+| PCB stackup / SI rules | PARTIAL | Generic PCIe Gen5 / DDR5 SI literature, JLC stackups | AMD platform design guide (layer count, via rules, breakout under the socket) | – |
+
+## Consequences
+- Hard GAPs blocking a fabricable board: **LGA1718 socket footprint/mechanical drawing, PROM21 ballout, boot firmware for 7000/9000.** The land map is now PARTIAL (public, map-only); every pin used on a fab board still needs a second public source.
+- Non-fab floorplan draft: `am5-floorplan-draft.md`.
+- PARTIAL blocks can be drafted now but need AMD data to freeze.
+- Public datasheets make the VRM stages, the EC, the DIMM-side interface and TI TPS53685 usable today.
+- The only public firmware path is Phoenix (8000G) via openSIL/Dasharo. That partly offsets the approved x16 target: the board boots with open firmware only as an x8 8000G system.
+
+- 2026-10-21: PCIe lane reversal/polarity and GPP_CLK REFCLK-to-port mapping remain **GAP** (not in any public source); connector-end layer change reserved. Stackup draft: `am5-stackup-draft.md` (thickness open).
