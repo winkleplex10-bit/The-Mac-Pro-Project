@@ -1,5 +1,8 @@
 # MacPro6,2: own AM5 CPU board ("CB-AM5"), DRAFT plan and floorplan fp0
 
+> **2026-10-21 (Aidan approved):** CPU target = **Ryzen 7000/9000 (Raphael / Granite Ridge), GFX x16 → Face P**; Ryzen 8000G remains a **drop-in at x8** (Face P lanes 8-15 idle). Lane map: GFX x16 → Face P · GPP#1 x4 → Face S slot A · GPP#2 x4 → Face S slot B · x4 → PROM21 · **J8 M.2 boot on the PROM21 free Gen4 x4**. Power: stock 450 W PSU with firmware limits (PPT/TDC/EDC via the LPT; 45 W Eco as the fallback cap). BP v3 changes approved (INA226 swap, J7 DNP, storage-face deviations). Text below that says otherwise is history.
+
+
 | | |
 |---|---|
 | Date | 2026-10-04, ≈ 12:30 ET (draft requested by Aidan 12:07 ET) |
@@ -10,13 +13,13 @@
 
 ## 0. Summary
 
-- **CPU:** **Ryzen 5 8600G / Ryzen 7 8700G (Phoenix)**. Dasharo v0.9.0 (coreboot + openSIL `phoenix_poc`) boots **only Ryzen 8000G** on AM5 today; Ryzen 7000/9000 "will not boot" [Sourced: cost study §10.3]. 7000/9000 is a later option. The board keeps the routing for it: Face P lanes 8–15 are routed, and the AC caps for all 16 GFX lanes are fitted.
+- **CPU (approved 2026-10-21):** **Ryzen 7000/9000, GFX x16**; 8000G = x8 drop-in. *Original fp0 text:* Ryzen 5 8600G / Ryzen 7 8700G (Phoenix). Dasharo v0.9.0 (coreboot + openSIL `phoenix_poc`) boots **only Ryzen 8000G** on AM5 today; Ryzen 7000/9000 "will not boot" [Sourced: cost study §10.3]. 7000/9000 is a later option. The board keeps the routing for it: Face P lanes 8–15 are routed, and the AC caps for all 16 GFX lanes are fitted.
 - **Power:** **cTDP 45 W** in the trashcan core (8600G cTDP 45–65 W [Sourced: AMD]). PPT ≈ 61 W at 45 W cTDP (AMD PPT = 1.35 × TDP) [Inference]. That is inside the LGA1700 CB 12 V allocation, which was based on PL2 65 W.
 - **Chipset:** one **PROM21** (19 × 19 FCBGA, ~7 W). **218-0891025** is preferred (X870-marked, lower DOA) over 218-0891018. It sits at the old PCH site (110, 133).
 - **VRM:** SVI3 controller with 3 rails: **5 × VDDCR + 2 × VDDCR_SOC + 1 × VDD_MISC = 8 SiC654 + 8 FP4**. Candidate: Renesas **RAA229139** (triple-output SVI3). Alternates are MPS **MP2857** and uPI uP9533P. XDPE192C3B and RAA229621 are dual-rail and would need a separate VDD_MISC loop.
 - **Memory:** **4 × DDR5 UDIMM vertical, 2DPC**. Same UMAX 90414 sockets and positions as the LGA1700 CB. 8600G: 2DPC 1R/2R = DDR5-3600 [Sourced: AMD].
 - **Lanes:**
-  - 8000G GFX **x8 → Face P**
+  - 7000/9000 GFX **x16 → Face P** (8000G: x8 drop-in)
   - GPP **x4 → Face S**
   - GPP **x4 → M.2 boot** (moved from the PCH to the CPU)
   - x4 → PROM21
@@ -132,8 +135,8 @@
 
 | Source | Lanes | Consumer | Connector | REFCLK | PERST# |
 |---|---|---|---|---|---|
-| CPU GFX (8000G) | **x8 Gen4** (lanes 0–7) | Face P | J1 FP lanes 0–7 → BP J9 | CPU GPP_CLK (FCH) | BP: PLTRST# ∧ FACE_P_RDY |
-| CPU GFX lanes 8–15 | x8 (unused on 8000G) | Face P (7000/9000: x16 Gen5) | J1 FP lanes 8–15 | same | same |
+| CPU GFX (7000/9000; 8000G = x8) | **x16** (lanes 0–15; 8000G drives 0–7) | Face P | J1 FP lanes 0–7 → BP J9 | CPU GPP_CLK (FCH) | BP: PLTRST# ∧ FACE_P_RDY |
+| CPU GFX lanes 8–15 | x8 (live on 7000/9000; idle on 8000G) | Face P (7000/9000: x16 Gen5) | J1 FP lanes 8–15 | same | same |
 | CPU GPP | x4 Gen4 | Face S | J1 FS lanes → BP J10 | CPU GPP_CLK | BP |
 | CPU GPP | x4 Gen4 | M.2 boot J8 | CB | CPU GPP_CLK | CB PCIE_RST_L |
 | CPU | x4 Gen4 | PROM21 uplink | CB | CPU GPP_CLK | CB |

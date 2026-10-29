@@ -1,0 +1,301 @@
+row,col,position,signal,diff_pair,direction,source,ssd_end_function,base_end_pin (Base Board),notes,base_net
+A,1,A1,SSD0_PERST#,-,base->SSD,CPU board,M.2 #0 PERST#,J1 FS_PERST_N,3.3 V open-drain/LVCMOS,FS_PERST_N
+A,2,A2,GND,-,-,-,GND fence/return,,,GND
+A,3,A3,SSD0_CLKREQ#,-,SSD->base,SSD,M.2 #0 CLKREQ#,J1 FS_CLKREQ0_N [GAP: net not on J1 yet],3.3 V open-drain/LVCMOS,FS_CLKREQ0_N
+A,4,A4,GND,-,-,-,GND fence/return,,,GND
+A,5,A5,SSD0_PEWAKE#,-,SSD->base,SSD,M.2 #0 PEWAKE#,J1 FS_PEWAKE0_N [GAP: not on J1 yet],3.3 V open-drain/LVCMOS,FS_PEWAKE0_N
+A,6,A6,GND,-,-,-,GND fence/return,,,GND
+A,7,A7,SSD1_PERST#,-,base->SSD,CPU board,M.2 #1 PERST#,J1 FS_PERST1_N,3.3 V open-drain/LVCMOS,FS_PERST1_N
+A,8,A8,GND,-,-,-,GND fence/return,,,GND
+A,9,A9,SSD1_CLKREQ#,-,SSD->base,SSD,M.2 #1 CLKREQ#,J1 FS_CLKREQ1_N,3.3 V open-drain/LVCMOS,FS_CLKREQ1_N
+A,10,A10,GND,-,-,-,GND fence/return,,,GND
+A,11,A11,SSD1_PEWAKE#,-,SSD->base,SSD,M.2 #1 PEWAKE#,J1 FS_PEWAKE1_N [GAP: not on J1 yet],3.3 V open-drain/LVCMOS,FS_PEWAKE1_N
+A,12,A12,GND,-,-,-,GND fence/return,,,GND
+A,13,A13,SSD_SMB_CLK,-,bidir,CPU board,shared SMBus SCL (both M.2),J1 FS_SMB_SCL,3.3 V open-drain/LVCMOS,FS_SMB_SCL
+A,14,A14,GND,-,-,-,GND fence/return,,,GND
+A,15,A15,SSD_SMB_DAT,-,bidir,CPU board,shared SMBus SDA (both M.2),J1 FS_SMB_SDA,3.3 V open-drain/LVCMOS,FS_SMB_SDA
+A,16,A16,GND,-,-,-,GND fence/return,,,GND
+A,17,A17,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,18,A18,GND,-,-,-,GND fence/return,,,GND
+A,19,A19,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,20,A20,GND,-,-,-,GND fence/return,,,GND
+A,21,A21,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,22,A22,GND,-,-,-,GND fence/return,,,GND
+A,23,A23,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,24,A24,GND,-,-,-,GND fence/return,,,GND
+A,25,A25,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,26,A26,GND,-,-,-,GND fence/return,,,GND
+A,27,A27,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,28,A28,GND,-,-,-,GND fence/return,,,GND
+A,29,A29,SPARE_BOARD_B,-,-,-,reserved for board B sideband,,,
+A,30,A30,GND,-,-,-,GND fence/return,,,GND
+B,1,B1,GND,-,-,-,GND fence/return,,,GND
+B,2,B2,GND,-,-,-,GND fence/return,,,GND
+B,3,B3,GND,-,-,-,GND fence/return,,,GND
+B,4,B4,GND,-,-,-,GND fence/return,,,GND
+B,5,B5,GND,-,-,-,GND fence/return,,,GND
+B,6,B6,GND,-,-,-,GND fence/return,,,GND
+B,7,B7,GND,-,-,-,GND fence/return,,,GND
+B,8,B8,GND,-,-,-,GND fence/return,,,GND
+B,9,B9,GND,-,-,-,GND fence/return,,,GND
+B,10,B10,GND,-,-,-,GND fence/return,,,GND
+B,11,B11,GND,-,-,-,GND fence/return,,,GND
+B,12,B12,GND,-,-,-,GND fence/return,,,GND
+B,13,B13,GND,-,-,-,GND fence/return,,,GND
+B,14,B14,GND,-,-,-,GND fence/return,,,GND
+B,15,B15,GND,-,-,-,GND fence/return,,,GND
+B,16,B16,GND,-,-,-,GND fence/return,,,GND
+B,17,B17,GND,-,-,-,GND fence/return,,,GND
+B,18,B18,GND,-,-,-,GND fence/return,,,GND
+B,19,B19,GND,-,-,-,GND fence/return,,,GND
+B,20,B20,GND,-,-,-,GND fence/return,,,GND
+B,21,B21,GND,-,-,-,GND fence/return,,,GND
+B,22,B22,GND,-,-,-,GND fence/return,,,GND
+B,23,B23,GND,-,-,-,GND fence/return,,,GND
+B,24,B24,GND,-,-,-,GND fence/return,,,GND
+B,25,B25,GND,-,-,-,GND fence/return,,,GND
+B,26,B26,GND,-,-,-,GND fence/return,,,GND
+B,27,B27,GND,-,-,-,GND fence/return,,,GND
+B,28,B28,GND,-,-,-,GND fence/return,,,GND
+B,29,B29,GND,-,-,-,GND fence/return,,,GND
+B,30,B30,GND,-,-,-,GND fence/return,,,GND
+C,1,C1,SSD0_TX0_P,SSD0_TX0,base->SSD,CPU via redriver,M.2 #0 PERp0 (host TX),U21 TX0P (net FS_TX0_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX0_P_B
+C,2,C2,SSD0_TX0_N,SSD0_TX0,base->SSD,CPU via redriver,M.2 #0 PERp0 (host TX),U21 TX0N (net FS_TX0_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX0_N_B
+C,3,C3,GND,-,-,-,GND fence/return,,,GND
+C,4,C4,SSD0_TX1_P,SSD0_TX1,base->SSD,CPU via redriver,M.2 #0 PERp1 (host TX),U21 TX1P (net FS_TX1_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX1_P_B
+C,5,C5,SSD0_TX1_N,SSD0_TX1,base->SSD,CPU via redriver,M.2 #0 PERp1 (host TX),U21 TX1N (net FS_TX1_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX1_N_B
+C,6,C6,GND,-,-,-,GND fence/return,,,GND
+C,7,C7,SSD0_TX2_P,SSD0_TX2,base->SSD,CPU via redriver,M.2 #0 PERp2 (host TX),U21 TX2P (net FS_TX2_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX2_P_B
+C,8,C8,SSD0_TX2_N,SSD0_TX2,base->SSD,CPU via redriver,M.2 #0 PERp2 (host TX),U21 TX2N (net FS_TX2_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX2_N_B
+C,9,C9,GND,-,-,-,GND fence/return,,,GND
+C,10,C10,SSD0_TX3_P,SSD0_TX3,base->SSD,CPU via redriver,M.2 #0 PERp3 (host TX),U21 TX3P (net FS_TX3_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX3_P_B
+C,11,C11,SSD0_TX3_N,SSD0_TX3,base->SSD,CPU via redriver,M.2 #0 PERp3 (host TX),U21 TX3N (net FS_TX3_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX3_N_B
+C,12,C12,GND,-,-,-,GND fence/return,,,GND
+C,13,C13,SSD1_TX0_P,SSD1_TX0,base->SSD,CPU via redriver,M.2 #1 PERp0 (host TX),U22 TX0P (net FS_TX4_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX4_P_B
+C,14,C14,SSD1_TX0_N,SSD1_TX0,base->SSD,CPU via redriver,M.2 #1 PERp0 (host TX),U22 TX0N (net FS_TX4_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX4_N_B
+C,15,C15,GND,-,-,-,GND fence/return,,,GND
+C,16,C16,SSD1_TX1_P,SSD1_TX1,base->SSD,CPU via redriver,M.2 #1 PERp1 (host TX),U22 TX1P (net FS_TX5_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX5_P_B
+C,17,C17,SSD1_TX1_N,SSD1_TX1,base->SSD,CPU via redriver,M.2 #1 PERp1 (host TX),U22 TX1N (net FS_TX5_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX5_N_B
+C,18,C18,GND,-,-,-,GND fence/return,,,GND
+C,19,C19,SSD1_TX2_P,SSD1_TX2,base->SSD,CPU via redriver,M.2 #1 PERp2 (host TX),U22 TX2P (net FS_TX6_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX6_P_B
+C,20,C20,SSD1_TX2_N,SSD1_TX2,base->SSD,CPU via redriver,M.2 #1 PERp2 (host TX),U22 TX2N (net FS_TX6_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX6_N_B
+C,21,C21,GND,-,-,-,GND fence/return,,,GND
+C,22,C22,SSD1_TX3_P,SSD1_TX3,base->SSD,CPU via redriver,M.2 #1 PERp3 (host TX),U22 TX3P (net FS_TX7_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX7_P_B
+C,23,C23,SSD1_TX3_N,SSD1_TX3,base->SSD,CPU via redriver,M.2 #1 PERp3 (host TX),U22 TX3N (net FS_TX7_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_TX7_N_B
+C,24,C24,GND,-,-,-,GND fence/return,,,GND
+C,25,C25,SSD0_REFCLK_P,SSD0_REFCLK,base->SSD,CPU board,M.2 #0 REFCLK,"J1 FS_REFCLK_P (direct, no redriver)",100 MHz HCSL,FS_REFCLK_P
+C,26,C26,SSD0_REFCLK_N,SSD0_REFCLK,base->SSD,CPU board,M.2 #0 REFCLK,"J1 FS_REFCLK_N (direct, no redriver)",100 MHz HCSL,FS_REFCLK_N
+C,27,C27,GND,-,-,-,GND fence/return,,,GND
+C,28,C28,SSD1_REFCLK_P,SSD1_REFCLK,base->SSD,CPU board,M.2 #1 REFCLK,"J1 FS_REFCLK1_P (direct, no redriver)",100 MHz HCSL,FS_REFCLK1_P
+C,29,C29,SSD1_REFCLK_N,SSD1_REFCLK,base->SSD,CPU board,M.2 #1 REFCLK,"J1 FS_REFCLK1_N (direct, no redriver)",100 MHz HCSL,FS_REFCLK1_N
+C,30,C30,GND,-,-,-,GND fence/return,,,GND
+D,1,D1,GND,-,-,-,GND fence/return,,,GND
+D,2,D2,GND,-,-,-,GND fence/return,,,GND
+D,3,D3,GND,-,-,-,GND fence/return,,,GND
+D,4,D4,GND,-,-,-,GND fence/return,,,GND
+D,5,D5,GND,-,-,-,GND fence/return,,,GND
+D,6,D6,GND,-,-,-,GND fence/return,,,GND
+D,7,D7,GND,-,-,-,GND fence/return,,,GND
+D,8,D8,GND,-,-,-,GND fence/return,,,GND
+D,9,D9,GND,-,-,-,GND fence/return,,,GND
+D,10,D10,GND,-,-,-,GND fence/return,,,GND
+D,11,D11,GND,-,-,-,GND fence/return,,,GND
+D,12,D12,GND,-,-,-,GND fence/return,,,GND
+D,13,D13,GND,-,-,-,GND fence/return,,,GND
+D,14,D14,GND,-,-,-,GND fence/return,,,GND
+D,15,D15,GND,-,-,-,GND fence/return,,,GND
+D,16,D16,GND,-,-,-,GND fence/return,,,GND
+D,17,D17,GND,-,-,-,GND fence/return,,,GND
+D,18,D18,GND,-,-,-,GND fence/return,,,GND
+D,19,D19,GND,-,-,-,GND fence/return,,,GND
+D,20,D20,GND,-,-,-,GND fence/return,,,GND
+D,21,D21,GND,-,-,-,GND fence/return,,,GND
+D,22,D22,GND,-,-,-,GND fence/return,,,GND
+D,23,D23,GND,-,-,-,GND fence/return,,,GND
+D,24,D24,GND,-,-,-,GND fence/return,,,GND
+D,25,D25,GND,-,-,-,GND fence/return,,,GND
+D,26,D26,GND,-,-,-,GND fence/return,,,GND
+D,27,D27,GND,-,-,-,GND fence/return,,,GND
+D,28,D28,GND,-,-,-,GND fence/return,,,GND
+D,29,D29,GND,-,-,-,GND fence/return,,,GND
+D,30,D30,GND,-,-,-,GND fence/return,,,GND
+E,1,E1,SSD0_RX0_P,SSD0_RX0,SSD->base,SSD,M.2 #0 PETp0 (host RX),U21 RX4P (net FS_RX0_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX0_P_B
+E,2,E2,SSD0_RX0_N,SSD0_RX0,SSD->base,SSD,M.2 #0 PETp0 (host RX),U21 RX4N (net FS_RX0_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX0_N_B
+E,3,E3,GND,-,-,-,GND fence/return,,,GND
+E,4,E4,SSD0_RX1_P,SSD0_RX1,SSD->base,SSD,M.2 #0 PETp1 (host RX),U21 RX5P (net FS_RX1_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX1_P_B
+E,5,E5,SSD0_RX1_N,SSD0_RX1,SSD->base,SSD,M.2 #0 PETp1 (host RX),U21 RX5N (net FS_RX1_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX1_N_B
+E,6,E6,GND,-,-,-,GND fence/return,,,GND
+E,7,E7,SSD0_RX2_P,SSD0_RX2,SSD->base,SSD,M.2 #0 PETp2 (host RX),U21 RX6P (net FS_RX2_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX2_P_B
+E,8,E8,SSD0_RX2_N,SSD0_RX2,SSD->base,SSD,M.2 #0 PETp2 (host RX),U21 RX6N (net FS_RX2_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX2_N_B
+E,9,E9,GND,-,-,-,GND fence/return,,,GND
+E,10,E10,SSD0_RX3_P,SSD0_RX3,SSD->base,SSD,M.2 #0 PETp3 (host RX),U21 RX7P (net FS_RX3_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX3_P_B
+E,11,E11,SSD0_RX3_N,SSD0_RX3,SSD->base,SSD,M.2 #0 PETp3 (host RX),U21 RX7N (net FS_RX3_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX3_N_B
+E,12,E12,GND,-,-,-,GND fence/return,,,GND
+E,13,E13,SSD1_RX0_P,SSD1_RX0,SSD->base,SSD,M.2 #1 PETp0 (host RX),U22 RX4P (net FS_RX4_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX4_P_B
+E,14,E14,SSD1_RX0_N,SSD1_RX0,SSD->base,SSD,M.2 #1 PETp0 (host RX),U22 RX4N (net FS_RX4_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX4_N_B
+E,15,E15,GND,-,-,-,GND fence/return,,,GND
+E,16,E16,SSD1_RX1_P,SSD1_RX1,SSD->base,SSD,M.2 #1 PETp1 (host RX),U22 RX5P (net FS_RX5_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX5_P_B
+E,17,E17,SSD1_RX1_N,SSD1_RX1,SSD->base,SSD,M.2 #1 PETp1 (host RX),U22 RX5N (net FS_RX5_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX5_N_B
+E,18,E18,GND,-,-,-,GND fence/return,,,GND
+E,19,E19,SSD1_RX2_P,SSD1_RX2,SSD->base,SSD,M.2 #1 PETp2 (host RX),U22 RX6P (net FS_RX6_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX6_P_B
+E,20,E20,SSD1_RX2_N,SSD1_RX2,SSD->base,SSD,M.2 #1 PETp2 (host RX),U22 RX6N (net FS_RX6_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX6_N_B
+E,21,E21,GND,-,-,-,GND fence/return,,,GND
+E,22,E22,SSD1_RX3_P,SSD1_RX3,SSD->base,SSD,M.2 #1 PETp3 (host RX),U22 RX7P (net FS_RX7_P_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX7_P_B
+E,23,E23,SSD1_RX3_N,SSD1_RX3,SSD->base,SSD,M.2 #1 PETp3 (host RX),U22 RX7N (net FS_RX7_N_B),"Gen5 32 GT/s, AC caps on SSD board (TX side) - verify",FS_RX7_N_B
+E,24,E24,GND,-,-,-,GND fence/return,,,GND
+E,25,E25,SPARE_BOARD_B,-,-,-,reserved for SSD board B pair,,,
+E,26,E26,SPARE_BOARD_B,-,-,-,reserved for SSD board B pair,,,
+E,27,E27,GND,-,-,-,GND fence/return,,,GND
+E,28,E28,SPARE_BOARD_B,-,-,-,reserved for SSD board B pair,,,
+E,29,E29,SPARE_BOARD_B,-,-,-,reserved for SSD board B pair,,,
+E,30,E30,GND,-,-,-,GND fence/return,,,GND
+F,1,F1,GND,-,-,-,GND fence/return,,,GND
+F,2,F2,GND,-,-,-,GND fence/return,,,GND
+F,3,F3,GND,-,-,-,GND fence/return,,,GND
+F,4,F4,GND,-,-,-,GND fence/return,,,GND
+F,5,F5,GND,-,-,-,GND fence/return,,,GND
+F,6,F6,GND,-,-,-,GND fence/return,,,GND
+F,7,F7,GND,-,-,-,GND fence/return,,,GND
+F,8,F8,GND,-,-,-,GND fence/return,,,GND
+F,9,F9,GND,-,-,-,GND fence/return,,,GND
+F,10,F10,GND,-,-,-,GND fence/return,,,GND
+F,11,F11,GND,-,-,-,GND fence/return,,,GND
+F,12,F12,GND,-,-,-,GND fence/return,,,GND
+F,13,F13,GND,-,-,-,GND fence/return,,,GND
+F,14,F14,GND,-,-,-,GND fence/return,,,GND
+F,15,F15,GND,-,-,-,GND fence/return,,,GND
+F,16,F16,GND,-,-,-,GND fence/return,,,GND
+F,17,F17,GND,-,-,-,GND fence/return,,,GND
+F,18,F18,GND,-,-,-,GND fence/return,,,GND
+F,19,F19,GND,-,-,-,GND fence/return,,,GND
+F,20,F20,GND,-,-,-,GND fence/return,,,GND
+F,21,F21,GND,-,-,-,GND fence/return,,,GND
+F,22,F22,GND,-,-,-,GND fence/return,,,GND
+F,23,F23,GND,-,-,-,GND fence/return,,,GND
+F,24,F24,GND,-,-,-,GND fence/return,,,GND
+F,25,F25,GND,-,-,-,GND fence/return,,,GND
+F,26,F26,GND,-,-,-,GND fence/return,,,GND
+F,27,F27,GND,-,-,-,GND fence/return,,,GND
+F,28,F28,GND,-,-,-,GND fence/return,,,GND
+F,29,F29,GND,-,-,-,GND fence/return,,,GND
+F,30,F30,GND,-,-,-,GND fence/return,,,GND
+G,1,G1,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,2,G2,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,3,G3,GND,-,-,-,GND fence/return,,,GND
+G,4,G4,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,5,G5,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,6,G6,GND,-,-,-,GND fence/return,,,GND
+G,7,G7,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,8,G8,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,9,G9,GND,-,-,-,GND fence/return,,,GND
+G,10,G10,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,11,G11,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,12,G12,GND,-,-,-,GND fence/return,,,GND
+G,13,G13,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,14,G14,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,15,G15,GND,-,-,-,GND fence/return,,,GND
+G,16,G16,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,17,G17,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,18,G18,GND,-,-,-,GND fence/return,,,GND
+G,19,G19,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,20,G20,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,21,G21,GND,-,-,-,GND fence/return,,,GND
+G,22,G22,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,23,G23,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,24,G24,GND,-,-,-,GND fence/return,,,GND
+G,25,G25,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,26,G26,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,27,G27,GND,-,-,-,GND fence/return,,,GND
+G,28,G28,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,29,G29,SPARE_BOARD_B,-,-,-,reserved for board B pair,,,
+G,30,G30,GND,-,-,-,GND fence/return,,,GND
+H,1,H1,GND,-,-,-,GND fence/return,,,GND
+H,2,H2,GND,-,-,-,GND fence/return,,,GND
+H,3,H3,GND,-,-,-,GND fence/return,,,GND
+H,4,H4,GND,-,-,-,GND fence/return,,,GND
+H,5,H5,GND,-,-,-,GND fence/return,,,GND
+H,6,H6,GND,-,-,-,GND fence/return,,,GND
+H,7,H7,GND,-,-,-,GND fence/return,,,GND
+H,8,H8,GND,-,-,-,GND fence/return,,,GND
+H,9,H9,GND,-,-,-,GND fence/return,,,GND
+H,10,H10,GND,-,-,-,GND fence/return,,,GND
+H,11,H11,GND,-,-,-,GND fence/return,,,GND
+H,12,H12,GND,-,-,-,GND fence/return,,,GND
+H,13,H13,GND,-,-,-,GND fence/return,,,GND
+H,14,H14,GND,-,-,-,GND fence/return,,,GND
+H,15,H15,GND,-,-,-,GND fence/return,,,GND
+H,16,H16,GND,-,-,-,GND fence/return,,,GND
+H,17,H17,GND,-,-,-,GND fence/return,,,GND
+H,18,H18,GND,-,-,-,GND fence/return,,,GND
+H,19,H19,GND,-,-,-,GND fence/return,,,GND
+H,20,H20,GND,-,-,-,GND fence/return,,,GND
+H,21,H21,GND,-,-,-,GND fence/return,,,GND
+H,22,H22,GND,-,-,-,GND fence/return,,,GND
+H,23,H23,GND,-,-,-,GND fence/return,,,GND
+H,24,H24,GND,-,-,-,GND fence/return,,,GND
+H,25,H25,GND,-,-,-,GND fence/return,,,GND
+H,26,H26,GND,-,-,-,GND fence/return,,,GND
+H,27,H27,GND,-,-,-,GND fence/return,,,GND
+H,28,H28,GND,-,-,-,GND fence/return,,,GND
+H,29,H29,GND,-,-,-,GND fence/return,,,GND
+H,30,H30,GND,-,-,-,GND fence/return,,,GND
+I,1,I1,GND,-,-,-,GND fence/return,,,GND
+I,2,I2,GND,-,-,-,GND fence/return,,,GND
+I,3,I3,GND,-,-,-,GND fence/return,,,GND
+I,4,I4,GND,-,-,-,GND fence/return,,,GND
+I,5,I5,GND,-,-,-,GND fence/return,,,GND
+I,6,I6,GND,-,-,-,GND fence/return,,,GND
+I,7,I7,GND,-,-,-,GND fence/return,,,GND
+I,8,I8,GND,-,-,-,GND fence/return,,,GND
+I,9,I9,GND,-,-,-,GND fence/return,,,GND
+I,10,I10,GND,-,-,-,GND fence/return,,,GND
+I,11,I11,GND,-,-,-,GND fence/return,,,GND
+I,12,I12,GND,-,-,-,GND fence/return,,,GND
+I,13,I13,GND,-,-,-,GND fence/return,,,GND
+I,14,I14,GND,-,-,-,GND fence/return,,,GND
+I,15,I15,GND,-,-,-,GND fence/return,,,GND
+I,16,I16,GND,-,-,-,GND fence/return,,,GND
+I,17,I17,GND,-,-,-,GND fence/return,,,GND
+I,18,I18,GND,-,-,-,GND fence/return,,,GND
+I,19,I19,GND,-,-,-,GND fence/return,,,GND
+I,20,I20,GND,-,-,-,GND fence/return,,,GND
+I,21,I21,GND,-,-,-,GND fence/return,,,GND
+I,22,I22,GND,-,-,-,GND fence/return,,,GND
+I,23,I23,GND,-,-,-,GND fence/return,,,GND
+I,24,I24,GND,-,-,-,GND fence/return,,,GND
+I,25,I25,GND,-,-,-,GND fence/return,,,GND
+I,26,I26,GND,-,-,-,GND fence/return,,,GND
+I,27,I27,GND,-,-,-,GND fence/return,,,GND
+I,28,I28,GND,-,-,-,GND fence/return,,,GND
+I,29,I29,GND,-,-,-,GND fence/return,,,GND
+I,30,I30,GND,-,-,-,GND fence/return,,,GND
+J,1,J1,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,2,J2,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,3,J3,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,4,J4,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,5,J5,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,6,J6,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,7,J7,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,8,J8,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,9,J9,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,10,J10,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,11,J11,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,12,J12,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,13,J13,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,14,J14,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,15,J15,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,16,J16,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,17,J17,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,18,J18,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,19,J19,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,20,J20,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,21,J21,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,22,J22,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,23,J23,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,24,J24,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
+J,25,J25,P3V3_SB_OPT,-,base->SSD,base 3V3_SB,optional standby 3.3 V (DNP-able),3V3_SB via 0R DNP,optional; 0.45 A max,SSD_3V3_SB_OPT
+J,26,J26,GND,-,-,-,GND fence/return,,,GND
+J,27,J27,SPARE_BOARD_B,-,-,-,reserved,,,
+J,28,J28,GND,-,-,-,GND fence/return,,,GND
+J,29,J29,SPARE_BOARD_B,-,-,-,reserved,,,
+J,30,J30,GND,-,-,-,GND fence/return,,,GND

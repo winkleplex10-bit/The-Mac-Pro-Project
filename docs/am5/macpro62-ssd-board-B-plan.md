@@ -32,3 +32,6 @@ Both CPU x4 ports into the switch as two partitions (PM50028 virtual switch part
 ## Update 2026-10-26 (Aidan)
 - The boot NVMe on the chipset has been dropped, so **boot now comes from the SSD board**. It keeps 2× Gen5 x4 over MCIO. PROM21 downlink 2 is now spare.
 - **Version B:** the 4-drive switch sits **on the SSD face against the thermal core**, not on the base board. Its power (~14–17 W) and cooling therefore belong to the SSD face (Mechanical & Thermal).
+
+## Status 2026-10-28
+ON HOLD per Aidan. Board A proceeds.

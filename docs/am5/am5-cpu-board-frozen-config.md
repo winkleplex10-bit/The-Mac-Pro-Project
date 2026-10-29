@@ -88,3 +88,11 @@ CPU board 12 V ≈ 214.6 W / **17.9 A** [Estimate: cpu-board-power-budget.md sca
 7. 12 V plane re-check at 17.9 A on 1080A.
 
 - RTC: use on-board CR2032 (BT1 area) feeding VBAT_RTC_CB; delete VBAT_RTC_IOB input (VBAT not carried on base/I/O Meg-Array). Pending Aidan sign-off. (2026-10-26)
+
+## Decisions 2026-10-28 (relayed by Master Bot from Aidan)
+- Firmware: Ryzen 7000/9000 target kept; AGESA via licensed board maker (ODM). openSIL/8000G path not pursued.
+- VRM controller: TI TPS53685 (public datasheet, AMD SVI3) replaces NDA controllers; power-stage compatibility (SiC654 vs TI NexFET) to be checked.
+- Gen5 lanes (x16 GPU, x4+x4 SSD board A): TI DS320PR1601 / DS320PR810 redrivers on base board, PT5161L retimer fallback footprint + 10 mm heatsink room (Base Board & Connectors owns placement; SI & Fab confirms budget). Nothing on CPU board.
+- GPU path on hold: placeholder Gen5 x16; CPU board J1 unchanged.
+- SSD board A only (two native CPU x4 Gen5 ports); board B on hold.
+- NDA items remaining for CPU board: PROM21 datasheet (justified), AGESA (via ODM).

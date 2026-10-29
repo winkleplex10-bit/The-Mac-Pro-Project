@@ -1,7 +1,93 @@
-# MacPro6,2 inter-board link and bandwidth map (AM5), rev 6
+# MacPro6,2 inter-board link and bandwidth map (AM5), rev 7b
 Base Board & Connectors, 2026-10-26 ≈18:00 EDT (rev 4 ≈17:50, rev 3 ≈17:40, rev 2 ≈17:30). Draft, nothing approved. No other files edited, nothing pushed.
 Inputs: research/connector-bandwidth-options.md (M&T), docs/pinmaps/base-iob-megarray-review.md, docs/am5-cpu-board-frozen-config.md, macpro62-interface-control-rev4.md, kicad/macpro62-backplane-v3/docs/loss_budget_A1.md, plus public vendor pages below.
 Tags: [Sourced] = public page (URL in Sources); [Estimate]; [GAP].
+
+
+## Rev 7: Gen5 public TI redrivers placed on the base board (Aidan decision via Master Bot, 2026-10-28; placed ≈15:10 EDT)
+Base Board & Connectors. Board A only (Board B on hold). Draft, nothing pushed, ordered, or sent to vendors. Backups: /workspace/backups/bp-v3-redrivers-20261028/.
+- **Parts (public datasheets):**
+  - **U20 DS320PR1601** (GPU x16, J1 ↔ GPU face): ZDG0354A nFBGA-354, 22.8 × 8.9 mm, 1.4 mm max, ball Ø0.37, NSMD land Ø0.30 (TI SNLS683, Jun 2023: pin table pp.6–14, P_ACT 5.8 W typ / 7.0 W max at EQ 5–19 and θJA 17.4 / θJC(top) 6.5 °C/W p.16, power/decoupling/layout p.34, outline p.40, land pattern p.41, stencil p.42). AC caps internal, no refclk/sideband. SMBus/I²C only: MODE = L2 target via 6.2 k (6.225 k ±10 %, Tbl 5-1).
+  - **U21/U22 DS320PR810** (SSD board x8 = 2 × x4, FS lanes 0–3 / 4–7): NJX0064A WQFN-64, 5.5 × 10 mm, 0.4 mm pitch, EP 4.1 × 8.6 (TI SNLS668, Aug 2022: pins pp.4–6, P_ACT 1.41 typ / 1.75 W max p.8, 5-level straps Tbl 7-4 and addresses Tbl 7-5 p.17, decoupling p.28, outline p.34, land p.35). MODE = L2 (24.9 k); U21 ADDR1/0 = L0/L0 → 0x18/0x19, U22 L0/L1 → 0x1A/0x1B. RSVD2–5 → GND per p.6.
+  - **U23 PT5161L fallback: separate alternate footprint, DNP, no pads.** Package and pinout are NDA-gated; TI publishes no cross-map, so pin compatibility with DS320PR1601 is **unverified and not assumed**.
+- **Decoupling (per datasheet), on B.Cu directly under each IC:** U20 16 × 100 nF + 4 × 1 µF + 2 × 10 µF (30 VCC balls); U21/U22 4 × 100 nF + 1 × 1 µF each, plus one shared 10 µF for the bus.
+- **Placement (board coords, mm; board centre (150,100), r 61):** U20 (182.2, 102.9) rot 0, the free band between J1 and the J9 Face-P connector, toward the outer edge. U21 (153.5, 102.9) and U22 (160.5, 102.9), rot 0. U23 ALT is a reservation at U20's site. Heatsink keep-out is drawn on Dwgs.User at 24 × 10.6 mm. The band is only 11.6 mm wide (J9 courtyard y 97.1 to J1 y 108.8), and H2 (199,100) and U3 bound it.
+- **Per-segment Manhattan estimate, connector pad → redriver centre → face pad** (full table: kicad/macpro62-backplane-v3/docs/gen5_redriver_segment_lengths_2026-10-28.csv; J9 MCIO = proxy for the not-yet-placed GPU MEG-Array):
+
+| Link | Redriver | J1 → redriver (mm) | redriver → face (mm) | Pairs over 40 mm |
+|---|---|---|---|---|
+| GPU x16 (FP lanes 0–15, TX+RX) | U20 | 8.8–36.9 | 17.1–68.1 | 16 (lanes 0–7, face side 40.3–68.1) |
+| SSD x4 #1 (FS 0–3) | U21 | 15.0–23.0 | 32.9–37.1 | 0 |
+| SSD x4 #2 (FS 4–7, slot-B pins) | U22 | 16.2–53.8 | 39.9–44.1 | 6 (FS4–6 both sides up to 53.8; FS7 RX B 44.1) |
+
+- **Flags:** 22 of 48 pairs exceed the ~40 mm/side budget on the Manhattan estimate. Octilinear routing is shorter (×≈0.8–0.85), but GPU lanes 0–7 face-side still land at about 34–58 mm. A final answer needs the real MEG-Array position (Aidan's stock-base measurements). The fixes would be to move J1 lanes 0–7 or the face connector, or to swap U20's site.
+- **Open issues:**
+  1. **3V3_RDRV is a NEW rail with its source TBD.** Max load ≈ 7.0 + 2 × 1.75 = 10.5 W (3.2 A). The existing 3V3_SB TPS563201 (3 A, standby) is not suitable. Needs Aidan's decision (power).
+  2. **U20 ball coordinates aren't transcribed.** The staggered grid on SNLS683 p.41 is ambiguous from text, so the footprint is an outline placeholder until TI CAD or a full transcription is available.
+  3. **The high-speed nets are not yet spliced.** The *_A/*_B labels are placed, but the J1→J9/J10 copper is still direct, so a net split plus reroute is needed.
+  4. **U20 straps (8 address pins) are TBD** (SNLS683 Tbl 7-3/8-1), and I²C address collisions haven't been checked yet.
+  5. **Heatsink:** at 7 W with θJC 6.5 °C/W and Tj ≤ 120 °C, a 24 × 10.6 mm footprint sink needs θSA ≲ 4–5 °C/W. That is unlikely without height or ducting, so it goes to M&T.
+  6. **B-side passives make assembly double-sided** (it was F-only).
+  7. **DRC is no longer clean after placement** (see the BP README note). That's expected until the reroute.
+  8. **SSD-side PT5081L/PT5161L fallback: none placed** (the brief covered the GPU only).
+
+### Rev 7a (2026-10-28 ≈16:00 EDT, SI & Fab review): moves, angled lengths, real ZDG0354A ball map
+Backup: /workspace/backups/bp-v3-rdrv-move-20261028/. The nets are not split and nothing is rerouted (waiting on Aidan for the 3V3_RDRV source).
+- **New placement (mm, rot 0, F.Cu):**
+  - U20 DS320PR1601 moves 182.2 → **173.7**, y 102.9 (8.5 mm toward J9). U23 ALT moves with it.
+  - U22 moves 160.5 → **152.5** (8 mm toward J10). U21 moves 153.5 → **158.6**. The B.Cu passives move with their ICs.
+  - **Blockers:** the band is y 97.1–108.8 (J9/J1). An 810 can't go left of x = 152.5 because of J10's courtyard. Both 810s have to sit left of U20, since no other free site exists toward J10 (a polygon search of the whole board found none). That caps U20's left edge at about 161.7. Placing U20 at x ≤ 170 (all face-side pairs ≤ 45) forces an 810 to the right of U20 (x ≈ 184), which puts SSD lanes 0–3 at 60–67 mm. Rejected.
+- **Angled (octilinear) estimates, max(dx,dy) + 0.414·min(dx,dy), pad → IC centre** (CSV updated):
+
+| Redriver | CPU side (J1) | Face side | Over 45 mm |
+|---|---|---|---|
+| U20 GPU x16 | 8.3–21.9 | 10.1–46.4 | FP_RX0, FP_TX0 (46.4, face side) |
+| U21 SSD FS0–3 | 15.3–21.6 | 34.5–41.1 | none |
+| U22 SSD FS4–7 | 8.3–40.8 | 23.9–30.6 | none |
+
+- **ZDG0354A:** all 354 balls come from the vector drawing on SNLS683 p.41: 354 Ø0.30 land circles, labels matched one-to-one and cross-checked against the pin table, pp.6–14. The check gives 35 distinct X and 129 distinct Y positions, monotonic in column number. Nearest-neighbour pitch is 0.6 (206 balls), 0.5, 0.75, 0.8 and 0.7, matching the drawing's 0.6/0.5/0.8 TYP. Spans are 7.88 × 21.94 (drawing: 7.88 / 21.9). The footprint is now TI_ZDG0354A_nFBGA-354_22.9x8.9mm (placeholder removed).
+- **Routing layers (stackup JLC06161H-2116, 1.6 mm):** host RX on L1_SIG_RX (F.Cu microstrip referenced to In1 GND, w 0.26 / gap 0.125, 85.5 Ω). Host TX on L3_SIG_TX_PWR (In2 stripline between In1 and In3, w 0.24 / gap 0.127, 84.5–85.7 Ω; legacy TX pairs at 0.21/0.127 come to 88.7–89.7 Ω). L4_SIG_SLOTB (In3) is the second inner signal layer. No GND plane separates In2 and In3, so the broadside rule applies. Through vias are 0.45/0.25 with no backdrill. Approximate stubs: from In2 about 1.0 mm, from In3 about 0.6 mm (SI to rule on backdrill or layer choice).
+
+### Rev 7b (2026-10-28 ≈18:30 EDT): SSD face pinout, real face connectors, 12 V buck (Aidan: 12 V-only PSU, base fed only via J1)
+Backup: /workspace/backups/bp-v3-faces-20261028/. Nets still not split, nothing rerouted or pushed.
+- **SSD face MEG-Array 300 pinout:** docs/pinmaps/base-ssd-megarray.csv (10 × 30, GSSG: pairs at columns 3k+1/3k+2, GND at 3k; full GND rows B/D/F/H/I fence the pair rows). Also has base_end and base_net columns.
+  - Row C: 8 TX pairs (2 × x4) + 2 REFCLK.
+  - Row E: 8 RX pairs + 2 spare pair slots (board B).
+  - Row G: 10 spare pair slots (board B).
+  - Row A: PERST#/CLKREQ#/PEWAKE# × 2 + SMB CLK/DAT, alternating with GND.
+  - Row J: **12 × P12V** (J1–J12) + **12 × GND return** (J13–J24) + optional P3V3_SB (J25, via R121 0 Ω DNP).
+  - **Counts: 18 pairs = 36 pins, 9 single-ended (8 sideband + 1 optional 3V3), 12 × 12 V, 210 GND (incl. 12 returns), 33 spare = 300.**
+  - **12 V power is APPROVED** (Aidan): 2.5 A / 12 = 0.21 A/pin vs 0.45 A rating, 2.1× margin.
+  - The pinout is our own and only mirrors the stock GPU-face position, not Apple's pin map.
+- **Face connectors placed** (per docs/stock-base-connector-positions.md; KiCad y = 100 − Y_stock):
+  - **J11 GPU** at (115.0, 66.0), rotation +45°. GPU pinout is pending GPU Board, so all its pads are currently no-connect.
+  - **J12 SSD** at (185.0, 66.0), rotation −45°. Nets come from the CSV.
+  - Both use the footprint Amphenol_MegArray_84501_300P_10x30_P1.27mm_UNVERIFIED (1.27 mm grid, Ø0.64 pads and A1/key location are not in a public dimensioned land pattern; housing 44.1 × 17.34 from mezz_megarray.pdf).
+  - J9/J10 MCIO stand-ins are removed from the PCB and set off-board/DNP in the schematic. MCIO_RIBBON rule areas are deleted.
+  - **Fit:** outer pads reach r 57.8 mm, inside the 58 mm ring keep-out. The housing corners reach r ≈ 61.6 mm, past the 61 mm board edge, within the scan's ±2 mm accuracy, so the position needs a calliper check.
+- **Lengths (octilinear, pad → redriver centre; GPU face = J11 centre until its pinout exists):**
+
+| Redriver | J1 side | Face side | Over 45 mm |
+|---|---|---|---|
+| U20 → J11 (GPU, left) | 8.3–21.9 | 74.0 | all 32 pairs |
+| U21 → J12 (SSD 0–3) | 15.3–21.6 | 51.4–58.6 | all 8 |
+| U22 → J12 (SSD 4–7) | 8.3–40.8 | 50.3–54.9 | all 8 |
+
+  **Root cause:** J1 puts the GPU lanes on its +x (right) half and the SSD lanes on the −x half, so the GPU face on the left forces the two groups to cross. The fix is either swap faces (GPU right / SSD left, which the positions doc marks provisional) or remap J1 (CPU Board). Swapping with the redrivers left as they are gives U20 face-side ≈ 41.6 mm (centre estimate), with the SSD redrivers then moved left toward the SSD face. The redrivers would need re-placing either way (Aidan to pick left/right).
+- **12 V → 3V3_RDRV buck:**
+  - Part: **U24 TI TPS565208DDCR** (SLVSE72B: 4.5–17 V in, 5 A, SOT-23-6 DDC, VFB 0.76 V, pins GND1/SW2/VIN3/VFB4/EN5/VBST6 p.4). The 5 A rating is ≥ 4 A and gives 1.56× over 3.2 A.
+  - Values per Tbl 2 p.14 (3.3 V): R118 33.2 k / R119 10 k, L 2.2 µH, Cout 3 × 22 µF (in the 20–68 µF range). Cin 2 × 10 µF 25 V + 100 nF. VBST 100 nF. EN 100 k pull-up to 12 V (always on).
+  - Placed at (118, 96), about 56 mm from U20. The L5 part is TBD: it needs ≥ 7 A Isat, and the 4 × 4 footprint is a placeholder.
+- **J1 12 V: there are 0 pins today.** J1 carries only 5V_SBY × 6 and 3V3_SB × 2; 12V_MAIN_IN still enters on J2 (Micro-Fit), which Aidan's decision makes obsolete. **Base 12 V load:** SSD 2.5 A + buck input ≈ 10.5 W / (12 V × 0.88) ≈ 1.0 A + MCU/sensors ≈ 0.1 A, about **3.6 A**. Fan power [GAP] is not included, and GPU power is not counted (it must not come through J1). At 1.1 A/contact (Mini Cool Edge, frozen-config doc) with 2× margin, that needs **≥ 7 × 12 V + 7 GND on J1** (8 + 8 if fans draw 12 V from the base). It's a CPU Board pinout change. The base's own U6/U7 standby bucks fed by 11V_SB_IN on J2 also become redundant or need a new source.
+- **Base 12 V eFuse at J1 (Aidan: base 12 V is taken ahead of the CB eFuse):**
+  - Part: **U25 TI TPS259824LNRGE** (SLVSEI3D, rev May 2026): 2.7–24 V, 15 A, 2.7 mΩ, RGE VQFN-24 4 × 4 with 2 exposed pads. 16.9 V OVLO, active current limit (Device Comparison Table p.4). Pins p.5. ILIM points p.9 (300 Ω → 4.98 A, 182 Ω → 8.13 A). Outline p.55, land pattern p.56.
+  - Values: **R122 249 Ω → ILIM ≈ 6.0 A typ** (interpolated; verify against the ILIM equation). EN/UVLO 100 k/13 k ≈ 10.4 V (verify V_EN, p.8). dVdt 22 nF (TBD). IMON 1.5 k → BP_12V_IMON. PG → BP_12V_PG (10 k to 3V3_SB). RETRY_DLY/NRETRY/LDSTRT to GND. Cin 1 µF, Cout 10 µF.
+  - Placed at (111, 104) next to the J1 left end. EFUSE_IN = J1 v4 P12V (A103–B106, ×8 at 0.75 A derated = 6 A). Output feeds 12V_MAIN_IN.
+  - **The J1 symbol and footprint nets are still v3.** Applying the v4 draft remaps sideband/FS pins too, so it waits for the v4 freeze (CPU Board).
+- **Base 12 V budget (from J1):** SSD face 2.5 A (I/O & Storage figure) + U24 input 10.5 W / (12 V × 0.88 est.; SLVSE72B Fig 12 not read numerically) = 0.99 A + eFuse/buck quiescent < 0.01 A → **≈ 3.5 A, within the 6 A J1 allocation and the 6.0 A ILIM**. Not included: fan power [GAP]. GPU power must not come via J1.
+- **Base standby (v4: CB → base):**
+  - **5V_SBY: ≈ 0 A of base load.** Its only base consumer was the U7 buck output. **U7 (and U6 for 3V3_SB) now back-feed CB-supplied rails and must be DNP/removed**, along with J2 / 11V_SB_IN.
+  - **3V3_SB: ≈ 0.07 A base-own worst case** (estimate: RP2350B MCU ~30–40 mA, W25Q128 ~15 mA active, INA226/TMP1075 ×2/LVC1G74 < 1 mA, LED D10 ~2 mA, 2.2 k I²C pull-ups ≤ 6 mA, 10 k pull-ups ≤ 8 mA; RP2350/W25Q datasheets not re-opened this turn) **+ IOB 3V3_SB via J6 [GAP] + optional SSD 3V3_SB (J12 J25, R121 DNP, ≤ 0.45 A)**. J1 v4 3V3_SB = 2 pins × 1.1 A.
 
 ## Rev 6: reuse of Apple Mac Pro 6,1 interconnects (Aidan goal, 2026-10-26 ≈17:45 EDT)
 **GPU pair count (corrected, GPU Board):** 32 PCIe + 1 REFCLK + 16 display + 4 AUX = **53 pairs** → 106 S + 106 GND (2/pair, GSSG) + 16 SE = **228 of 300 → 72 spare**. Fits MEG-Array 300.
@@ -261,3 +347,21 @@ Rev 6: graphics flex 821-1880/923-0500 https://www.macsology.com/product/923-050
 Rev 5: MEG-Array series https://www.amphenol-cs.com/product-series/meg-array.html (Cloudflare blocked direct fetch; content via search) · datasheet https://www.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/mezzanine/mezz_megarray.pdf · older rev https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6257/mezz_megarray.pdf · GS-20-033 https://www.amphenol-cs.com/media/wysiwyg/files/documentation/gs-20-033.pdf
 Rev 4: APF6-RA https://www.samtec.com/products/apf6-ra · ADM6/ADF6 https://www.samtec.com/products/adm6 , https://www.samtec.com/products/adf6 · NovaRay https://www.samtec.com/products/nvaf , https://suddendocs.samtec.com/literature/samtec-high-speed-b2b-design-guide.pdf · Samtec arrays overview https://www.samtec.com/high-speed-board-to-board/high-density-arrays/ · ExaMAX/ExaMAX2 https://www.amphenol-cs.com/product-series/examax.html , https://www.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/backplane/bpl_examax_backplane.pdf , https://www.amphenol-cs.com/media/wysiwyg/files/documentation/gs-12-1096.pdf · STRADA Whisper https://www.te.com/en/products/connectors/pcb-connectors/backplane-connectors/high-speed-backplane-connectors/strada-whisper.html , https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocFormat=pdf&DocLang=English&DocNm=108-32112&DocType=Specification+Or+Standard&PartCntxt=2187626-1 · Molex Impel https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/171/171320/AS-171320-992-001.pdf · Mac Pro 2013: https://www.ifixit.com/Teardown/Mac+Pro+Late+2013+Teardown/20778 , https://www.ifixit.com/Guide/Mac+Pro+Late+2013+Interconnect+Board+Replacement/21209 , https://www.ifixit.com/Document/XMlFgdGGPKXQ1IdB/2013-MP-Repair-Manual.pdf
 HSEC8-DV: https://www.samtec.com/products/hsec8-dv , https://suddendocs.samtec.com/testreports/connector-speed-sma_hsec8-dv_web.pdf , https://datasheet.octopart.com/HSEC8-150-01-SM-DV-A-Samtec-datasheet-41340256.pdf · ERF8/ERM8: https://www.samtec.com/products/erf8 , https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6239/erm8-erf8.pdf · Mini Cool Edge flyer: https://www.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/general/mini-cool-edge-flyer.pdf · SEARAY: https://www.samtec.com/products/seaf8 · AMD Ryzen 9 9950X spec (4× USB 10G, 1× USB2, 24 usable lanes): https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html · AMD AM5 QRG: https://www.amd.com/content/dam/amd/en/documents/partner-hub/ryzen/amd-socket-am5-quick-reference-guide.pdf · VL822: https://www.via-labs.com/product_show.php?id=99 , http://www.usbtech.net/upload/portal/20210129/273a4e5ddf8b65a319765aa6eb529a1d.pdf · PEX89024: https://www.broadcom.com/products/pcie-switches-retimers/expressfabric/gen5/pex89024 , https://docs.broadcom.com/doc/BC00-0445EN · Switchtec PFX Gen5: https://ww1.microchip.com/downloads/en/DeviceDoc/00003776.pdf · MEG-Array: https://www.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/mezzanine/mezz_megarray.pdf · Mini Cool Edge: https://www.amphenol-cs.com/product-series/mini-cool-edge-0-60mm.html · MCIO: https://www.amphenol-ast.com/v3/en/product_view.aspx?id=370 · ASM4242: https://www.asmedia.com.tw/product/e20zx49yU0SZBUH5/363Zx80yu6sY3XH2.html
+
+## Rev 6a decisions (2026-10-26, Aidan)
+- C1/C2 DP-Alt: Parade PS8838 retimer (approved).
+- C3/C4 USB4: Parade PS8830 retimers at the ports (approved). It is a retimer, not a host; host stays ASM4242 on PROM21 downlink 1 (Aidan confirmed). Note ASM4242 DP-in is HBR3 only. Datasheets gated; routed to Communications under NDA rule.
+
+## Rev 7c (2026-10-28): U20 heatsink keep-outs and temperature sensor
+- Dwgs.User: pedestal band 24×10.6 mm (x 161.7–185.7, y 97.6–108.2), centred on U20 (173.7,102.9); fin overhang 40×35 mm (x 153.7–193.7, y 85.4–120.4), parts ≤3 mm only; radial air channel from U20 to the rim (x 185.7–208, same y band). The channel is also an F.Cu rule area (KO_U20_RADIAL_CHANNEL, footprints not allowed), so DRC will flag what is in it.
+- Conflicts (not moved; this needs a mechanical decision): **H2 mounting hole/standoff (199,100) is inside the radial channel, directly upstream.** U3 (197.5,107) and R25 (202.1,108.6) are low parts in the channel and can stay or move. **J3 JST GH top-entry (192.5,86.5), about 4.25 mm tall (GAP: confirm height), reaches the fin overhang corner.** Clearance from the H2 pad edge (r 2) to the fin edge is 3.3 mm, below the 4 mm target. The screw has a straight driver path (not under the fins). H1 (101,100) is clear: nearest part U25 is about 10.8 mm away. H3 (172,130) is outside the fin footprint (fin edge y 120.4).
+- U26 TMP1075DGKR (same part as U3, LCSC C2864807; GAP: confirm the address table in the TI TMP1075 datasheet) on I2C_SYS at **0x4A** (A1=V+, A0=A2=GND); ALERT goes to the shared BP_OTEMP_N; it sits at (173.7,111) just below the pedestal band, with C83 100 nF.
+- Mated heights: Meg-Array 84500+84501 = 4.0 mm stack (Amphenol Meg-Array product family). J1 Mini Cool Edge: body ≈6 mm (earlier estimate; GAP: drawing CME102241010301X gives no height, so the card seating height still has to be measured).
+- KiCad is no longer installed on the box and the Debian mirror returns HTTP 500, so the rev 7c edits were made as text and DRC/ERC have not been rerun.
+
+## Rev 7d (2026-10-28, 19:15 EDT): faces swapped (Aidan's decision)
+- GPU face J11 is upper-right at (185.63,67.74), rotation −46.7; SSD face J12 is upper-left at (114.24,68.11), rotation +46.5. This was placed by the concurrent tools/stock_align.py from stock measurements.
+- U21/U22 and their B.Cu passives (C62–C72, R111–R117) moved by (−21,−6): U21 is now (137.6,96.9), U22 (131.5,96.9). U20 did not move, so its heatsink keep-outs stay where they were.
+- Octilinear lengths (tools/swap_lengths.py → CSV): U20 A 8.3–21.9, B 39.3 (to the J11 centre; GPU pinout pending). U21 A 15.8–21.0, B 37.8–44.8. U22 A 14.6–28.4, B 34.3–41.9. **0 pairs over 45 mm** (worst 44.8).
+- Meg-Array fab body corners: r 61.50 (J11) and 61.54 (J12) from the true disc centre, still past the 61.035 edge. Pads are at r ≤57.8.
+- ERC rev 7d: 0 errors, 162 warnings (global_label_dangling). DRC: drc_report_rev7d_20261028.txt (running in the background).

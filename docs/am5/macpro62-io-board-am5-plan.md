@@ -117,3 +117,8 @@ ASMedia's product page says the DP sink ports are "Compliance DP V1.4a … up to
 [I1] https://www.intel.com/content/www/us/en/products/sku/186251/intel-jhl8040r-thunderbolt-4-retimer/specifications.html
 [I2] https://community.intel.com/t5/Thunderbolt-Share/Datasheet-of-the-JHL8040R-for-a-non-professional/m-p/1702277
 [I3] https://www.mouser.com/c/semiconductors/interface-ics/i-o-controller-interface-ic
+
+## Decisions 2026-10-28 (Aidan, via Master Bot)
+- C1/C2: keep Parade PS8838 retimer.
+- C3/C4 USB4: ASM4242 host stays; PS8830 retimers held as fallback footprints pending simulation.
+- MEG-Array grid unchanged.

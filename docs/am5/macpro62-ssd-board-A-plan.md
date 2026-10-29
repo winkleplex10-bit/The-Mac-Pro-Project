@@ -9,3 +9,7 @@
 
 ## Update 2026-10-26 (Aidan)
 - The boot NVMe on the chipset has been dropped, so **boot now comes from the SSD board**. It keeps 2× Gen5 x4 over MCIO. PROM21 downlink 2 is now spare.
+
+## Status 2026-10-28
+Proceeding: two native CPU x4 Gen5 ports, no switch. Link uses TI DS320PR810 redriver on the base board, with a PT5081L/PT5161L-class retimer fallback footprint (SI & Fab to confirm the budget).
+- Correction (SI & Fab, 2026-10-28): the x8 link (2 x4) needs TWO DS320PR810s, up to 1.75 W each. Layout rule: Gen5 runs on the SSD board from the base connector to each M.2 slot stay at 60 mm or less, including the M.2 connector.
