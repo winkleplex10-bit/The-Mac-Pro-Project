@@ -18,7 +18,7 @@ Notes: the PROM21 chipset uplink (Gen4 x4, 7.9 GB/s) still feeds most of D. ASM4
 ## 2. Candidate connectors (VERIFIED REV, 2026-10-25 12:45 EDT)
 **What changed:** values are now cited from vendor pages and datasheets, either fetched directly or quoted by search. Items marked [CHG] differ from the earlier from-memory table. The Amphenol PDFs couldn't be downloaded with curl (the server returned HTML), so their values come from the datasheet text quoted in search results at the cited URL.
 
-**J1 CSV re-check** (kicad/macpro62-am5-v3/docs/cpulink_224_pinout_am5_v3.csv): 224 pins = 96 PCIe data (48 pairs; the AM5 column already labels x16 as Gen5 to Face P) + 78 GND + 8 standby power (6 × 5V_SBY, 2 × 3V3_SB) + 7 REFCLK lines + 4 reserved + 31 other (SATA, USB2, sideband). This confirms the earlier CPU & Base Board counts. The slot is full.
+**J1 CSV re-check** (archive/kicad/macpro62-am5-v3/docs/cpulink_224_pinout_am5_v3.csv): 224 pins = 96 PCIe data (48 pairs; the AM5 column already labels x16 as Gen5 to Face P) + 78 GND + 8 standby power (6 × 5V_SBY, 2 × 3V3_SB) + 7 REFCLK lines + 4 reserved + 31 other (SATA, USB2, sideband). This confirms the earlier CPU & Base Board counts. The slot is full.
 
 | Connector | Max rate | Positions / pitch | Height / card | A per contact | Cycles | Retention | Source |
 |---|---|---|---|---|---|---|---|

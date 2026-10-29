@@ -1,6 +1,6 @@
 # Review: base-iob-megarray.csv (Base Board & Connectors, 2026-10-26)
 Reviewer: Base Board & Connectors. Source files were read, not edited.
-Inputs: docs/pinmaps/base-iob-megarray.csv (168 rows), docs/macpro62-io-board-am5-plan.md §2–4, docs/am5-cpu-board-frozen-config.md (Option C, J3), macpro62-interface-control-rev4.md (I-2, I-3, I-7, I-8), kicad/macpro62-backplane-v3/docs/loss_budget_A1.md.
+Inputs: docs/pinmaps/base-iob-megarray.csv (168 rows), docs/macpro62-io-board-am5-plan.md §2–4, docs/am5-cpu-board-frozen-config.md (Option C, J3), macpro62-interface-control-rev4.md (I-2, I-3, I-7, I-8), boards/base-v3/kicad/docs/loss_budget_A1.md.
 
 ## Verdict
 **Connector choice: OK (200-pos 10×20 at 4 mm exists and is rated for the speeds here). Pin map: NOT ready.** The ground pattern is a 1-D list, not a 10×20 grid assignment. The base-end column is empty. J3 can't carry everything this map expects from it.

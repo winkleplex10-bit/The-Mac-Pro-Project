@@ -5,7 +5,7 @@
 | Date | 2026-10-02, rev 1 ≈ 12:30 ET; **rev 2 ≈ 13:15 ET** (Aidan's decisions: 445 W ceiling + live power target, face normals ≈ 45°, CR-2 by jog cable, O-3/O-4/O-5 approved; port modules PMI-50); **rev 2.1 2026-10-04 ≈ 08:45 ET** (O-6 answered: MCIO plug data sourced, BP mating-face error corrected, the lateral jog does not fit → proposal O-10, J_PCIE X 47.0 + BP fp6); **rev 3 2026-10-04 ≈ 09:15 ET** (Aidan approved **O-10**: J_PCIE X 47.0 / J_DISP X 82.5, narrow plugs, BP fp6 zero-jog landing applied in KiCad; DRC 0; O-10 CLOSED) |
 | Owner | Aidan Winkler (MacPro6,2 project) |
 | Scope | Every inter-board interface: CB (LGA1700/Z790 CPU board), BP (base board / backplane, Ø122), IOB (I/O board rev A0 + risers), face modules (MP62-FACE v0.1, template, SM-1 storage face) |
-| Masters | Architecture spec `macpro62-architecture-spec-v0.2.md` (changes 30–34; §5.5 LPT), face spec `macpro62-face-module-spec-v0.1.md` update 6 (supersedes arch §7), CB plan fl2.3, IOB plan (incl. §4.7.9 port modules), SM-1 plan, `kicad/macpro62-io-modules/README.md` |
+| Masters | Architecture spec `macpro62-architecture-spec-v0.2.md` (changes 30–34; §5.5 LPT), face spec `../archive/docs/macpro62-face-module-spec-v0.1.md` update 6 (supersedes arch §7), CB plan fl2.3, IOB plan (incl. §4.7.9 port modules), SM-1 plan, `boards/io/modules/README.md` |
 | Tags | [Sourced], [Estimate], [Inference], [Unverified], [Proposal], TBD — as in the spec |
 
 **Conventions**
@@ -21,9 +21,9 @@
 
 | # | Interface | End A (part, gender) | End B (part, gender) | Medium | Pinout of record |
 |---|---|---|---|---|---|
-| I-1 | CPU-LINK | CB J1: card-edge fingers 224 (male tab, 79.89 × 1.57) | BP J1: Amphenol Mini Cool Edge 224 ME1022410103011, vertical SMT (female) | direct mate | `kicad/macpro62-backplane/docs/cpulink_224_pinout_draft.csv` (+ `cb_net` column) — identical copy in `kicad/macpro62-lga1700/docs/` |
-| I-2 | IOB-HS1 | CB J3: MCIO 124 RA receptacle (back side) | IOB J1: MCIO 124 RA receptacle (`MP62_MCIO_124P_RA_SFF-TA-1016`) | MCIO 124 cable, plug–plug, crossed | IOB end `kicad/macpro62-io-board/docs/mp62-iob-hs1_mcio124_pinout_v0.2.csv`; CB end `kicad/macpro62-lga1700/docs/mp62-cb-j3_mcio124_host-end.csv` |
-| I-3 | DISPLAY-LINK | Face P J_DISP (template J2): MCIO 74 RA receptacle, module **X 82.5** (O-10; narrow plug) | IOB J2: MCIO 74 RA receptacle | MCIO 74 cable, plug–plug, crossed | module end `macpro62-face/pinouts/mp62-face-v0.1_mcio74_displaylink_module-end.csv`; IOB end `kicad/macpro62-io-board/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` |
+| I-1 | CPU-LINK | CB J1: card-edge fingers 224 (male tab, 79.89 × 1.57) | BP J1: Amphenol Mini Cool Edge 224 ME1022410103011, vertical SMT (female) | direct mate | `archive/kicad/macpro62-backplane/docs/cpulink_224_pinout_draft.csv` (+ `cb_net` column) — identical copy in `archive/kicad/macpro62-lga1700/docs/` |
+| I-2 | IOB-HS1 | CB J3: MCIO 124 RA receptacle (back side) | IOB J1: MCIO 124 RA receptacle (`MP62_MCIO_124P_RA_SFF-TA-1016`) | MCIO 124 cable, plug–plug, crossed | IOB end `boards/io/kicad/docs/mp62-iob-hs1_mcio124_pinout_v0.2.csv`; CB end `archive/kicad/macpro62-lga1700/docs/mp62-cb-j3_mcio124_host-end.csv` |
+| I-3 | DISPLAY-LINK | Face P J_DISP (template J2): MCIO 74 RA receptacle, module **X 82.5** (O-10; narrow plug) | IOB J2: MCIO 74 RA receptacle | MCIO 74 cable, plug–plug, crossed | module end `macpro62-face/pinouts/mp62-face-v0.1_mcio74_displaylink_module-end.csv`; IOB end `boards/io/kicad/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` |
 | I-4 | BP → Face P / Face S PCIe | BP J9 / J10: MCIO 124 RA receptacles (`MP62_MCIO_124P_RA_SFF-TA-1016`) | Module J_PCIE (template J1): MCIO 124 RA receptacle, module **X 47.0** (O-10, rev 3; was 43.5) | MCIO 124 cable, straight plug ↔ straight plug (narrow, no anti-skew flanges), crossed; **zero jog** (BP fp6 s = +5.0), ≈ 55 mm mating face ↔ mating face, custom (U-21) | module end `macpro62-face/pinouts/mp62-face-v0.1_mcio124_pcie_module-end.csv`; BP end = same, rows swapped |
 | I-5 | Face AUX ×2 | BP J3 / J4: JST GH 15P **BM15B-GHS-TBT** vertical | Module J_AUX (template J3): JST GH 15P **SM15B-GHS-TB** RA, module X 16.5 | GH 15P cable, GHR-15V-S both ends, 1:1 | `macpro62-face/pinouts/mp62-face-v0.1_aux_gh15.csv` |
 | I-6 | IOB-LINK | BP J6: JST GH 15P BM15B-GHS-TBT vertical | IOB J6: JST GH 15P BM15B-GHS-TBT vertical | GH 15P cable, 1:1 | IOB plan §5.5 (table §7 here) |
@@ -32,7 +32,7 @@
 | I-9 | 12 V bus bars / lugs | PSU terminal pairs (stock bus bars, T8 923-0716) | CB LUG1/LUG2; Face J20/J21 (site A) or J22/J23 (site B) | bus bar / lug | §9 |
 | I-10 | Fan + AirPort | stock fan-assembly ribbon / interposer | IOB J7 CONN_C 2×20 0.5 (DF12-40DS-0.5V(86) candidate) + J8 U.FL | stock ribbon | IOB plan §4.7.7, M-IOC1 |
 | I-11 | I/O wall flex | stock 821-2222 flex, 14 fingers 0.5 | IOB J31 HX FPC 0.5-14P (C7502869), double-sided contacts | stock flex | IOB plan §5.6, jumper matrix |
-| I-12 | **PMI-50 port modules** (internal to the IOB) | IOB JM1–JM11: Hirose **DF40C-50DS** receptacle, F side | module paddle: **DF40C-50DP** header (faces down), on the FPC of MOD-C / MOD-A / MOD-H | direct mate (board-to-board) | `kicad/macpro62-io-modules/README.md` (PMI-50 table), IOB plan §4.7.9; §10.1 here |
+| I-12 | **PMI-50 port modules** (internal to the IOB) | IOB JM1–JM11: Hirose **DF40C-50DS** receptacle, F side | module paddle: **DF40C-50DP** header (faces down), on the FPC of MOD-C / MOD-A / MOD-H | direct mate (board-to-board) | `boards/io/modules/README.md` (PMI-50 table), IOB plan §4.7.9; §10.1 here |
 
 ---
 
@@ -92,7 +92,7 @@ Connector: MCIO 124 RA receptacle at both ends (Amphenol G97R24332HR / Molex 217
 | A29 → B29 | I226B_CLKREQ# | IOB → CB, OD | → SRCCLKREQ11#; held low on the IOB (R143 0R) | OK |
 | B29/B30 → A29/A30 | USB2_HS1 D± | bi | PCH USB2 → IOB hub H1a | OK |
 
-**Fixed:** the CB had no host-end table; the generator `kicad/macpro62-lga1700/tools/make_j3_pinout.py` now writes it (rows swapped). CB U13 i226-V removed (both i226 on the IOB); CB plan §0/§1.2/§7.2/§8 updated (no MDI on the cable, no 2:1 DP mux, 10 × USB3, 1 USB2).
+**Fixed:** the CB had no host-end table; the generator `archive/kicad/macpro62-lga1700/tools/make_j3_pinout.py` now writes it (rows swapped). CB U13 i226-V removed (both i226 on the IOB); CB plan §0/§1.2/§7.2/§8 updated (no MDI on the cable, no 2:1 DP mux, 10 × USB3, 1 USB2).
 
 ---
 
@@ -136,7 +136,7 @@ Connector: MCIO 124 RA receptacle at both ends (Amphenol G97R24332HR / Molex 217
 | J10 Face S | **+5.0** | **29.5** (was 31.5) | (−19.28, 12.20) (was (−15.74, 18.57): Δ 7.3) | +45° | 28.3 / 41.5 | 49.4 / 8.1 / 5.4 → OK | **0** | 29.9 / 56.3 mm; 38.4 / 64.8 mm |
 
 - **Re-pack (fp6):** courtyards sized for the narrow plug (±21.6). J9 ↔ J10 apex gap **4.28 mm**, **J1 ↔ J10 2.33 mm**, J1 ↔ J9 11.88 mm (≥ 1 mm required). **J3** (Face P AUX) (0, 51.4) rot 0 → **(42.5, 13.5) rot 45** (Δ ≈ 55 mm, beyond J9's outer end, Face-P s ≈ −20.5); **J4** (Face S AUX) (−38.0, 2.5) rot 135 → **(−2.5, 43.5) rot 45** (Δ ≈ 54 mm, apex wedge, Face-S s ≈ −28.6); **U3** (0, 41.6) → **(−7.5, 49.0)** (Δ 10.5); redriver row **U10–U14 +2.5 mm in x** (U14 (−19.35, −3.5) → (−16.85, −3.5)). A full free-space search (`scratch/o10/`) found no GH15 site near J10 / G1 / Face S's J_AUX end, so the AUX connectors swapped ends of the V; each AUX cable runs along its own face's bottom edge above the MCIO ribbon (§6).
-- New F.Cu rule areas `MCIO_RIBBON_J9` / `MCIO_RIBBON_J10` (no footprints/pads) from the plug end to n 63, s ± 21.6. The BP is not routed (placeholders only), so nothing was re-routed. **DRC 0 violations / 0 unconnected**; floorplan fit check ALL OK (27 parts); system fit check `kicad/macpro62-backplane/fitcheck_mcio_o10.txt` (`tools/fitcheck_o10.py`) **ALL OK** (zero jog both faces; corridors free, nearest part J3 2.9 mm / J4 6.5 mm; plugs inboard of the boards n ≤ 45 vs 55; ribbon 10.4 mm under the 15 mm edge; J_PCIE / J_DISP narrow plug bodies 1.3 mm apart; envelope h ≥ 17.8 over J_PCIE, h(96.1) 9.1 vs J_DISP body 6.86; SM-1 J1 3.9 mm below the M.2 cards).
+- New F.Cu rule areas `MCIO_RIBBON_J9` / `MCIO_RIBBON_J10` (no footprints/pads) from the plug end to n 63, s ± 21.6. The BP is not routed (placeholders only), so nothing was re-routed. **DRC 0 violations / 0 unconnected**; floorplan fit check ALL OK (27 parts); system fit check `archive/kicad/macpro62-backplane/fitcheck_mcio_o10.txt` (`tools/fitcheck_o10.py`) **ALL OK** (zero jog both faces; corridors free, nearest part J3 2.9 mm / J4 6.5 mm; plugs inboard of the boards n ≤ 45 vs 55; ribbon 10.4 mm under the 15 mm edge; J_PCIE / J_DISP narrow plug bodies 1.3 mm apart; envelope h ≥ 17.8 over J_PCIE, h(96.1) 9.1 vs J_DISP body 6.86; SM-1 J1 3.9 mm below the M.2 cards).
 - **Open notes:** the ribbon bend lies just beyond the BP rim (bend outer face n 61.1, r ≤ 65.8 at z 1.5–8.2) → base ring / fillet clearance **M1b**; stock hole **S5** (18.49, 50.72) sits under the J9 ribbon (z ≥ 1.5): no screw head there, purpose TO CHECK (CR-BP-1); AUX cable lengths ≈ 56 / 64 mm lateral (M9); Face P lane estimate 37.6–74.0 mm (Face S 29.9–34.3), intra-x16 skew is absorbed by the PCIe receiver deskew but keep pair-internal matching.
 - Cable RFQ (U-21): draft text prepared 2026-10-04 (Amphenol AssembleTech / Molex / TE), **not sent**.
 
@@ -274,7 +274,7 @@ Positions: BP J6 (11.4, −48.8) rot 180 (moved 1.6 mm for S3); IOB J6 B side, X
 
 ### 10.1 I-12 PMI-50 port-module interface (internal to the IOB) [Proposal, D-IO16]
 
-Each USB-C (C1–C6), USB-A (A1–A4) and HDMI port is a flex-only module (MOD-C / MOD-A / MOD-H, `kicad/macpro62-io-modules/`). The module paddle carries a **Hirose DF40C-50DP** header (facing down) that mates with a **DF40C-50DS** receptacle (JM1–JM11) on the IOB F side. Plug loads go through the bonded sleeve → collar → clamp plate → standoffs, never through the DF40. DF40 is rated for about 30 mating cycles. Swaps are done with the system off.
+Each USB-C (C1–C6), USB-A (A1–A4) and HDMI port is a flex-only module (MOD-C / MOD-A / MOD-H, `boards/io/modules/`). The module paddle carries a **Hirose DF40C-50DP** header (facing down) that mates with a **DF40C-50DS** receptacle (JM1–JM11) on the IOB F side. Plug loads go through the bonded sleeve → collar → clamp plate → standoffs, never through the DF40. DF40 is rated for about 30 mating cycles. Swaps are done with the system off.
 
 **Pinout (one standard for all modules; row A = odd pins 2k−1, row B = even pins 2k):**
 
@@ -493,43 +493,43 @@ Standby (11 V SB, 5 W): BP MCU/sensors ≤ 0.3 W, faces ≤ 0.1 W, CB 5V_SBY 1�
 
 ### 18.1 Rev 2 (2026-10-02 ≈ 12:40–13:15 ET)
 
-- **BP** `kicad/macpro62-backplane/`: `tools/hub_floorplan.py` (fp5, 45° / 135°), `tools/build_pcb.py`, `tools/build_sch.py` (PWR_ALERT stubs, LPT/EMC2101 text), `tools/cpulink_pinout.py` (A105 PWR_ALERT#), `README.md`; regenerated `backplane.kicad_pcb`, `drc_report.txt` (0/0), `fitcheck_floorplan.txt` (ALL OK), `floorplan.png/.svg`, `lane_length_estimate.txt`, `.kicad_sch`, `erc_report.txt` (0), `schematic_blockdiagram.pdf`, `docs/cpulink_224_pinout_draft.csv`.
-- **CB** `kicad/macpro62-lga1700/`: `tools/make_placeholders.py` (`MP62_AREA_PwrMon_INA228_10x6`), `tools/build_pcb.py` (U15, rev A-fl2.3), regenerated PCB, `drc_report.txt` (0/0), `floorplan.png`, `docs/cpulink_224_pinout_draft.csv`; plan `macpro62-lga1700-board-plan.md` (fl2.3).
-- **IOB** `kicad/macpro62-io-board/` (schematic only): `tools/build_sch.py` (R148 DNP / R149 fitted, U98 INA228, RS90, C990, +12V_EFUSE_OUT), `tools/make_fps.py`, new `MP62_IO.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod`, `MP62_IO.pretty/R_2512_6332Metric.kicad_mod`; regenerated `macpro62-io-board.kicad_sch`, `erc_report.txt` (0), `docs/sch_netlist_summary.txt`; plan `macpro62-io-board-plan.md` + `docs/` copy (§4.7.7, §7). `placement.json`, risers and plate untouched.
-- **SM-1** `kicad/macpro62-storage-face/`: `tools/build_sch.py` (U13, R520, C520), `tools/build_storage.py`, `tools/make_storage_fps.py`, new VSSOP-10 / R_2512 footprints, regenerated PCB/schematic, `drc_report.txt` (0/0), `erc_report.txt` (0), `README.md`; plan `macpro62-storage-board-plan.md`.
+- **BP** `archive/kicad/macpro62-backplane/`: `tools/hub_floorplan.py` (fp5, 45° / 135°), `tools/build_pcb.py`, `tools/build_sch.py` (PWR_ALERT stubs, LPT/EMC2101 text), `tools/cpulink_pinout.py` (A105 PWR_ALERT#), `README.md`; regenerated `backplane.kicad_pcb`, `drc_report.txt` (0/0), `fitcheck_floorplan.txt` (ALL OK), `floorplan.png/.svg`, `lane_length_estimate.txt`, `.kicad_sch`, `erc_report.txt` (0), `schematic_blockdiagram.pdf`, `docs/cpulink_224_pinout_draft.csv`.
+- **CB** `archive/kicad/macpro62-lga1700/`: `tools/make_placeholders.py` (`MP62_AREA_PwrMon_INA228_10x6`), `tools/build_pcb.py` (U15, rev A-fl2.3), regenerated PCB, `drc_report.txt` (0/0), `floorplan.png`, `docs/cpulink_224_pinout_draft.csv`; plan `../archive/docs/macpro62-lga1700-board-plan.md` (fl2.3).
+- **IOB** `boards/io/kicad/` (schematic only): `tools/build_sch.py` (R148 DNP / R149 fitted, U98 INA228, RS90, C990, +12V_EFUSE_OUT), `tools/make_fps.py`, new `MP62_IO.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod`, `MP62_IO.pretty/R_2512_6332Metric.kicad_mod`; regenerated `macpro62-io-board.kicad_sch`, `erc_report.txt` (0), `docs/sch_netlist_summary.txt`; plan `../boards/io/docs/macpro62-io-board-plan.md` + `docs/` copy (§4.7.7, §7). `placement.json`, risers and plate untouched.
+- **SM-1** `archive/kicad/macpro62-storage-face/`: `tools/build_sch.py` (U13, R520, C520), `tools/build_storage.py`, `tools/make_storage_fps.py`, new VSSOP-10 / R_2512 footprints, regenerated PCB/schematic, `drc_report.txt` (0/0), `erc_report.txt` (0), `README.md`; plan `../archive/docs/macpro62-storage-board-plan.md`.
 - **Face template** `kicad/macpro62-face-template/`: `tools/make_footprints.py`, `tools/build_template.py` (reference RS1/U5), new VSSOP-10 / R_2512 footprints, regenerated PCB, `drc_report.txt` (0/0), `README.md`.
-- **Face spec** `macpro62-face/src/spec_part1..5.md` → `macpro62-face-module-spec-v0.1.md` (update 4: §3.5, §3.6 cable, §6.3, new §6.8 LPT, §7, §8, §13).
+- **Face spec** `macpro62-face/src/spec_part1..5.md` → `../archive/docs/macpro62-face-module-spec-v0.1.md` (update 4: §3.5, §3.6 cable, §6.3, new §6.8 LPT, §7, §8, §13).
 - **Master spec** `macpro62-architecture-spec-v0.2.md` (change 32; §3.1, §3.4, §3.13, §4.8, §4.9, §5.4, new §5.5, §7.9, M2c).
 - This ICD; zips rebuilt.
 
 ### 18.2 Rev 1 (2026-10-02 ≈ 12:30 ET)
 
-- **BP** `kicad/macpro62-backplane/`: `tools/hub_floorplan.py`, `tools/build_pcb.py`, `tools/build_sch.py`, `tools/make_placeholders.py`, `tools/cpulink_pinout.py`, `README.md`; regenerated `backplane.kicad_pcb/.kicad_pro`, `drc_report.txt` (0/0), `fitcheck_floorplan.txt` (ALL OK), `floorplan.png/.svg`, `lane_length_estimate.txt`, all `.kicad_sch` (fan sheet deleted), `erc_report.txt` (0), `schematic_blockdiagram.pdf`, `docs/cpulink_224_pinout_draft.csv`; new `MP62_BP_Stubs.kicad_sym`, `sym-lib-table`, `MP62_Placeholders.pretty/MP62_MCIO_124P_RA_SFF-TA-1016.kicad_mod`.
-- **CB** `kicad/macpro62-lga1700/`: `tools/build_pcb.py`, `tools/make_placeholders.py`, new `tools/make_j3_pinout.py`, new `docs/mp62-cb-j3_mcio124_host-end.csv`, `docs/cpulink_224_pinout_draft.csv`; regenerated PCB, `drc_report.txt` (0/0), `floorplan.png`; plan `macpro62-lga1700-board-plan.md` (fl2.2).
-- **IOB** `kicad/macpro62-io-board/`: `tools/build_sch.py` (J2 row swap, U90 bus), regenerated `macpro62-io-board.kicad_sch`, `erc_report.txt` (0), `docs/sch_netlist_summary.txt`, new `docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv`; plan `macpro62-io-board-plan.md` + `docs/` copy (§4.7.7 fan control, §5.2, §5.5, §7 budget).
-- **Face spec** `macpro62-face/src/spec_part1.md`, `spec_part4.md`, `spec_part5.md` → rebuilt `macpro62-face-module-spec-v0.1.md` (host = CB, §9.6 IOB-end table, §13 CR status).
-- **SM-1** `macpro62-storage-board-plan.md` (§10 O-1 row).
+- **BP** `archive/kicad/macpro62-backplane/`: `tools/hub_floorplan.py`, `tools/build_pcb.py`, `tools/build_sch.py`, `tools/make_placeholders.py`, `tools/cpulink_pinout.py`, `README.md`; regenerated `backplane.kicad_pcb/.kicad_pro`, `drc_report.txt` (0/0), `fitcheck_floorplan.txt` (ALL OK), `floorplan.png/.svg`, `lane_length_estimate.txt`, all `.kicad_sch` (fan sheet deleted), `erc_report.txt` (0), `schematic_blockdiagram.pdf`, `docs/cpulink_224_pinout_draft.csv`; new `MP62_BP_Stubs.kicad_sym`, `sym-lib-table`, `MP62_Placeholders.pretty/MP62_MCIO_124P_RA_SFF-TA-1016.kicad_mod`.
+- **CB** `archive/kicad/macpro62-lga1700/`: `tools/build_pcb.py`, `tools/make_placeholders.py`, new `tools/make_j3_pinout.py`, new `docs/mp62-cb-j3_mcio124_host-end.csv`, `docs/cpulink_224_pinout_draft.csv`; regenerated PCB, `drc_report.txt` (0/0), `floorplan.png`; plan `../archive/docs/macpro62-lga1700-board-plan.md` (fl2.2).
+- **IOB** `boards/io/kicad/`: `tools/build_sch.py` (J2 row swap, U90 bus), regenerated `macpro62-io-board.kicad_sch`, `erc_report.txt` (0), `docs/sch_netlist_summary.txt`, new `docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv`; plan `../boards/io/docs/macpro62-io-board-plan.md` + `docs/` copy (§4.7.7 fan control, §5.2, §5.5, §7 budget).
+- **Face spec** `macpro62-face/src/spec_part1.md`, `spec_part4.md`, `spec_part5.md` → rebuilt `../archive/docs/macpro62-face-module-spec-v0.1.md` (host = CB, §9.6 IOB-end table, §13 CR status).
+- **SM-1** `../archive/docs/macpro62-storage-board-plan.md` (§10 O-1 row).
 - **Master spec** `macpro62-architecture-spec-v0.2.md` (change 30; §1.2, §3.8, §3.9, §4.1, §4.3, §4.4, §4.6, §4.7, §4.8, §4.9, §5.1, §5.3, §5.4, §7 banner/§7.5/§7.6/§7.8/§7.9, M7).
 - This ICD.
 
 ### 18.2 Rev 2.1 (2026-10-04 ≈ 08:20–08:50 ET)
 
 - ICD: header, I-4 row, §5 mechanical (O-6 result table, verdict, O-10 proposal), §14 rows, §16 O-1/O-6/O-10, §17 U-6/U-19/U-21.
-- Face spec sources `macpro62-face/src/spec_part1.md` (changelog update 5), `spec_part2.md` (§3.5 BP landing; §3.6 routing, plug data, jog, space check), `spec_part5.md` (C-9, OQ-1, M4) → rebuilt `macpro62-face-module-spec-v0.1.md`; new sketch `macpro62-face/docs/o6_mcio_cross_section.png` (script `scratch/o6/sketch.py`).
+- Face spec sources `macpro62-face/src/spec_part1.md` (changelog update 5), `spec_part2.md` (§3.5 BP landing; §3.6 routing, plug data, jog, space check), `spec_part5.md` (C-9, OQ-1, M4) → rebuilt `../archive/docs/macpro62-face-module-spec-v0.1.md`; new sketch `macpro62-face/docs/o6_mcio_cross_section.png` (script `scratch/o6/sketch.py`).
 - Architecture spec: changelog item 33.
 - No KiCad files changed (O-10 is a proposal). Scripts: `scratch/o6/cand3.py`, `scan_common.py`, `jogmin.py`.
 
 ### 18.3 Rev 3 (2026-10-04 ≈ 08:45–09:15 ET, O-10 applied)
 
-- **Face** `macpro62-face/tools/face_geom.py` (J_PCIE X 47.0 / J_DISP X 82.5, narrow-plug keep-outs, LANDING s +5.0) → `face_geom.json` (copied to the template and SM-1 `tools/`), `make_drawing.py` → `macpro62-face-v0.1-mech.png`, `make_dxf.py` → `macpro62-face-v0.1-outline.dxf`; spec sources `src/spec_part1.md` (update 6), `spec_part2.md` (§3.5 table + rules, §3.6), `spec_part4.md` (checklist 10/11, §9 note), `spec_part5.md` (C-2, C-9, CR status, OQ-1, MF-3) → rebuilt `macpro62-face-module-spec-v0.1.md`.
+- **Face** `macpro62-face/tools/face_geom.py` (J_PCIE X 47.0 / J_DISP X 82.5, narrow-plug keep-outs, LANDING s +5.0) → `face_geom.json` (copied to the template and SM-1 `tools/`), `make_drawing.py` → `macpro62-face-v0.1-mech.png`, `make_dxf.py` → `macpro62-face-v0.1-outline.dxf`; spec sources `src/spec_part1.md` (update 6), `spec_part2.md` (§3.5 table + rules, §3.6), `spec_part4.md` (checklist 10/11, §9 note), `spec_part5.md` (C-2, C-9, CR status, OQ-1, MF-3) → rebuilt `../archive/docs/macpro62-face-module-spec-v0.1.md`.
 - **Face template** `kicad/macpro62-face-template/`: `tools/make_footprints.py` (narrow-plug courtyards 124P ±21.6 / 74P ±13.6), `MP62_Face.pretty`, regenerated PCB (J1 X 47.0, J2 X 82.5), `drc_report.txt` (0/0/0), `template_render.png`, `README.md`.
-- **SM-1** `kicad/macpro62-storage-face/`: `tools/make_footprints.py`, `tools/floorplan.py` (J_PCIE X from `face_geom.json`), regenerated PCB (J1 X 47.0), `drc_report.txt` (0/0/0), `erc_report.txt` (0), `floorplan_storage_SM1.png`, `render_core_side_F.png`, `render_outer_side_B.png`, `README.md`.
-- **BP** `kicad/macpro62-backplane/`: `tools/hub_floorplan.py` (fp6), `tools/build_pcb.py` (rev A-fp6-hub), new `tools/fitcheck_o10.py` → `fitcheck_mcio_o10.txt`; regenerated `MP62_Placeholders.pretty/MP62_MCIO_124P_RA_SFF-TA-1016.kicad_mod`, `backplane.kicad_pcb`, `drc_report.txt` (0/0), `erc_report.txt` (0, schematic unchanged), `fitcheck_floorplan.txt`, `lane_length_estimate.txt`, `floorplan.png/.svg`, `README.md`. fp5 backups and search scripts in `scratch/o10/`.
+- **SM-1** `archive/kicad/macpro62-storage-face/`: `tools/make_footprints.py`, `tools/floorplan.py` (J_PCIE X from `face_geom.json`), regenerated PCB (J1 X 47.0), `drc_report.txt` (0/0/0), `erc_report.txt` (0), `floorplan_storage_SM1.png`, `render_core_side_F.png`, `render_outer_side_B.png`, `README.md`.
+- **BP** `archive/kicad/macpro62-backplane/`: `tools/hub_floorplan.py` (fp6), `tools/build_pcb.py` (rev A-fp6-hub), new `tools/fitcheck_o10.py` → `fitcheck_mcio_o10.txt`; regenerated `MP62_Placeholders.pretty/MP62_MCIO_124P_RA_SFF-TA-1016.kicad_mod`, `backplane.kicad_pcb`, `drc_report.txt` (0/0), `erc_report.txt` (0, schematic unchanged), `fitcheck_floorplan.txt`, `lane_length_estimate.txt`, `floorplan.png/.svg`, `README.md`. fp5 backups and search scripts in `scratch/o10/`.
 - Architecture spec: changelog item 34. This ICD (header, I-1 rows I-3/I-4, §5 fp6, §6 AUX positions, §14, §16 O-10 CLOSED, §17 U-21).
 
 ### 18.4 Informative note (2026-10-04 ≈ 12:30 ET, no interface change)
 
-- New **separate** draft project `kicad/macpro62-am5/` + plan `macpro62-am5-board-plan.md` (architecture spec changelog item 35). `kicad/macpro62-lga1700/` untouched. ICD rev stays **3**; only §18.4 and §19 were added.
+- New **separate** draft project `archive/kicad/macpro62-am5/` + plan `macpro62-am5-board-plan.md` (architecture spec changelog item 35). `archive/kicad/macpro62-lga1700/` untouched. ICD rev stays **3**; only §18.4 and §19 were added.
 
 ---
 
@@ -538,7 +538,7 @@ Standby (11 V SB, 5 W): BP MCU/sensors ≤ 0.3 W, faces ≤ 0.1 W, CB 5V_SBY 1�
 If the AM5 CPU board (Ryzen 8000G + PROM21, `macpro62-am5-board-plan.md` §7) replaces the LGA1700 CB:
 
 - **I-1 CPU-LINK and I-2 IOB-HS1:** physicals, positions, contact numbers and **signal names are unchanged**. The BP, the IOB and their pinout CSVs stay valid. Only the **CB-side source** of each net changes:
-  - per-contact tables: `kicad/macpro62-am5/docs/cpulink_224_pinout_am5.csv`, `.../mp62-cb-j3_mcio124_host-end_am5.csv`
+  - per-contact tables: `archive/kicad/macpro62-am5/docs/cpulink_224_pinout_am5.csv`, `.../mp62-cb-j3_mcio124_host-end_am5.csv`
   - counts: `pinout_delta_summary.txt`
 - **I-1 counts:** 115 SAME, 109 re-mapped. The re-mapped contacts:
   - FP lanes 0–7 = CPU GFX x8 Gen4. **FP lanes 8–15 are routed but not driven by 8000G**, so Face P trains x8. 7000/9000 restore x16.

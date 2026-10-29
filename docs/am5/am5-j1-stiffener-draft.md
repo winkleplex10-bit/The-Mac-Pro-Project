@@ -1,6 +1,6 @@
 # AM5 CPU board: J1-area stiffener, backplate tie-in, washers (DRAFT)
 
-Status: draft from Mechanical & Thermal, 2026-10-23. I read the board (`kicad/macpro62-am5-v3/macpro62_am5.kicad_pcb`) but did not change it. Coordinates are KiCad board mm, with y increasing toward J1. **GAP** means not measured or not published. No dimensions here are invented.
+Status: draft from Mechanical & Thermal, 2026-10-23. I read the board (`archive/kicad/macpro62-am5-v3/macpro62_am5.kicad_pcb`) but did not change it. Coordinates are KiCad board mm, with y increasing toward J1. **GAP** means not measured or not published. No dimensions here are invented.
 
 ## 1. Inputs (as given or read from the board)
 | Item | Value | Source |

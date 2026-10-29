@@ -7,8 +7,8 @@
 |---|---|
 | Date | 2026-10-04, ≈ 12:30 ET (draft requested by Aidan 12:07 ET) |
 | Status | **DRAFT** – block schematic bd0 (ERC 0) + part-level floorplan fp0 (DRC 0, no nets, not routed). **Not for fab:** U1 socket and U2 PROM21 pads are synthetic placeholders (AMD NDA). |
-| KiCad | `/workspace/kicad/macpro62-am5/` (new, separate sibling of `kicad/macpro62-lga1700`, which is **unchanged**) |
-| Basis | cost study `macpro62-cost-estimate.md` §10 (AM5 what-if); LGA1700 CB plan `macpro62-lga1700-board-plan.md`; ICD rev 3 `macpro62-interface-control.md`; arch spec v0.2 change 35 |
+| KiCad | `/workspace/kicad/macpro62-am5/` (new, separate sibling of `archive/kicad/macpro62-lga1700`, which is **unchanged**) |
+| Basis | cost study `macpro62-cost-estimate.md` §10 (AM5 what-if); LGA1700 CB plan `../archive/docs/macpro62-lga1700-board-plan.md`; ICD rev 3 `macpro62-interface-control.md`; arch spec v0.2 change 35 |
 | Tags | [Sourced] datasheet/vendor page · [Estimate] · [Inference] · [Unverified] · [Proposal] |
 
 ## 0. Summary
@@ -159,8 +159,8 @@
 
 - **Physicals, positions and signal names are unchanged** for I-1 CPU-LINK (224) and I-2 IOB-HS1 (MCIO 124). The BP, the IOB and their CSVs stay valid. Only the CB-side source of each net changes.
 - **Full per-contact tables:**
-  - `kicad/macpro62-am5/docs/cpulink_224_pinout_am5.csv` (columns cb_net_lga1700 / cb_net_am5 / delta_vs_ICD)
-  - `kicad/macpro62-am5/docs/mp62-cb-j3_mcio124_host-end_am5.csv`
+  - `archive/kicad/macpro62-am5/docs/cpulink_224_pinout_am5.csv` (columns cb_net_lga1700 / cb_net_am5 / delta_vs_ICD)
+  - `archive/kicad/macpro62-am5/docs/mp62-cb-j3_mcio124_host-end_am5.csv`
   - counts in `pinout_delta_summary.txt`
 
 ### 7.1 I-1 CPU-LINK (224 contacts): 115 SAME, 60 REMAP, 32 REMAP (8000G unused), 4 REMAP (closes U-12), 9 REMAP (name), 3 REMAP (source), 1 new semantics
@@ -361,4 +361,4 @@ This draft adds two lines to the VRM estimate (8 instead of 7 stages, ≈ +$3–
 - VIA Labs VL822-Q7 (USB 3.2 Gen2 4-port hub, QFN-76 9 × 9): LCSC C42419379; Genesys GL3590: LCSC C22375753
 - Dasharo v0.9.0 MSI PRO B850-P WIFI (8000G only), PROM21 sourcing/part numbers, socket part numbers: `macpro62-cost-estimate.md` §10.3/§10.6
 - Kingston DDR5 population rules (AMD 2DPC speeds): https://www.kingston.com/en/memory/memory-population-rules
-- LGA1700 CB geometry, outline and placements: `kicad/macpro62-lga1700/tools/build_pcb.py` (read only)
+- LGA1700 CB geometry, outline and placements: `archive/kicad/macpro62-lga1700/tools/build_pcb.py` (read only)

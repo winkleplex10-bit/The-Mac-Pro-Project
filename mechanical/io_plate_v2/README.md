@@ -1,4 +1,4 @@
-> **Update 2026-10-04 ≈ 15:55 ET: ear-1 clash fixed on the board side (Aidan; not pushed).** The main-board HDMI clamp post **H25 moved (50.82, 111.0) → (53.60, 114.35)**; see the IOB README and `kicad/macpro62-io-board/tools/hdmi_post_search.py`. `build_plate.py` checks now pick the HDMI post nearest the button and assume a **countersunk M2** (`--clamp-head pan` for the old pan head). Every variant, preview, DXF and check was regenerated; plate geometry is unchanged.
+> **Update 2026-10-04 ≈ 15:55 ET: ear-1 clash fixed on the board side (Aidan; not pushed).** The main-board HDMI clamp post **H25 moved (50.82, 111.0) → (53.60, 114.35)**; see the IOB README and `boards/io/kicad/tools/hdmi_post_search.py`. `build_plate.py` checks now pick the HDMI post nearest the button and assume a **countersunk M2** (`--clamp-head pan` for the old pan head). Every variant, preview, DXF and check was regenerated; plate geometry is unchanged.
 >   | `button.check.hdmi_clamp` | csk M2 (default, top 15.26) | pan M2 (top 16.86, for reference) |
 >   |---|---|---|
 >   | ear-1 M1.4 head: plan / vertical | **0.83** / 0.26 | 0.83 / −1.34 |
@@ -106,7 +106,7 @@
 > - **Foam DXF:** now has Ø2.2 holes at the two ear posts **(15:30 ET: Ø3.1)**.
 > - **New DXF layer:** `BUTTON_INNER_FEATURES` (back and front view).
 > - **Close-up:** `io_plate_v2_A0_button_closeup.png` (plan with scan underlay + sections A-A through both posts and B-B along X + 3D inner face).
-> - **H21 moved:** main-board clamp post C upper H21 (53.19, 70.80) → **(53.19, 69.80)** in `kicad/macpro62-io-board/tools/modules_geom.py` (`POSTS`), so `modules.json`, the PCB and this plate follow. Distance to SCR_C1 is now 5.70, so the web between the clamp-plate Ø5.0 hole and the Ø3.8 post is **0.3 → 1.3**, and `clamp_post_margin` is 0.80 → 1.80. modules_geom 114/114 checks OK. Main-board DRC: 0 violations, 0 unconnected; schematic untouched.
+> - **H21 moved:** main-board clamp post C upper H21 (53.19, 70.80) → **(53.19, 69.80)** in `boards/io/kicad/tools/modules_geom.py` (`POSTS`), so `modules.json`, the PCB and this plate follow. Distance to SCR_C1 is now 5.70, so the web between the clamp-plate Ø5.0 hole and the Ø3.8 post is **0.3 → 1.3**, and `clamp_post_margin` is 0.80 → 1.80. modules_geom 114/114 checks OK. Main-board DRC: 0 violations, 0 unconnected; schematic untouched.
 > - **Measure on the stock plate (M-IOPB1–7):**
 >   1. Button hole Ø on both faces; stock cap OD, flange OD/thickness and key tab.
 >   2. Is the Ø≈15 ring a recess or a raised collar, and what is its depth/height and exact Ø?

@@ -20,7 +20,7 @@
 
 | File | What it is |
 |---|---|
-| `macpro62-face-module-spec-v0.1.md` | This document |
+| `../archive/docs/macpro62-face-module-spec-v0.1.md` | This document |
 | `macpro62-face/macpro62-face-v0.1-mech.png` | Mechanical drawing: outline, holes, keep-outs on both sides, connector zones, outer height zones, section |
 | `macpro62-face/macpro62-face-v0.1-system.png` | Link / power / display path diagram and power sequencing timing |
 | `macpro62-face/macpro62-face-v0.1-outline.dxf` | DXF R2010, mm, layered: outline, holes, keep-outs, connector zones, height zones, core die/strip pads, bosses, plate, tab |
@@ -28,7 +28,7 @@
 | `macpro62-face/tools/` | Generators (single geometry source `face_geom.py`), EEPROM encoder/validator `mp62_eeprom.py` |
 | `macpro62-face/eeprom_examples/*.bin` | Example ID EEPROM images (MXM RX 6600 carrier, ASM2824 storage) |
 | `kicad/macpro62-face-template/` | KiCad 9 template: Edge.Cuts, 4 mounting holes, rule-area keep-outs (bracket, both bus-bar tongue zones KO-F2A/B, core tab KO-F5A/B), both lug sites wired in parallel (reference tracks), core contact zones on User.1, connector placeholders, JLC 6-layer stackup, netclasses. `kicad-cli pcb drc`: **0 violations, 0 unconnected** |
-| `kicad/macpro62-storage-face/` + `macpro62-storage-board-plan.md` | Storage reference module SM-1 rev A0 (§11.3): floorplan PCB (DRC 0/0), schematic (ERC 0/0), plan with BOM, cost and RAID analysis |
+| `archive/kicad/macpro62-storage-face/` + `../archive/docs/macpro62-storage-board-plan.md` | Storage reference module SM-1 rev A0 (§11.3): floorplan PCB (DRC 0/0), schematic (ERC 0/0), plan with BOM, cost and RAID analysis |
 | `bracket/core_gpu_face/` | Core GPU-face scan, calibrated and traced: `trace_core_gpu_face.py`, `core_gpu_face.json`, DXF in the module frame and in the scan frame, overlay PNGs (on the scan, and in the module frame) |
 
 ![MP62-FACE v0.1 mechanical drawing](macpro62-face/macpro62-face-v0.1-mech.png)
@@ -45,7 +45,7 @@
 | **MP62-FACE v0.1 (this standalone spec)** | 2026-10-01 | First standalone release. Mechanical frame, outline, holes and keep-outs defined (§3), including core contact zones traced from the core scan and the measured 4.5 mm core gap. MCIO 124 confirmed as **one 16i connector per face**, SFF-9402 sideband positions (§4). AUX moves to **GH15** (adds MOD_LED#; USB2 primary) (§5). Power budget **Face P 150 W / Face S 40 W**, new classes, eFuse and sequencing rules (§6). Binary MP62 descriptor EEPROM (§8). **DISPLAY-LINK = second MCIO (74-pin, 8i) on the module with a twinax cable to the IOB** (§9). KiCad template, DXF and drawings. |
 | MP62-FACE v0.1 update 1 | 2026-10-01 (≈ 17:45 ET) | **Mirrored bus-bar lugs (C-17):** both lug sites (A at X ≈ 97, B at X ≈ 7) on every module, wired in parallel; KO-F2B, KO-F5B and the mirrored rod added (§3.3, §6.4.1). **Rod identified (C-15)** as the base-board standoff screw; core-bottom spacing conflict with M1 logged (C-16). Drawing, DXF, KiCad template (J22/J23, rule areas, reference tracks; DRC 0/0) and power pinout updated. |
 | MP62-FACE v0.1 update 2 | 2026-10-01 (≈ 18:30 ET) | Base-board scan: stock GPU connector axes ±46.6° → face-angle conflict **C-18** and measurement M2c logged (no module geometry change). Standoff screws confirmed at the base-board holes (pitch 98.25). |
-| MP62-FACE v0.1 update 3 | 2026-10-01 (≈ 20:20 ET) | **Storage reference module SM-1** designed (plan `macpro62-storage-board-plan.md`, KiCad `kicad/macpro62-storage-face/`): §11.3 rewritten (ASM2824 on the die pad with a gap pad, 4 × 2280 on the outer side, bracketless). New conflicts **C-19** (bracketless modules / KO-B1), **C-20** (>2 W rule vs outer-side M.2 SSDs), **C-21** (THERM_ALERT# throttle for storage). New measurements MF-13, MF-14. Storage parts added to §15. RAID finding: no driverless bootable hardware RAID is orderable (§11.3). |
+| MP62-FACE v0.1 update 3 | 2026-10-01 (≈ 20:20 ET) | **Storage reference module SM-1** designed (plan `../archive/docs/macpro62-storage-board-plan.md`, KiCad `archive/kicad/macpro62-storage-face/`): §11.3 rewritten (ASM2824 on the die pad with a gap pad, 4 × 2280 on the outer side, bracketless). New conflicts **C-19** (bracketless modules / KO-B1), **C-20** (>2 W rule vs outer-side M.2 SSDs), **C-21** (THERM_ALERT# throttle for storage). New measurements MF-13, MF-14. Storage parts added to §15. RAID finding: no driverless bootable hardware RAID is orderable (§11.3). |
 | MP62-FACE v0.1 update 3a | 2026-10-01 (≈ 20:30 ET) | Aidan approved bracketless SM-1 (C-19): 4 × 2280, module held by low-head screws (head + washer ≤ 1.6 mm); MF-13 redefined (thread/length for the screw part number). |
 | MP62-FACE v0.1 update 4 | 2026-10-02 (≈ 13:15 ET) | ICD rev 2 (Aidan's decisions): **face normals ≈ 45° / 135°** (M2c answered, C-18 closed; module frame unchanged); BP J9/J10 re-placed (fp5) → cable jogs 13.7 mm (Face P) / 10.5 mm (Face S); **CR-2 closed by a flat-twinax jog cable** (§3.5, §3.6); **445 W system ceiling** replaces the 405 W rule (§6.3); new **§6.8 live power target** (12 V monitor INA228 @0x40 mandatory for modules > 3 W, power-target agent @0x58, THERM_ALERT# fast cap); SMBus map §8 updated. |
 | MP62-FACE v0.1 update 5 | 2026-10-04 (≈ 08:45 ET) | ICD rev 2.1, **O-6 answered**: MCIO plug data sourced (SFF-TA-1016 Rev 1.3 Tables 5-4/6-2/6-3, Amphenol AssembleTech DS-0002); BP mating-face error corrected (n 30.0 / 30.3, not 43.3 / 43.6) → ≈ 28–37 mm free cable, 90° bend fits; **the 13.7 / 10.5 mm lateral jog does not fit a flat twinax ribbon** (§3.6). Centreline (X 52) fallback rejected (≥ 3.5 mm jog). **Proposal O-10** (needs Aidan): J_PCIE X 47.0, J_DISP X 82.5, narrow cable plugs, BP fp6 zero-jog landing (§3.5). Positions X 43.5 / 82.0 stay normative until approved. Cross-section `docs/o6_mcio_cross_section.png`. |
@@ -199,7 +199,7 @@ Nominal G = 4.5 and p = 0 are used here. Recompute every stack with the measured
 - **Length (ICD rev 2.1, corrected):** BP mating faces are at n ≈ 30.0 / 30.3 (rev 2 mistook the plug-zone end of the courtyard, 43.3 / 43.6, for the mating face). Free cable between plug rears ≈ **28 mm at M1 = 15 mm, ≈ 37 mm at 23.5 mm** (fp5). **fp6 (normative landing): 26.4 / 29.9 mm (J9 / J10) at M1 15, 34.9 / 38.4 mm at 23.5**, one 90° easy bend R_c ≈ 3.6 mm, mating face ↔ mating face **≈ 52.8 / 56.3 mm (M1 15) and 61.3 / 64.8 mm (M1 23.5)**: one ≈ 55 mm part covers both faces at M1 15 (± 2 mm by plug-latch float / ribbon bow; M4). Commodity MCIO cables are ≥ 150 mm (Molex 216610-1121 is the shortest standard straight–straight 124P), and there is no room to stow slack under the face, so **custom-length cables are needed** (OQ-1, U-21). TO MEASURE M4.
 - **Cable type (normative for hosts) [Proposal]:** MCIO 124 (16i) straight-plug ↔ straight-plug, rows crossed (SFF-9402), **85 Ω twinax, 30–34 AWG**, flat ribbon (Amphenol AssembleTech MCIO cable family, Molex Mini Cool Edge or equal; custom lengths). Ribbon data [Sourced: Amphenol AssembleTech MCIO cable datasheet]: 34 AWG thickness 0.55–0.60 mm, 1.25 mm per pair, **bend radius ≥ 2.5 × ribbon thickness**. Design rule here: inside bend radius **≥ 3 mm per ribbon layer**, no creased folds across the twinax, ≤ 2 static bends. **Plugs: narrow option (no anti-skew flanges) at least on the module end (normative, O-10); the same narrow plug on the BP end gives one symmetrical part.** Vendor RFQ: Amphenol AssembleTech / Molex / TE (OQ-1).
 - ~~**Jog:** pre-formed lateral offset 13.7 / 10.5 mm~~ **Not feasible (ICD O-6, rev 2.1):** the offset is along X, which is in the ribbon plane in both straight runs (horizontal ≈ 12.9 mm, vertical ≈ 9.7 mm at M1 15). A flat ribbon can only jog in its plane by folding, and a 45°/45° Z-fold needs a straight run ≥ the ribbon width (≈ 17–20 mm per 16-pair ribbon). Edge twists need ≥ 2–3 widths, and loose-pair bundles need several bundle diameters of bend radius. 3M foldable twinax (static fold R 1.0) has no 124P part, and hard creases give 13–20 Ω impedance dips. **Hosts shall land the cable at the module's J_PCIE X (zero jog); O-10 applied (BP fp6).** Backup B1: rigid-flex MCIO jumper with gold-finger paddle ends (jog in the flex outline, needs a retention clip and an SI check).
-- **Space check (ICD rev 2.1) [Estimate]:** the BP plug (z ≤ 10.0 at the latch) ends at n ≈ 43.2–45.0, inboard of the board (n 55–56.6); the ribbon passes **≈ 10 mm under the 15 mm board edge**; the module plug occupies n 56.6–64.5, Y ≈ 1.3–14.5; the vertical run is ≈ 1.5 mm off the outer face below the edge. Before ordering, M4 must confirm the vendor's plug overmold length, M1c the edge height, and a straight ↔ straight sample the fit. The envelope gives ≥ 17.8 mm across J_PCIE (X 25.4–68.6) for the outer-side run. BP fp6 fit check: `kicad/macpro62-backplane/fitcheck_mcio_o10.txt` (ALL OK; open: bend beyond the BP rim at r ≤ 65.8 vs base ring M1b, S5 under the J9 ribbon CR-BP-1).
+- **Space check (ICD rev 2.1) [Estimate]:** the BP plug (z ≤ 10.0 at the latch) ends at n ≈ 43.2–45.0, inboard of the board (n 55–56.6); the ribbon passes **≈ 10 mm under the 15 mm board edge**; the module plug occupies n 56.6–64.5, Y ≈ 1.3–14.5; the vertical run is ≈ 1.5 mm off the outer face below the edge. Before ordering, M4 must confirm the vendor's plug overmold length, M1c the edge height, and a straight ↔ straight sample the fit. The envelope gives ≥ 17.8 mm across J_PCIE (X 25.4–68.6) for the outer-side run. BP fp6 fit check: `archive/kicad/macpro62-backplane/fitcheck_mcio_o10.txt` (ALL OK; open: bend beyond the BP rim at r ≤ 65.8 vs base ring M1b, S5 under the J9 ribbon CR-BP-1).
 - **J_DISP cable** to the IOB: 0.3–0.5 m, routed along the outer side. Path and length TO MEASURE M9.
 - **Mating cycles:** MCIO is rated 250 cycles [Sourced: Amphenol]. That is fine for a module that is changed occasionally.
 
@@ -300,8 +300,8 @@ Nominal G = 4.5 and p = 0 are used here. Recompute every stack with the measured
 
 | Pin | Signal | Dir (module view) | Notes |
 |---|---|---|---|
-| 1 | 3V3_AUX | In (power) | From BP. <= 1.0 A per face in S0, <= 15 mA (50 mW) in S5; 2 pins x 1 A GH rating |
-| 2 | 3V3_AUX | In (power) |  |
+| 1 | 3V3_AUX | In (../power/docs) | From BP. <= 1.0 A per face in S0, <= 15 mA (50 mW) in S5; 2 pins x 1 A GH rating |
+| 2 | 3V3_AUX | In (../power/docs) |  |
 | 3 | GND | - |  |
 | 4 | FACE_PRSNT# | Out | Module ties to GND |
 | 5 | FACE_PWR_EN | In | 3.3 V push-pull from BP; high = module may enable its 12 V eFuse; module pull-down 100k |
@@ -648,7 +648,7 @@ Sideband (AUX ±, HPD, presence):
 > - Links 0–2 are used: link 0 → C1 (4-lane), link 1 → C2 (4-lane), link 2 → HDMI via TDP158 (DP++ to TMDS, HDMI 2.0 class), link 3 spare (unrouted). [v0.2: three live links; C3 and C4 USB-only]
 > - The TUSB1046A mux plus TPS65994AD PD handle USB-C. HPD0/1 come from PD #1, (HPD3/4 spare in v0.2), HPD2 from the TDP158.
 > - See `/workspace/macpro62-io-board-plan.md` §5.2.
-> - **IOB-end contact table (2026-10-02, ICD):** `kicad/macpro62-io-board/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` = §9.3 with rows A/B exchanged; IOB J2 is wired to it.
+> - **IOB-end contact table (2026-10-02, ICD):** `boards/io/kicad/docs/mp62-iob-j2_mcio74_displaylink_iob-end.csv` = §9.3 with rows A/B exchanged; IOB J2 is wired to it.
 
 - HDMI 2.1 retimer on Link 2 (TI TDP2004-class [Unverified]); ESD on every port.
 - DP_PWR and HDMI 5 V with current limit.
@@ -689,7 +689,7 @@ Sideband (AUX ±, HPD, presence):
 
 ### 11.3 Storage module (Face S or P): SM-1, ASM2824 + 4 × M.2 [update 3]
 
-Full design: `macpro62-storage-board-plan.md` and `kicad/macpro62-storage-face/` (rev A0 floorplan, DRC 0/0; schematic ERC 0/0; routing not started).
+Full design: `../archive/docs/macpro62-storage-board-plan.md` and `archive/kicad/macpro62-storage-face/` (rev A0 floorplan, DRC 0/0; schematic ERC 0/0; routing not started).
 
 - **Why a switch:** Face S is CPU PEG60 Gen4 x4, which cannot bifurcate, so 4 SSDs need a switch. The **ASMedia ASM2824** (Gen3, x8 up / 4 × x4 down, internal downstream clock buffer, SRIS) is the only cheap, JLC-assemblable choice (JLC C9900092023; price TBD, ≈ $15–40 [Unverified]). Gen4 switches (PM40028, PEX88024) cost $164–323, are NDA, and have no stock. The upstream x8 is wired to J_PCIE lanes 0–7, so a future x8 host doubles throughput with no module change. Bandwidth today: Gen3 x4 ≈ 3.5 GB/s shared.
 - **Core side:** the ASM2824 sits centred on the die pad with a **3.0 mm soft gap pad** (≈ 1.1 K/W, ≈ 5 K at 4 W), with no Cu block and no preload. Switch support parts (core buck, crystal, SPI flash, PERST# buffers, TMP1075 0x48) are all ≤ 2 mm tall.
@@ -839,7 +839,7 @@ Full design: `macpro62-storage-board-plan.md` and `kicad/macpro62-storage-face/`
 | Cable, PCIe | MCIO 16i, custom length | — | ≈ $60–80 | — |
 | Cable, display | MCIO 8i straight 0.5 m | — | ≈ $46–52 | — |
 
-**Storage reference module SM-1 additions** (update 3; full BOM in `macpro62-storage-board-plan.md` §6):
+**Storage reference module SM-1 additions** (update 3; full BOM in `../archive/docs/macpro62-storage-board-plan.md` §6):
 
 | Function | Part | LCSC | Price | Stock |
 |---|---|---|---|---|
@@ -856,7 +856,7 @@ Full design: `macpro62-storage-board-plan.md` and `kicad/macpro62-storage-face/`
 - SFF-9402 Rev 1.1 (multi-protocol internal cable pinouts for SFF-TA-1016).
 - JPC MCIO RA drawing; Amphenol G97R24332HR / G97R22332HR product pages (LCSC).
 - `macpro62-architecture-spec-v0.2.md` §4, §5, §7 (the superseded face spec), REF-S1 (Apple service references: screws 923-0708, 923-0716, standoffs 923-0690).
-- BP KiCad project `kicad/macpro62-backplane/` (J9/J10 positions, footprints, stackup).
+- BP KiCad project `archive/kicad/macpro62-backplane/` (J9/J10 positions, footprints, stackup).
 - Fusion export `gpu_board_outline.dxf`; `bracket/gpu_board/summary.md`; `bracket/summary.md`; `bracket/gpu_bracket_keepout.dxf`.
 - **Core GPU-face scan** (Aidan, 2026-10-01), traced in `bracket/core_gpu_face/` (script, JSON, DXF, overlays).
 - **Aidan's measurement:** core standoff height 4.5 ± 0.5 mm (2026-10-01).

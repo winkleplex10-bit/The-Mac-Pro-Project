@@ -1,6 +1,6 @@
 # MacPro6,2 v3 face interconnect plan: CB → BP → Face P / Face S
 Written 2026-10-21 (ET). Target approved by Aidan on 2026-10-21: Ryzen 7000/9000 with GFX x16 (an 8000G still drops in at x8), stock 450 W PSU with firmware limits, and the BP v3 changes (INA226, J7 DNP, storage-face deviations).
-Sources: `kicad/macpro62-backplane-v3/backplane.kicad_pcb` (read with pcbnew; not modified), `fitcheck_mcio_o10.txt`, ICD v3 §5/§14/§20, and the vendor datasheets cited below. Nothing has been ordered or submitted.
+Sources: `boards/base-v3/kicad/backplane.kicad_pcb` (read with pcbnew; not modified), `fitcheck_mcio_o10.txt`, ICD v3 §5/§14/§20, and the vendor datasheets cited below. Nothing has been ordered or submitted.
 
 ## 1. Interconnect per lane group
 
@@ -102,7 +102,7 @@ Snapshot taken before the edits in §4.
 
 | File:line | Conflicting text (abridged) |
 |---|---|
-| kicad/macpro62-am5-v3/README.md:8 | Target Ryzen 5 8600G / 7 8700G (Phoenix) at cTDP 45 W; 7000/9000 "later option" |
+| archive/kicad/macpro62-am5-v3/README.md:8 | Target Ryzen 5 8600G / 7 8700G (Phoenix) at cTDP 45 W; 7000/9000 "later option" |
 | macpro62-am5-board-plan.md:13-14 | CPU = 8600G/8700G; power cTDP 45 W, PPT ≈ 61 W |
 | macpro62-am5-board-plan.md:19 | "8000G GFX x8 → Face P" as the design case |
 | macpro62-am5-board-plan.md:48, 135-136, 167-168 | DXIO GFX x8; lane table x8 live, lanes 8-15 unused |
@@ -124,7 +124,7 @@ Snapshot taken before the edits in §4.
 See the change log in the agent summary. Backup: `/workspace/backups/docs_pre_am5x16_20261021-144031.tgz`.
 
 ### Change log (2026-10-21 ≈ 14:41 ET; no KiCad boards touched)
-- `kicad/macpro62-am5-v3/README.md`: added a banner with the approved target and rewrote the Target line (x16; 8000G as an x8 drop-in).
+- `archive/kicad/macpro62-am5-v3/README.md`: added a banner with the approved target and rewrote the Target line (x16; 8000G as an x8 drop-in).
 - `macpro62-am5-board-plan.md`: added a banner and updated the CPU bullet, the Face P lane bullet, and the two GFX rows in the lane table.
 - `macpro62-architecture-spec-v0.2.md`: marked change 35 as superseded, added **change 36** (AM5 v3 is the board of record, plus the lane map, power and BP approvals), and updated the LGA1700 table row to "parked".
 - `macpro62-interface-control-v3.md`:

@@ -2,7 +2,7 @@
 No project files edited. Nothing ordered or quoted. Estimates are marked [Est]; anything uncited is a gap.
 
 ## 0. Topology facts from project docs (these change the question)
-- GPU host link: Navi 23 = **PCIe 4.0 x8** (docs/gpu-board-prior-art.md L41/L55). The BP is budgeted Gen4 with Gen5 redrivers removed and the firmware forces Gen4 (kicad/macpro62-backplane/docs/loss_budget_A1.md). **Gen4 governs.** An AM5 Gen5 root trains down to the lowest common rate.
+- GPU host link: Navi 23 = **PCIe 4.0 x8** (docs/gpu-board-prior-art.md L41/L55). The BP is budgeted Gen4 with Gen5 redrivers removed and the firmware forces Gen4 (archive/kicad/macpro62-backplane/docs/loss_budget_A1.md). **Gen4 governs.** An AM5 Gen5 root trains down to the lowest common rate.
 - Display: J_DISP carries **5 links, not 3**: DL0/DL1 DP 4-lane to USB-C (TUSB1046A on the IOB), DL2 DP++ to HDMI through **TDP158** on the IOB, and DL3/DL4 DP 2-lane alt-mode (gpu-board-prior-art.md L42).
 - **The two joints go to different boards.** PCIe goes face J_PCIE to BP J9 (about 55 mm, cable-plan §1). Display goes face J_DISP to IOB J2. One connector on the face means a **Y-split flex** (one branch to the BP, one to the IOB), or the display has to go through the BP. Mechanical & Thermal needs to confirm this.
 

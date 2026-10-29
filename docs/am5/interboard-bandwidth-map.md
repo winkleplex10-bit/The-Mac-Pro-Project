@@ -1,6 +1,6 @@
 # MacPro6,2 inter-board link and bandwidth map (AM5), rev 7b
 Base Board & Connectors, 2026-10-26 ≈18:00 EDT (rev 4 ≈17:50, rev 3 ≈17:40, rev 2 ≈17:30). Draft, nothing approved. No other files edited, nothing pushed.
-Inputs: research/connector-bandwidth-options.md (M&T), docs/pinmaps/base-iob-megarray-review.md, docs/am5-cpu-board-frozen-config.md, macpro62-interface-control-rev4.md, kicad/macpro62-backplane-v3/docs/loss_budget_A1.md, plus public vendor pages below.
+Inputs: research/connector-bandwidth-options.md (M&T), docs/pinmaps/base-iob-megarray-review.md, docs/am5-cpu-board-frozen-config.md, macpro62-interface-control-rev4.md, boards/base-v3/kicad/docs/loss_budget_A1.md, plus public vendor pages below.
 Tags: [Sourced] = public page (URL in Sources); [Estimate]; [GAP].
 
 
@@ -12,7 +12,7 @@ Base Board & Connectors. Board A only (Board B on hold). Draft, nothing pushed, 
   - **U23 PT5161L fallback: separate alternate footprint, DNP, no pads.** Package and pinout are NDA-gated; TI publishes no cross-map, so pin compatibility with DS320PR1601 is **unverified and not assumed**.
 - **Decoupling (per datasheet), on B.Cu directly under each IC:** U20 16 × 100 nF + 4 × 1 µF + 2 × 10 µF (30 VCC balls); U21/U22 4 × 100 nF + 1 × 1 µF each, plus one shared 10 µF for the bus.
 - **Placement (board coords, mm; board centre (150,100), r 61):** U20 (182.2, 102.9) rot 0, the free band between J1 and the J9 Face-P connector, toward the outer edge. U21 (153.5, 102.9) and U22 (160.5, 102.9), rot 0. U23 ALT is a reservation at U20's site. Heatsink keep-out is drawn on Dwgs.User at 24 × 10.6 mm. The band is only 11.6 mm wide (J9 courtyard y 97.1 to J1 y 108.8), and H2 (199,100) and U3 bound it.
-- **Per-segment Manhattan estimate, connector pad → redriver centre → face pad** (full table: kicad/macpro62-backplane-v3/docs/gen5_redriver_segment_lengths_2026-10-28.csv; J9 MCIO = proxy for the not-yet-placed GPU MEG-Array):
+- **Per-segment Manhattan estimate, connector pad → redriver centre → face pad** (full table: boards/base-v3/kicad/docs/gen5_redriver_segment_lengths_2026-10-28.csv; J9 MCIO = proxy for the not-yet-placed GPU MEG-Array):
 
 | Link | Redriver | J1 → redriver (mm) | redriver → face (mm) | Pairs over 40 mm |
 |---|---|---|---|---|
@@ -22,7 +22,7 @@ Base Board & Connectors. Board A only (Board B on hold). Draft, nothing pushed, 
 
 - **Flags:** 22 of 48 pairs exceed the ~40 mm/side budget on the Manhattan estimate. Octilinear routing is shorter (×≈0.8–0.85), but GPU lanes 0–7 face-side still land at about 34–58 mm. A final answer needs the real MEG-Array position (Aidan's stock-base measurements). The fixes would be to move J1 lanes 0–7 or the face connector, or to swap U20's site.
 - **Open issues:**
-  1. **3V3_RDRV is a NEW rail with its source TBD.** Max load ≈ 7.0 + 2 × 1.75 = 10.5 W (3.2 A). The existing 3V3_SB TPS563201 (3 A, standby) is not suitable. Needs Aidan's decision (power).
+  1. **3V3_RDRV is a NEW rail with its source TBD.** Max load ≈ 7.0 + 2 × 1.75 = 10.5 W (3.2 A). The existing 3V3_SB TPS563201 (3 A, standby) is not suitable. Needs Aidan's decision (../power/docs).
   2. **U20 ball coordinates aren't transcribed.** The staggered grid on SNLS683 p.41 is ambiguous from text, so the footprint is an outline placeholder until TI CAD or a full transcription is available.
   3. **The high-speed nets are not yet spliced.** The *_A/*_B labels are placed, but the J1→J9/J10 copper is still direct, so a net split plus reroute is needed.
   4. **U20 straps (8 address pins) are TBD** (SNLS683 Tbl 7-3/8-1), and I²C address collisions haven't been checked yet.

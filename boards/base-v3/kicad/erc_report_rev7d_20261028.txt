@@ -1,0 +1,491 @@
+ERC report (2026-10-28T19:11:26-0400, Encoding UTF8)
+
+***** Sheet /
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 490.22 mm): Global Label 'FP_TX0_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 492.76 mm): Global Label 'FP_TX0_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 495.30 mm): Global Label 'FP_RX0_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 497.84 mm): Global Label 'FP_RX0_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 490.22 mm): Global Label 'FP_RX0_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 500.38 mm): Global Label 'FP_TX1_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 492.76 mm): Global Label 'FP_RX0_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 502.92 mm): Global Label 'FP_TX1_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 495.30 mm): Global Label 'FP_TX0_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 505.46 mm): Global Label 'FP_RX1_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 497.84 mm): Global Label 'FP_TX0_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 508.00 mm): Global Label 'FP_RX1_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 500.38 mm): Global Label 'FP_RX1_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 510.54 mm): Global Label 'FP_TX2_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 502.92 mm): Global Label 'FP_RX1_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 513.08 mm): Global Label 'FP_TX2_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 505.46 mm): Global Label 'FP_TX1_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 515.62 mm): Global Label 'FP_RX2_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 508.00 mm): Global Label 'FP_TX1_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 518.16 mm): Global Label 'FP_RX2_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 510.54 mm): Global Label 'FP_RX2_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 520.70 mm): Global Label 'FP_TX3_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 513.08 mm): Global Label 'FP_RX2_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 523.24 mm): Global Label 'FP_TX3_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 515.62 mm): Global Label 'FP_TX2_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 525.78 mm): Global Label 'FP_RX3_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 518.16 mm): Global Label 'FP_TX2_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 528.32 mm): Global Label 'FP_RX3_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 520.70 mm): Global Label 'FP_RX3_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 530.86 mm): Global Label 'FP_TX4_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 523.24 mm): Global Label 'FP_RX3_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 533.40 mm): Global Label 'FP_TX4_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 525.78 mm): Global Label 'FP_TX3_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 535.94 mm): Global Label 'FP_RX4_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 528.32 mm): Global Label 'FP_TX3_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 538.48 mm): Global Label 'FP_RX4_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 530.86 mm): Global Label 'FP_RX4_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 541.02 mm): Global Label 'FP_TX5_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 533.40 mm): Global Label 'FP_RX4_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 543.56 mm): Global Label 'FP_TX5_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 535.94 mm): Global Label 'FP_TX4_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 546.10 mm): Global Label 'FP_RX5_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 538.48 mm): Global Label 'FP_TX4_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 548.64 mm): Global Label 'FP_RX5_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 541.02 mm): Global Label 'FP_RX5_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 551.18 mm): Global Label 'FP_TX6_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 543.56 mm): Global Label 'FP_RX5_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 553.72 mm): Global Label 'FP_TX6_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 546.10 mm): Global Label 'FP_TX5_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 556.26 mm): Global Label 'FP_RX6_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 548.64 mm): Global Label 'FP_TX5_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 558.80 mm): Global Label 'FP_RX6_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 551.18 mm): Global Label 'FP_RX6_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 561.34 mm): Global Label 'FP_TX7_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 553.72 mm): Global Label 'FP_RX6_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 556.26 mm): Global Label 'FP_TX6_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 563.88 mm): Global Label 'FP_TX7_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 558.80 mm): Global Label 'FP_TX6_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 566.42 mm): Global Label 'FP_RX7_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 561.34 mm): Global Label 'FP_RX7_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 568.96 mm): Global Label 'FP_RX7_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 563.88 mm): Global Label 'FP_RX7_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 571.50 mm): Global Label 'FP_TX8_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 566.42 mm): Global Label 'FP_TX7_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 574.04 mm): Global Label 'FP_TX8_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 568.96 mm): Global Label 'FP_TX7_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 576.58 mm): Global Label 'FP_RX8_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 571.50 mm): Global Label 'FP_RX8_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 579.12 mm): Global Label 'FP_RX8_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 574.04 mm): Global Label 'FP_RX8_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 581.66 mm): Global Label 'FP_TX9_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 576.58 mm): Global Label 'FP_TX8_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 584.20 mm): Global Label 'FP_TX9_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 579.12 mm): Global Label 'FP_TX8_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 586.74 mm): Global Label 'FP_RX9_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 487.68 mm): Global Label 'FS_TX0_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 581.66 mm): Global Label 'FP_RX9_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 589.28 mm): Global Label 'FP_RX9_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 490.22 mm): Global Label 'FS_TX0_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 584.20 mm): Global Label 'FP_RX9_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 591.82 mm): Global Label 'FP_TX10_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 492.76 mm): Global Label 'FS_TX1_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 586.74 mm): Global Label 'FP_TX9_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 594.36 mm): Global Label 'FP_TX10_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 495.30 mm): Global Label 'FS_TX1_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 589.28 mm): Global Label 'FP_TX9_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 497.84 mm): Global Label 'FS_TX2_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 596.90 mm): Global Label 'FP_RX10_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 500.38 mm): Global Label 'FS_TX2_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 599.44 mm): Global Label 'FP_RX10_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 502.92 mm): Global Label 'FS_TX3_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 594.36 mm): Global Label 'FP_RX10_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 601.98 mm): Global Label 'FP_TX11_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(332.74 mm, 505.46 mm): Global Label 'FS_TX3_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 596.90 mm): Global Label 'FP_TX10_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 604.52 mm): Global Label 'FP_TX11_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 599.44 mm): Global Label 'FP_TX10_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 607.06 mm): Global Label 'FP_RX11_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 601.98 mm): Global Label 'FP_RX11_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 609.60 mm): Global Label 'FP_RX11_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 604.52 mm): Global Label 'FP_RX11_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 612.14 mm): Global Label 'FP_TX12_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 607.06 mm): Global Label 'FP_TX11_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 614.68 mm): Global Label 'FP_TX12_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 609.60 mm): Global Label 'FP_TX11_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 617.22 mm): Global Label 'FP_RX12_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 612.14 mm): Global Label 'FP_RX12_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 619.76 mm): Global Label 'FP_RX12_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 614.68 mm): Global Label 'FP_RX12_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 622.30 mm): Global Label 'FP_TX13_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 617.22 mm): Global Label 'FP_TX12_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 624.84 mm): Global Label 'FP_TX13_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 619.76 mm): Global Label 'FP_TX12_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 627.38 mm): Global Label 'FP_RX13_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 622.30 mm): Global Label 'FP_RX13_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 629.92 mm): Global Label 'FP_RX13_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 624.84 mm): Global Label 'FP_RX13_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 632.46 mm): Global Label 'FP_TX14_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 627.38 mm): Global Label 'FP_TX13_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 635.00 mm): Global Label 'FP_TX14_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 629.92 mm): Global Label 'FP_TX13_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 637.54 mm): Global Label 'FP_RX14_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 632.46 mm): Global Label 'FP_RX14_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 640.08 mm): Global Label 'FP_RX14_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 635.00 mm): Global Label 'FP_RX14_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 642.62 mm): Global Label 'FP_TX15_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 637.54 mm): Global Label 'FP_TX14_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 645.16 mm): Global Label 'FP_TX15_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 640.08 mm): Global Label 'FP_TX14_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 647.70 mm): Global Label 'FP_RX15_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 520.70 mm): Global Label 'FS_RX3_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 642.62 mm): Global Label 'FP_RX15_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 523.24 mm): Global Label 'FS_RX3_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(48.26 mm, 650.24 mm): Global Label 'FP_RX15_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 645.16 mm): Global Label 'FP_RX15_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 528.32 mm): Global Label 'FS_RX2_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 647.70 mm): Global Label 'FP_TX15_N_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 530.86 mm): Global Label 'FS_RX2_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(104.14 mm, 650.24 mm): Global Label 'FP_TX15_P_B'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 535.94 mm): Global Label 'FS_RX1_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 538.48 mm): Global Label 'FS_RX1_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 487.68 mm): Global Label 'FS_TX4_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 543.56 mm): Global Label 'FS_RX0_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 490.22 mm): Global Label 'FS_TX4_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(388.62 mm, 546.10 mm): Global Label 'FS_RX0_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 492.76 mm): Global Label 'FS_TX5_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 495.30 mm): Global Label 'FS_TX5_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 497.84 mm): Global Label 'FS_TX6_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 500.38 mm): Global Label 'FS_TX6_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 502.92 mm): Global Label 'FS_TX7_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(454.66 mm, 505.46 mm): Global Label 'FS_TX7_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 520.70 mm): Global Label 'FS_RX7_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 523.24 mm): Global Label 'FS_RX7_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 528.32 mm): Global Label 'FS_RX6_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 530.86 mm): Global Label 'FS_RX6_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 535.94 mm): Global Label 'FS_RX5_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 538.48 mm): Global Label 'FS_RX5_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 543.56 mm): Global Label 'FS_RX4_N_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(510.54 mm, 546.10 mm): Global Label 'FS_RX4_P_A'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(1054.10 mm, 462.28 mm): Global Label 'FS_CLKREQ0_N'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(1054.10 mm, 467.36 mm): Global Label 'FS_PEWAKE0_N'
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(1054.10 mm, 482.60 mm): Global Label 'FS_PEWAKE1_N'
+
+ ** ERC messages: 162  Errors 0  Warnings 162

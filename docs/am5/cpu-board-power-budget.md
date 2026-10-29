@@ -4,7 +4,7 @@ Date: 2026-10-21 (ET). Research only; no KiCad files changed.
 **Basis:**
 - Ryzen 7000/9000 with **PPT 130 W** as the main case and 138 W for comparison.
 - PPT is socket power and covers VDDCR + SOC + MISC.
-- Board parts are from `kicad/macpro62-am5-v3/placeholders_flagged.txt`: SiC654 ×8 + FP4, PROM21, 4 × DDR5 **UDIMM**, J8 M.2, U16 VL822, U9 RP2350.
+- Board parts are from `archive/kicad/macpro62-am5-v3/placeholders_flagged.txt`: SiC654 ×8 + FP4, PROM21, 4 × DDR5 **UDIMM**, J8 M.2, U16 VL822, U9 RP2350.
 - Worst = every load at its maximum at the same time. Typical = PPT-limited sustained load with typical peripherals.
 - Tags: [Sourced] datasheet/vendor, [Estimate].
 

@@ -1,0 +1,21 @@
+ERC report (2026-10-28T14:59:53-0400, Encoding UTF8)
+
+***** Sheet /
+
+***** Sheet /CPU: Socket AM5 (Ryzen 7000/9000, 142 W PPT cap)/
+
+***** Sheet /SVI3 VRM: TI TPS53685 (VDDCR + VDDCR_SOC + VDD_MISC)/
+
+***** Sheet /DDR5 2DPC: 4 x UDIMM vertical (back)/
+
+***** Sheet /PROM21 chipset - PLACEHOLDER - pinout pending datasheet/
+
+***** Sheet /Platform power: 12 V entry (LUG1/LUG2), TPS259851 eFuse, aux + PROM21 rails/
+
+***** Sheet /EC, firmware, clocks, RTC (on-board CR2032), debug/
+
+***** Sheet /J1 Amphenol ME1022410103011 Mini Cool Edge 224 card edge/
+
+***** Sheet /J3 MCIO-124 to base board (rev 2 pinout)/
+
+ ** ERC messages: 0  Errors 0  Warnings 0

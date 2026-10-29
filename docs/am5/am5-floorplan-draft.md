@@ -28,7 +28,7 @@ Basis: `am5-pinmap-table.csv` (from public-domain Wikimedia Commons `Socket_AM5_
 
 
 ## Socket mechanism keep-out (replaces the 46.6 × 46.5 mm U1 placeholder; docs only, KiCad unchanged)
-Source: `am5-socket-mechanicals.md` (WikiChip: AM5 backplate/stiffener/force-frame/lever envelope 67 × 106 mm). Socket centre (78.4, 73.3) = centre of U1 placeholder x 55.1-101.7, y 50.0-96.5. Board coordinates below are KiCad mm (y down), from `kicad/macpro62-am5-v3/fitcheck_floorplan.txt`.
+Source: `am5-socket-mechanicals.md` (WikiChip: AM5 backplate/stiffener/force-frame/lever envelope 67 × 106 mm). Socket centre (78.4, 73.3) = centre of U1 placeholder x 55.1-101.7, y 50.0-96.5. Board coordinates below are KiCad mm (y down), from `archive/kicad/macpro62-am5-v3/fitcheck_floorplan.txt`.
 
 | Keep-out | Orientation A (106 along x) | Orientation B (106 along y) |
 |---|---|---|
