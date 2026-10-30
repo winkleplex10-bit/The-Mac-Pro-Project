@@ -122,3 +122,20 @@ ASMedia's product page says the DP sink ports are "Compliance DP V1.4a … up to
 - C1/C2: keep Parade PS8838 retimer.
 - C3/C4 USB4: ASM4242 host stays; PS8830 retimers held as fallback footprints pending simulation.
 - MEG-Array grid unchanged.
+
+## Base link position (2026-10-29, from Base Board & Connectors)
+The I/O board uses a MEG-Array 300 (84500 plug / 84501 receptacle, 4 mm stack). The stock field centre is (-1.73, -48.74) mm with the axis at 0.65 degrees. The origin is the gold-hole midpoint, with +y toward the core. The base-end column is still pending.
+
+## 12 V feed (2026-10-29)
+Aidan's decision, passed on by Base Board & Connectors: the board stays at the 4 mm stack. The 12 V supply (15 A budget) comes up from the base board through current-rated standoffs, at least 2x 12 V and 2x GND. They sit to the right of J13, at about base KiCad x 178-192, y 135-142. The direct PSU Micro-Fit is dropped. To do: reserve the matching screw and pad positions on the I/O board, with 12 V and GND pours tied to them, and put the input eFuse and bulk capacitors right at the standoffs. Exact positions are pending from Base Board & Connectors.
+Provisional standoffs, in base KiCad top-side coordinates (mirror them for the I/O board): P1 12V (182.0, 141.5), P2 GND (189.5, 139.5), P3 GND (182.0, 133.0), P4 12V (190.0, 131.0). They use M3 screws from the I/O top through plated holes, with a 7.5-8 mm round pad, no solder mask, and a via ring. The part is Wurth 746600330R plus a 1 mm shim, or the WA-SMSI 4 mm spacer. The eFuse sits on the base board; the I/O board keeps its bulk caps. The I/O outline still has no KiCad file, so whether it covers x 178-192, y 128-145 is unverified.
+
+## Supersedes the 12 V standoff sections above (2026-10-29 11:30, Aidan, via Base Board & Connectors)
+"PSU feeds the I/O board directly like stock." The I/O board is the upright rear panel, as in stock (iFixit: flex 923-0501). WITHDRAWN: the P1-P4 standoffs and the base-side eFuse. The PSU DC-out goes straight to the I/O board input, and the I/O board carries its own eFuse and bulk caps. The data path is J13 (base) -> a custom flex with a Meg-Array 300 at each end -> the I/O board. Open: whether the flex can carry UHBR20, USB4 and PCIe Gen4, and its stiffeners and length (SI & Fab and Mechanical & Thermal).
+
+## Port layout (Aidan, 2026-10-29)
+Follows stock Mac Pro 6,1 rear panel. The six Thunderbolt 2 positions become USB-C:
+- Bottom pair: USB4 (ASM4242 + PS8830 retimers)
+- Middle pair: DisplayPort Alt mode (PS8838)
+- Top pair: USB 3.2
+USB-A x4, 2x 2.5GbE, HDMI 2.1b in stock positions. All I/O on flex from J13. Outline waits on Aidan's full 3D scan of the backplate (being redesigned).

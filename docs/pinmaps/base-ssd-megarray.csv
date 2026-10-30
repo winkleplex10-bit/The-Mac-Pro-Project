@@ -269,18 +269,18 @@ I,27,I27,GND,-,-,-,GND fence/return,,,GND
 I,28,I28,GND,-,-,-,GND fence/return,,,GND
 I,29,I29,GND,-,-,-,GND fence/return,,,GND
 I,30,I30,GND,-,-,-,GND fence/return,,,GND
-J,1,J1,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,2,J2,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,3,J3,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,4,J4,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,5,J5,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,6,J6,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,7,J7,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,8,J8,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,9,J9,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,10,J10,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,11,J11,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
-J,12,J12,P12V_SSD,-,base->SSD,PSU 12V,SSD board 12 V in,12V_MAIN_IN (via base fuse/eFuse TBD),"APPROVED (Aidan 2026-10-28: 12 V-only PSU, base fed via J1). 12 V ~2.5 A over 12 pins = 0.21 A/pin vs 0.45 A rating (2.1x margin).",12V_MAIN_IN
+J,1,J1,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,2,J2,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,3,J3,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,4,J4,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,5,J5,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,6,J6,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,7,J7,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,8,J8,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,9,J9,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,10,J10,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,11,J11,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
+J,12,J12,GND,-,-,-,GND (was P12V_SSD; SSD board has own PSU input),GND,Aidan 2026-10-29: SSD board powered from its own PSU input (ex 2nd D700 input); pins now GND next to the pairs.,GND
 J,13,J13,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
 J,14,J14,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND
 J,15,J15,GND,-,-,-,12 V return (matched count),GND,paired return for P12V_SSD,GND

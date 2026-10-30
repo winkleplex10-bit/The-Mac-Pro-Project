@@ -1,0 +1,225 @@
+pin,bay,signal,cb_net_lga1700,"cb_net_am5_v4 (DRAFT, Ryzen 7000/9000 + PROM21 CB)",dir_cb_view,delta_vs_v3
+A1,1,CC_PRSNT1#,GND (short finger on the CB card edge),GND (short finger on the CB card edge),-,SAME v4
+B1,1,GND,GND,GND,-,SAME v4
+A2,1,FP_PET15_P,"CPU PEG TX lane 15 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 15 TX (AC caps on the CB) -> Face P,out,SAME v4
+B2,1,FP_PER15_P,CPU PEG RX lane 15,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 15 RX -> Face P,in,SAME v4
+A3,1,FP_PET15_N,"CPU PEG TX lane 15 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 15 TX (AC caps on the CB) -> Face P,out,SAME v4
+B3,1,FP_PER15_N,CPU PEG RX lane 15,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 15 RX -> Face P,in,SAME v4
+A4,1,GND,GND,GND,-,SAME v4
+B4,1,GND,GND,GND,-,SAME v4
+A5,1,FP_PET14_P,"CPU PEG TX lane 14 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 14 TX (AC caps on the CB) -> Face P,out,SAME v4
+B5,1,FP_PER14_P,CPU PEG RX lane 14,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 14 RX -> Face P,in,SAME v4
+A6,1,FP_PET14_N,"CPU PEG TX lane 14 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 14 TX (AC caps on the CB) -> Face P,out,SAME v4
+B6,1,FP_PER14_N,CPU PEG RX lane 14,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 14 RX -> Face P,in,SAME v4
+A7,1,GND,GND,GND,-,SAME v4
+B7,1,GND,GND,GND,-,SAME v4
+A8,1,FP_PET13_P,"CPU PEG TX lane 13 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 13 TX (AC caps on the CB) -> Face P,out,SAME v4
+B8,1,FP_PER13_P,CPU PEG RX lane 13,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 13 RX -> Face P,in,SAME v4
+A9,1,FP_PET13_N,"CPU PEG TX lane 13 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 13 TX (AC caps on the CB) -> Face P,out,SAME v4
+B9,1,FP_PER13_N,CPU PEG RX lane 13,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 13 RX -> Face P,in,SAME v4
+A10,1,GND,GND,GND,-,SAME v4
+B10,1,GND,GND,GND,-,SAME v4
+A11,1,FP_PET12_P,"CPU PEG TX lane 12 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 12 TX (AC caps on the CB) -> Face P,out,SAME v4
+B11,1,FP_PER12_P,CPU PEG RX lane 12,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 12 RX -> Face P,in,SAME v4
+A12,1,FP_PET12_N,"CPU PEG TX lane 12 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 12 TX (AC caps on the CB) -> Face P,out,SAME v4
+B12,1,FP_PER12_N,CPU PEG RX lane 12,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 12 RX -> Face P,in,SAME v4
+A13,1,GND,GND,GND,-,SAME v4
+B13,1,GND,GND,GND,-,SAME v4
+A14,1,FP_PET11_P,"CPU PEG TX lane 11 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 11 TX (AC caps on the CB) -> Face P,out,SAME v4
+B14,1,FP_PER11_P,CPU PEG RX lane 11,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 11 RX -> Face P,in,SAME v4
+A15,1,FP_PET11_N,"CPU PEG TX lane 11 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 11 TX (AC caps on the CB) -> Face P,out,SAME v4
+B15,1,FP_PER11_N,CPU PEG RX lane 11,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 11 RX -> Face P,in,SAME v4
+A16,1,GND,GND,GND,-,SAME v4
+B16,1,GND,GND,GND,-,SAME v4
+A17,1,FP_PET10_P,"CPU PEG TX lane 10 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 10 TX (AC caps on the CB) -> Face P,out,SAME v4
+B17,1,FP_PER10_P,CPU PEG RX lane 10,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 10 RX -> Face P,in,SAME v4
+A18,1,FP_PET10_N,"CPU PEG TX lane 10 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 10 TX (AC caps on the CB) -> Face P,out,SAME v4
+B18,1,FP_PER10_N,CPU PEG RX lane 10,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 10 RX -> Face P,in,SAME v4
+A19,1,GND,GND,GND,-,SAME v4
+B19,1,GND,GND,GND,-,SAME v4
+A20,1,FP_PET9_P,"CPU PEG TX lane 9 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 9 TX (AC caps on the CB) -> Face P,out,SAME v4
+B20,1,FP_PER9_P,CPU PEG RX lane 9,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 9 RX -> Face P,in,SAME v4
+A21,1,FP_PET9_N,"CPU PEG TX lane 9 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 9 TX (AC caps on the CB) -> Face P,out,SAME v4
+B21,1,FP_PER9_N,CPU PEG RX lane 9,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 9 RX -> Face P,in,SAME v4
+A22,1,GND,GND,GND,-,SAME v4
+B22,1,GND,GND,GND,-,SAME v4
+A23,1,FP_PET8_P,"CPU PEG TX lane 8 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 8 TX (AC caps on the CB) -> Face P,out,SAME v4
+B23,1,FP_PER8_P,CPU PEG RX lane 8,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 8 RX -> Face P,in,SAME v4
+A24,1,FP_PET8_N,"CPU PEG TX lane 8 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 8 TX (AC caps on the CB) -> Face P,out,SAME v4
+B24,1,FP_PER8_N,CPU PEG RX lane 8,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 8 RX -> Face P,in,SAME v4
+A25,1,GND,GND,GND,-,SAME v4
+B25,1,GND,GND,GND,-,SAME v4
+A26,1,FP_PET7_P,"CPU PEG TX lane 7 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 7 TX (AC caps on the CB) -> Face P,out,SAME v4
+B26,1,FP_PER7_P,CPU PEG RX lane 7,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 7 RX -> Face P,in,SAME v4
+A27,1,FP_PET7_N,"CPU PEG TX lane 7 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 7 TX (AC caps on the CB) -> Face P,out,SAME v4
+B27,1,FP_PER7_N,CPU PEG RX lane 7,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 7 RX -> Face P,in,SAME v4
+A28,1,GND,GND,GND,-,SAME v4
+B28,1,GND,GND,GND,-,SAME v4
+A29,2,GND,GND,GND,-,SAME v4
+B29,2,GND,GND,GND,-,SAME v4
+A30,2,FP_PET6_P,"CPU PEG TX lane 6 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 6 TX (AC caps on the CB) -> Face P,out,SAME v4
+B30,2,FP_PER6_P,CPU PEG RX lane 6,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 6 RX -> Face P,in,SAME v4
+A31,2,FP_PET6_N,"CPU PEG TX lane 6 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 6 TX (AC caps on the CB) -> Face P,out,SAME v4
+B31,2,FP_PER6_N,CPU PEG RX lane 6,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 6 RX -> Face P,in,SAME v4
+A32,2,GND,GND,GND,-,SAME v4
+B32,2,GND,GND,GND,-,SAME v4
+A33,2,FP_PET5_P,"CPU PEG TX lane 5 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 5 TX (AC caps on the CB) -> Face P,out,SAME v4
+B33,2,FP_PER5_P,CPU PEG RX lane 5,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 5 RX -> Face P,in,SAME v4
+A34,2,FP_PET5_N,"CPU PEG TX lane 5 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 5 TX (AC caps on the CB) -> Face P,out,SAME v4
+B34,2,FP_PER5_N,CPU PEG RX lane 5,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 5 RX -> Face P,in,SAME v4
+A35,2,GND,GND,GND,-,SAME v4
+B35,2,GND,GND,GND,-,SAME v4
+A36,2,FP_PET4_P,"CPU PEG TX lane 4 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 4 TX (AC caps on the CB) -> Face P,out,SAME v4
+B36,2,FP_PER4_P,CPU PEG RX lane 4,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 4 RX -> Face P,in,SAME v4
+A37,2,FP_PET4_N,"CPU PEG TX lane 4 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 4 TX (AC caps on the CB) -> Face P,out,SAME v4
+B37,2,FP_PER4_N,CPU PEG RX lane 4,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 4 RX -> Face P,in,SAME v4
+A38,2,GND,GND,GND,-,SAME v4
+B38,2,GND,GND,GND,-,SAME v4
+A39,2,FP_PET3_P,"CPU PEG TX lane 3 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 3 TX (AC caps on the CB) -> Face P,out,SAME v4
+B39,2,FP_PER3_P,CPU PEG RX lane 3,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 3 RX -> Face P,in,SAME v4
+A40,2,FP_PET3_N,"CPU PEG TX lane 3 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 3 TX (AC caps on the CB) -> Face P,out,SAME v4
+B40,2,FP_PER3_N,CPU PEG RX lane 3,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 3 RX -> Face P,in,SAME v4
+A41,2,GND,GND,GND,-,SAME v4
+B41,2,GND,GND,GND,-,SAME v4
+A42,2,FP_PET2_P,"CPU PEG TX lane 2 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 2 TX (AC caps on the CB) -> Face P,out,SAME v4
+B42,2,FP_PER2_P,CPU PEG RX lane 2,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 2 RX -> Face P,in,SAME v4
+A43,2,FP_PET2_N,"CPU PEG TX lane 2 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 2 TX (AC caps on the CB) -> Face P,out,SAME v4
+B43,2,FP_PER2_N,CPU PEG RX lane 2,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 2 RX -> Face P,in,SAME v4
+A44,2,GND,GND,GND,-,SAME v4
+B44,2,GND,GND,GND,-,SAME v4
+A45,2,FP_PET1_P,"CPU PEG TX lane 1 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 1 TX (AC caps on the CB) -> Face P,out,SAME v4
+B45,2,FP_PER1_P,CPU PEG RX lane 1,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 1 RX -> Face P,in,SAME v4
+A46,2,FP_PET1_N,"CPU PEG TX lane 1 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 1 TX (AC caps on the CB) -> Face P,out,SAME v4
+B46,2,FP_PER1_N,CPU PEG RX lane 1,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 1 RX -> Face P,in,SAME v4
+A47,2,GND,GND,GND,-,SAME v4
+B47,2,GND,GND,GND,-,SAME v4
+A48,2,FP_PET0_P,"CPU PEG TX lane 0 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 0 TX (AC caps on the CB) -> Face P,out,SAME v4
+B48,2,FP_PER0_P,CPU PEG RX lane 0,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 0 RX -> Face P,in,SAME v4
+A49,2,FP_PET0_N,"CPU PEG TX lane 0 (x16 -> Face P), AC caps on the CB",CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 0 TX (AC caps on the CB) -> Face P,out,SAME v4
+B49,2,FP_PER0_N,CPU PEG RX lane 0,CPU PCIe GFX x16 (Gen5 on 7000/9000) lane 0 RX -> Face P,in,SAME v4
+A50,2,GND,GND,GND,-,SAME v4
+B50,2,GND,GND,GND,-,SAME v4
+A51,2,FP_REFCLK_P,PCH CLKOUT for CPU PEG (SRCn TBD; SRC11/SRC12 are taken by the IOB i226 links),CPU (FCH) GPP_CLK output for the GFX x8/x16 link (index TBD) - CPU makes the 100 MHz refclks; no PCH CLKOUT,out,SAME v4
+B51,2,USB2_FACEP_P,PCH USB2 port -> Face P AUX 13/14,PROM21 USB2 port -> Face P AUX 13/14,bi,SAME v4
+A52,2,FP_REFCLK_N,PCH CLKOUT for CPU PEG (SRCn TBD; SRC11/SRC12 are taken by the IOB i226 links),CPU (FCH) GPP_CLK output for the GFX x8/x16 link (index TBD) - CPU makes the 100 MHz refclks; no PCH CLKOUT,out,SAME v4
+B52,2,USB2_FACEP_N,PCH USB2 port -> Face P AUX 13/14,PROM21 USB2 port -> Face P AUX 13/14,bi,SAME v4
+A53,2,GND,GND,GND,-,SAME v4
+B53,2,GND,GND,GND,-,SAME v4
+A54,2,SSD0_PET0_P,"reserved, NC on the CB","CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 0 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_PET7_P)
+B54,2,SSD0_PER0_P,"reserved, NC on the CB",CPU PCIe Gen5 SSD link 0 lane 0 RX <- SSD board A,in,v4 (was FS_PER7_P)
+A55,2,SSD0_PET0_N,"reserved, NC on the CB","CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 0 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_PET7_N)
+B55,2,SSD0_PER0_N,"reserved, NC on the CB",CPU PCIe Gen5 SSD link 0 lane 0 RX <- SSD board A,in,v4 (was FS_PER7_N)
+A56,2,GND,GND,GND (Gen5 shield),-,SAME
+B56,2,GND,GND,GND (Gen5 shield),-,SAME
+A57,3,SSD0_PET1_P,GND,"CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 1 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B57,3,SSD0_PER1_P,GND,CPU PCIe Gen5 SSD link 0 lane 1 RX <- SSD board A,in,v4 (was GND)
+A58,3,SSD0_PET1_N,"CPU PCIe x4 TX lane 0 (-> Face S), AC caps on the CB","CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 1 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_PET0_P)
+B58,3,SSD0_PER1_N,CPU PCIe x4 RX lane 0,CPU PCIe Gen5 SSD link 0 lane 1 RX <- SSD board A,in,v4 (was FS_PER0_P)
+A59,3,GND,"CPU PCIe x4 TX lane 0 (-> Face S), AC caps on the CB",GND (Gen5 shield),-,v4 (was FS_PET0_N)
+B59,3,GND,CPU PCIe x4 RX lane 0,GND (Gen5 shield),-,v4 (was FS_PER0_N)
+A60,3,SSD0_PET2_P,GND,"CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 2 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B60,3,SSD0_PER2_P,GND,CPU PCIe Gen5 SSD link 0 lane 2 RX <- SSD board A,in,v4 (was GND)
+A61,3,SSD0_PET2_N,"CPU PCIe x4 TX lane 1 (-> Face S), AC caps on the CB","CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 2 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_PET1_P)
+B61,3,SSD0_PER2_N,CPU PCIe x4 RX lane 1,CPU PCIe Gen5 SSD link 0 lane 2 RX <- SSD board A,in,v4 (was FS_PER1_P)
+A62,3,GND,"CPU PCIe x4 TX lane 1 (-> Face S), AC caps on the CB",GND (Gen5 shield),-,v4 (was FS_PET1_N)
+B62,3,GND,CPU PCIe x4 RX lane 1,GND (Gen5 shield),-,v4 (was FS_PER1_N)
+A63,3,SSD0_PET3_P,GND,"CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 3 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B63,3,SSD0_PER3_P,GND,CPU PCIe Gen5 SSD link 0 lane 3 RX <- SSD board A,in,v4 (was GND)
+A64,3,SSD0_PET3_N,"CPU PCIe x4 TX lane 2 (-> Face S), AC caps on the CB","CPU PCIe Gen5 SSD link 0 (NVMe x4 root port) lane 3 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_PET2_P)
+B64,3,SSD0_PER3_N,CPU PCIe x4 RX lane 2,CPU PCIe Gen5 SSD link 0 lane 3 RX <- SSD board A,in,v4 (was FS_PER2_P)
+A65,3,GND,"CPU PCIe x4 TX lane 2 (-> Face S), AC caps on the CB",GND (Gen5 shield),-,v4 (was FS_PET2_N)
+B65,3,GND,CPU PCIe x4 RX lane 2,GND (Gen5 shield),-,v4 (was FS_PER2_N)
+A66,3,SSD1_PET0_P,GND,"CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 0 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B66,3,SSD1_PER0_P,GND,CPU PCIe Gen5 SSD link 1 lane 0 RX <- SSD board A,in,v4 (was GND)
+A67,3,SSD1_PET0_N,"CPU PCIe x4 TX lane 3 (-> Face S), AC caps on the CB","CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 0 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_PET3_P)
+B67,3,SSD1_PER0_N,CPU PCIe x4 RX lane 3,CPU PCIe Gen5 SSD link 1 lane 0 RX <- SSD board A,in,v4 (was FS_PER3_P)
+A68,3,GND,"CPU PCIe x4 TX lane 3 (-> Face S), AC caps on the CB",GND (Gen5 shield),-,v4 (was FS_PET3_N)
+B68,3,GND,CPU PCIe x4 RX lane 3,GND (Gen5 shield),-,v4 (was FS_PER3_N)
+A69,3,SSD1_PET1_P,GND,"CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 1 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B69,3,SSD1_PER1_P,GND,CPU PCIe Gen5 SSD link 1 lane 1 RX <- SSD board A,in,v4 (was GND)
+A70,3,SSD1_PET1_N,PCH CLKOUT for the CPU x4 port (SRCn TBD),"CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 1 TX, AC caps on CB -> base -> SSD board A",out,v4 (was FS_REFCLK_P)
+B70,3,SSD1_PER1_N,PCH SATA0 RX,CPU PCIe Gen5 SSD link 1 lane 1 RX <- SSD board A,in,v4 (was SATA0_RX_P)
+A71,3,GND,PCH CLKOUT for the CPU x4 port (SRCn TBD),GND (Gen5 shield),-,v4 (was FS_REFCLK_N)
+B71,3,GND,PCH SATA0 RX,GND (Gen5 shield),-,v4 (was SATA0_RX_N)
+A72,3,SSD1_PET2_P,GND,"CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 2 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B72,3,SSD1_PER2_P,GND,CPU PCIe Gen5 SSD link 1 lane 2 RX <- SSD board A,in,v4 (was GND)
+A73,3,SSD1_PET2_N,"PCH SATA0 TX (SATA-capable HSIO not used by M.2 RP9-12; lane TBD), AC caps on the CB","CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 2 TX, AC caps on CB -> base -> SSD board A",out,v4 (was SATA0_TX_P)
+B73,3,SSD1_PER2_N,"PCH USB2 port (BP MCU, number TBD)",CPU PCIe Gen5 SSD link 1 lane 2 RX <- SSD board A,in,v4 (was USB2_MCU_P)
+A74,3,GND,"PCH SATA0 TX (SATA-capable HSIO not used by M.2 RP9-12; lane TBD), AC caps on the CB",GND (Gen5 shield),-,v4 (was SATA0_TX_N)
+B74,3,GND,"PCH USB2 port (BP MCU, number TBD)",GND (Gen5 shield),-,v4 (was USB2_MCU_N)
+A75,3,SSD1_PET3_P,GND,"CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 3 TX, AC caps on CB -> base -> SSD board A",out,v4 (was GND)
+B75,3,SSD1_PER3_P,GND,CPU PCIe Gen5 SSD link 1 lane 3 RX <- SSD board A,in,v4 (was GND)
+A76,3,SSD1_PET3_N,"reserved, NC on the CB","CPU PCIe Gen5 SSD link 1 (GPP x4 root port) lane 3 TX, AC caps on CB -> base -> SSD board A",out,v4 (was RSVD_HS_A1_P)
+B76,3,SSD1_PER3_N,PCH USB2 port -> Face S AUX 13/14,CPU PCIe Gen5 SSD link 1 lane 3 RX <- SSD board A,in,v4 (was USB2_FACES_P)
+A77,3,GND,"reserved, NC on the CB",GND (Gen5 shield),-,v4 (was RSVD_HS_A1_N)
+B77,3,GND,PCH USB2 port -> Face S AUX 13/14,GND (Gen5 shield),-,v4 (was USB2_FACES_N)
+A78,3,SSD0_REFCLK_P,GND,"CPU (FCH) GPP_CLK 100 MHz for SSD link 0 (index TBD, NDA)",out,v4 (was GND)
+B78,3,SSD1_REFCLK_P,GND,"CPU (FCH) GPP_CLK 100 MHz for SSD link 1 (index TBD, NDA)",out,v4 (was GND)
+A79,3,SSD0_REFCLK_N,"reserved, NC on the CB","CPU (FCH) GPP_CLK 100 MHz for SSD link 0 (index TBD, NDA)",out,v4 (was RSVD_HS_A2_P)
+B79,3,SSD1_REFCLK_N,PCH USB2 port -> BP J6 13/14 -> IOB USB2_LINK (hub H2: USB-A A1-A4 + Bluetooth),"CPU (FCH) GPP_CLK 100 MHz for SSD link 1 (index TBD, NDA)",out,v4 (was USB2_SPARE_P)
+A80,3,GND,"reserved, NC on the CB",GND (shield HS -> low-speed),-,v4 (was RSVD_HS_A2_N)
+B80,3,GND,PCH USB2 port -> BP J6 13/14 -> IOB USB2_LINK (hub H2: USB-A A1-A4 + Bluetooth),GND (shield HS -> low-speed),-,v4 (was USB2_SPARE_N)
+A81,3,USB2_MCU_P,GND,PROM21 USB2 port (number TBD),bi,v4 (was GND)
+B81,3,GND,GND,GND (freed pin; keeps 80 GND),-,"v4 rev2 (was USB2_SPARE_P; dropped, Aidan 2026-10-29)"
+A82,3,USB2_MCU_N,GND,PROM21 USB2 port (number TBD),bi,v4 (was FS_PET4_P)
+B82,3,GND,"reserved, NC on the CB",GND (freed pin; keeps 80 GND),-,"v4 rev2 (was USB2_SPARE_N; dropped, Aidan 2026-10-29)"
+A83,3,SUS_S3#,GND,"FCH SLP_S3_L (buffered, 3V3_SB)",out,v4 (was FS_PET4_N)
+B83,3,GND,"reserved, NC on the CB",GND (freed pin; keeps 80 GND),-,"v4 rev2 (was BIOS_SEL; dropped, Aidan 2026-10-29)"
+A84,3,SUS_S4_S5#,GND,FCH SLP_S5_L (buffered; AM5 has no separate SLP_S4),out,v4 (was GND)
+B84,3,I2C0_CLK,GND,CB ID EEPROM 0x57 + EC I2C target (3V3_SB domain); BP MCU is controller,"bi, OD",v4 (was GND)
+A85,4,RSMRST_OUT#,GND,copy of EC-driven FCH RSMRST_L,out,v4 (was GND)
+B85,4,I2C0_DAT,GND,as I2C0_CLK,"bi, OD",v4 (was GND)
+A86,4,VIN_PWR_OK,EC GPIO in -> EC drives PCH PWRBTN# (BP MCU relays IOB PWRBTN_IN_N),EC GPIO in: BP 12 V main good (PSU PWR_OK AND interlock),in,v4 (was FS_PET5_P)
+B86,4,UART0_TX,PCH SMBus (DIMM SPD/PMIC/TS bus): 0R DNP isolation on the CB by default (avoid multi-master on the DIMM bus) [Proposal],EC UART TX (EC <-> BP MCU); LPT_SET semantics change: PPT/TDC/EDC instead of PL1/PL2 (plan sec. 9),out,v4 (was FS_PER5_N)
+A87,4,PLTRST#,EC GPIO in -> PCH SYS_RESET#,FCH PCIE_RST_L (buffered); BP makes PERST#_FP/FS = PLTRST# AND FACE_x_RDY,out,v4 (was FS_PET5_N)
+B87,4,UART0_RX,"PCH SMBus, as SMB_CLK",EC UART RX,in,v4 (was FS_PER5_P)
+A88,4,THERMTRIP#,GND,CPU THERMTRIP_L (OD) wired-OR with the PROM21 thermal trip (if any),"out, OD",v4 (was GND)
+B88,4,FAN_PWMOUT,GND,EC PWM out = fan demand (BP MCU writes the IOB EMC2101),out,v4 (was GND)
+A89,4,CARRIER_HOT#,"PCH SLP_S3# (buffered, 3V3_SB)",EC GPIO in -> CPU PROCHOT_L (OD) - LPT fast cap path unchanged,"in, OD",v4 (was SUS_S3#)
+B89,4,FAN_TACHIN,PCH SMBALERT# (DNP with SMB_*),EC capture in: tach regenerated by the BP MCU,in,v4 (was BIOS_SEL)
+A90,4,WAKE0#,PCH SLP_S4# (buffered; SLP_S5# not exported),FCH WAKE_L (faces' WAKE# ORed on the BP),"in, OD",v4 (was SUS_S4_S5#)
+B90,4,GND,CB ID EEPROM 0x57 + EC I2C target (3V3_SB domain); BP MCU is controller,GND (freed pin; keeps 80 GND),-,"v4 rev2 (was PWRBTN#; dropped, Aidan 2026-10-29)"
+A91,4,RSTBTN#,GND,EC GPIO in -> FCH SYS_RESET_L (moved pin in v3),bi,v4 (was GND)
+B91,4,PWR_ALERT#,GND,"CB 12 V power alert (ICD rev 2, live power target): wired-OR of CB INA228 U15 ALERT (0x45 on I2C0) and U11 eFuse FLT#; BP 10k pull-up to 3V3_SB, BP MCU IRQ","out, OD",v4 (was GND)
+A92,4,GND,copy of EC-driven PCH RSMRST#,GND (low-speed -> power),-,v4 (was RSMRST_OUT#)
+B92,4,GND,as I2C0_CLK,GND (low-speed -> power),-,v4 (was I2C0_DAT)
+A93,4,3V3_SB,EC GPIO in: BP 12 V main good (PSU PWR_OK AND interlock),CB -> base board 3V3_SB (CB standby rail feeds base MCU/ID logic); 1.1 A/contact,"out, power",v4 (was VIN_PWR_OK)
+B93,4,3V3_SB,EC UART TX (EC <-> BP MCU),CB -> base board 3V3_SB (CB standby rail feeds base MCU/ID logic); 1.1 A/contact,"out, power",v4 (was UART0_TX)
+A94,4,5V_SBY,GND,CB -> base board 5V standby (from 12 V standby buck on CB); 1.1 A/contact,"out, power",v4 (was GND)
+B94,4,5V_SBY,GND,CB -> base board 5V standby (from 12 V standby buck on CB); 1.1 A/contact,"out, power",v4 (was GND)
+A95,4,5V_SBY,PCH PLTRST# (buffered); BP makes PERST#_FP/FS = PLTRST# AND FACE_x_RDY,CB -> base board 5V standby (from 12 V standby buck on CB); 1.1 A/contact,"out, power",v4 (was PLTRST#)
+B95,4,5V_SBY,EC UART RX,CB -> base board 5V standby (from 12 V standby buck on CB); 1.1 A/contact,"out, power",v4 (was UART0_RX)
+A96,4,5V_SBY,"CPU/PCH THERMTRIP# (OD, wired-OR on the CB)",CB -> base board 5V standby (from 12 V standby buck on CB); 1.1 A/contact,"out, power",v4 (was THERMTRIP#)
+B96,4,5V_SBY,EC PWM out = fan demand (BP MCU writes the IOB EMC2101),CB -> base board 5V standby (from 12 V standby buck on CB); 1.1 A/contact,"out, power",v4 (was FAN_PWMOUT)
+A97,4,GND,GND,GND (standby return),-,SAME
+B97,4,GND,GND,GND (standby return),-,SAME
+A98,4,GND,EC GPIO in -> CPU PROCHOT# (OD),GND (standby return),-,v4 (was CARRIER_HOT#)
+B98,4,GND,EC capture in: tach regenerated by the BP MCU,GND (standby return),-,v4 (was FAN_TACHIN)
+A99,4,GND,PCH WAKE# (faces' WAKE# ORed on the BP),GND (spare position grounded),-,v4 (was WAKE0#)
+B99,4,GND,EC GPIO spare,GND (spare position grounded),-,v4 (was PWRBTN#)
+A100,4,GND,GND,GND (spare position grounded),-,SAME
+B100,4,GND,GND,GND (spare position grounded),-,SAME
+A101,4,GND,EC GPIO in (optional dual-image select),GND (12 V return),-,v4 (was FS_PET6_P)
+B101,4,GND,EC GPIO spare,GND (12 V return),-,v4 (was FS_REFCLK1_P)
+A102,4,P12V,EC GPIO spare,CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power","v4 rev2 (was GND; 12xP12V, Aidan 2026-10-29)"
+B102,4,P12V,"reserved, NC on the CB",CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power","v4 rev2 (was GND; 12xP12V, Aidan 2026-10-29)"
+A103,4,P12V,GND,CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was GND)
+B103,4,P12V,GND,CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was GND)
+A104,4,P12V,EC GPIO spare,CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was RSTBTN#)
+B104,4,P12V,"reserved, NC on the CB",CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was FS_PER6_N)
+A105,4,P12V,"CB 12 V power alert (ICD rev 2, live power target): wired-OR of CB INA228 U15 ALERT (0x45 on I2C0) and U11 eFuse FLT#; BP 10k pull-up to 3V3_SB, BP MCU IRQ",CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was PWR_ALERT#)
+B105,4,P12V,"reserved, NC on the CB",CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was FS_PER6_P)
+A106,4,P12V,GND,CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was GND)
+B106,4,P12V,GND,CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power",v4 (was GND)
+A107,4,P12V,"CB standby input (PCH DSW/primary wells via bucks, EC, RTC)",CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power","v4 rev2 (was GND; 12xP12V, Aidan 2026-10-29)"
+B107,4,P12V,"CB 3V3_SB input (EC, ID EEPROM)",CB -> base board 12 V (from LUG1/LUG2 ahead of CB TPS259851; base board has own eFuse); 12 pins x 0.75 A derated = 9 A (1.1 A rated),"out, power","v4 rev2 (was GND; 12xP12V, Aidan 2026-10-29)"
+A108,4,GND,"CB standby input (PCH DSW/primary wells via bucks, EC, RTC)",GND (12 V return),-,v4 (was 5V_SBY)
+B108,4,GND,"CB 3V3_SB input (EC, ID EEPROM)",GND (12 V return),-,v4 (was 3V3_SB)
+A109,4,GND,GND,GND (12 V return),-,SAME
+B109,4,GND,GND,GND (12 V return),-,SAME
+A110,4,GND,"CB standby input (PCH DSW/primary wells via bucks, EC, RTC)",GND (12 V return),-,v4 (was 5V_SBY)
+B110,4,GND,"CB standby input (PCH DSW/primary wells via bucks, EC, RTC)",GND (12 V return),-,v4 (was 5V_SBY)
+A111,4,GND,"CB standby input (PCH DSW/primary wells via bucks, EC, RTC)",GND (12 V return),-,v4 (was 5V_SBY)
+B111,4,GND,"CB standby input (PCH DSW/primary wells via bucks, EC, RTC)",GND (12 V return),-,v4 (was 5V_SBY)
+A112,4,CC_PRSNT2#,GND (short finger on the CB card edge),GND (short finger on the CB card edge),-,SAME
+B112,4,GND,GND,GND,-,SAME

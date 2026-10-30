@@ -36,3 +36,11 @@ Goal: PROM21 free Gen4 x4 downstream port -> CPU-LINK ex-RSVD pins (slot B x2), 
 
 ## 2026-10-29 Migrated to v4
 Copied from /workspace/kicad/macpro62-am5-v3 (kept intact for the archive). Project renamed macpro62_am5_v4. Includes the Oct 28 schematic pass (PROM21 placeholder, TPS53685, J3 rev2, CR2032) and the J1 v4 DRAFT pinout (docs/cpulink_224_pinout_am5_v4_DRAFT.csv, not pinned; P12V fed ahead of the CB eFuse). The PCB has not been updated yet (still old J3 rev1 nets, VL822, J8).
+
+## 2026-10-29 10:39 EDT: Aidan approved the 3V3_SB regulator at 2 A
+The CPU board 3V3_SB standby regulator is sized for 2 A continuous (CB own load ~0.1 A + PROM21 standby TBD [NDA] + base/I/O 0.67 A, ~2x margin). Part not yet selected. It feeds J1 A93/B93 (2 x 1.1 A rated, ~1.5 A derated). Base 5V_SBY load is ~0 A per Base Board & Connectors.
+
+## 2026-10-29 17:41 ET (Aidan, own words)
+- "J1 is go": J1 v4 pinout pinned -> docs/cpulink_224_pinout_am5_v4_PINNED.csv (12x P12V, 80 GND).
+- "H2 is go": H2 cut as 5.0 x 6.0 mm oval slot along x (H1-H2 axis), pad 10 x 9 mm.
+- "OpenCore boot drive is no longer designed": no boot drive on the CB; nothing to route.

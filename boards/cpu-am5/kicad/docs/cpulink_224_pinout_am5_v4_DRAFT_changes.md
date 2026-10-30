@@ -47,3 +47,12 @@ Total GND 80 ≥ 78 (requirement met). Literal "+8 GND" (86) was not reached; th
 - The CPU board eFuse/plane load stays about 17.9 A (26.3 A at 230 W); the 12 V plane re-check is still open.
 - Standby buck upsizing: NOT approved yet, unchanged.
 - The v4 map is accepted by Base Board & Connectors; pinning still waits for Aidan.
+
+## 2026-10-29 10:39 EDT: Aidan approved the 3V3_SB regulator at 2 A
+The CPU board 3V3_SB standby regulator is sized for 2 A continuous (CB own load ~0.1 A + PROM21 standby TBD [NDA] + base/I/O 0.67 A, ~2x margin). Part not yet selected. It feeds J1 A93/B93 (2 x 1.1 A rated, ~1.5 A derated). Base 5V_SBY load is ~0 A per Base Board & Connectors.
+
+## 2026-10-29 rev2: 12x P12V (Aidan: "Go for the J1 change", relayed by Base Board & Connectors)
+- P12V now A102-B107 (12 pins, contiguous) = 9 A at 0.75 A derate; base load ~3.5 A (SSD board has its own PSU feed).
+- A102/B102/A107/B107 GND -> P12V; GND count kept at 80 by grounding freed pins:
+  B81/B82 (USB2_SPARE, base feeds J13 spare from its USB2 hub), B83 (BIOS_SEL, strap moves on-board/EC default), B90 (duplicate PWRBTN#, J3 B29 remains).
+- 12 V return GND: A101/B101, A108-B111. LUG/pre-eFuse copper target ~30 A (check in v4 PCB pass).

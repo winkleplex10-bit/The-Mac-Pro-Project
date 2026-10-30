@@ -96,3 +96,21 @@ At 600 W out / ~94% / 115 V the module draws its full 6 A rated input; 108 V mai
 - Fan: a separate switched 12V rail with board PWM; the module's fan output at most as a diode-OR backup. The curve takes the highest of CPU Tctl, GPU hotspot, S1 and inlet; S1 at 85C forces 100%; a tach alarm if the fan stops.
 - Thermal test: log about once per second; steps at 300/400/450/500/550/600W, each held until flat for 10 minutes, at 25C and 40C intake. Cap = the highest step with S1 at 90C or below at 40C intake, minus 10%.
 - Measured on the stock machine: CPU alone 100W at 67C; CPU plus both GPUs about 90C; fan at 100% is 1900 RPM; room about 22C.
+
+## Base-board PSU input (Aidan's decision 2026-10-29 10:39 AM ET, relayed by I/O & Storage)
+The I/O board no longer gets a direct PSU lead; its 12V goes PSU -> base-board input -> I/O connector. The SSD board 12V already goes through the base board. The GPU feed is undecided.
+Load through the base input at 12V:
+- CPU board: 17.9A at 142W PPT, 26.3A at 230W
+- I/O: 15A budget
+- SSD: 6.5A peak
+- Base retimer: about 1A
+- Fan: up to 2A
+- Total: about 42A at 142W, about 51A at 230W
+- Adding the GPU (RTX 5070 at 250W, 21A plus 25-30A spikes) would bring it to about 72A.
+Proposal:
+- Rate the base input for 60A continuous without the GPU, or 80A if the GPU is fed through the base board.
+- Use the bus bar or lug pair on the stock LUG footprint (2x2 PTH per lug; one 12V lug pair and one GND lug pair), or two crimped 8 AWG pairs under 100mm, rated 105C.
+- Put an eFuse or fuse per downstream branch on the base board.
+- Recommend a separate direct GPU feed from the PSU to keep the base-board current lower; the decision is open.
+- CORRECTION (10:40 AM ET, from Base Board & Connectors): Aidan's decision only covers the I/O 12V through the base input. The CPU board keeps its own LUG1/LUG2 feed, because J1 v4 has only 8 P12V pins. Baseline is Scenario A: a base input for I/O + SSD + fan + retimer, about 25A, rated about 30A. The 60A CPU-through-base version (B) is not decided and is Aidan's call. Agreed: a direct PSU-to-GPU feed and per-branch eFuses. PSU outputs: (1) CPU lugs about 18-26A, (2) base input about 30A rating, (3) GPU direct about 21A plus spikes.
+- UPDATE (11:48 AM ET, Aidan decision as relayed by Base Board & Connectors): no base PSU input. The base runs from the CPU board over J1 (12 P12V pins, about 3.5A). PSU 12V outputs: (1) CPU lugs about 18-26A plus about 3.5A base pass-through, (2) I/O board direct about 15A, (3) SSD board direct (the stock second-D700 feed) about 3A without the switch or about 7A with PEX, (4) GPU direct about 21A plus spikes. Supersedes the base-input notes above.

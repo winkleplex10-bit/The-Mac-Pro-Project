@@ -96,3 +96,5 @@ CPU board 12 V ≈ 214.6 W / **17.9 A** [Estimate: cpu-board-power-budget.md sca
 - GPU path on hold: placeholder Gen5 x16; CPU board J1 unchanged.
 - SSD board A only (two native CPU x4 Gen5 ports); board B on hold.
 - NDA items remaining for CPU board: PROM21 datasheet (justified), AGESA (via ODM).
+
+- 2026-10-29: 3V3_SB standby regulator sized for 2 A (Aidan approved); it also feeds the base and I/O boards via J1.

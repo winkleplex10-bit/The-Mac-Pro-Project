@@ -16740,10 +16740,10 @@
 				)
 			)
 		)
-		(pad "1" thru_hole circle
+		(pad "1" thru_hole oval
 			(at 0 0)
-			(size 9 9)
-			(drill 5)
+			(size 10 9)
+			(drill oval 6 5)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net 2 "GND_CORE_H2")

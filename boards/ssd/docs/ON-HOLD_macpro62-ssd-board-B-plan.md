@@ -30,8 +30,15 @@ Both CPU x4 ports into the switch as two partitions (PM50028 virtual switch part
 [4] https://ww1.microchip.com/downloads/en/DeviceDoc/00003776.pdf
 
 ## Update 2026-10-26 (Aidan)
-- The boot NVMe on the chipset has been dropped, so **boot now comes from the SSD board**. It keeps 2× Gen5 x4 over MCIO. PROM21 downlink 2 is now spare.
+- The boot NVMe on the chipset has been dropped, so **boot now comes from the SSD board**. It keeps 2× Gen5 x4 over the 300-pin MEG-Array. PROM21 downlink 2 is now spare.
 - **Version B:** the 4-drive switch sits **on the SSD face against the thermal core**, not on the base board. Its power (~14–17 W) and cooling therefore belong to the SSD face (Mechanical & Thermal).
 
 ## Status 2026-10-28
 ON HOLD per Aidan. Board A proceeds.
+
+## Connector update 2026-10-29 (Aidan)
+The base-board link is a 300-pin MEG-Array (84500/84501, 4 mm stack). MCIO is retired for this board. The pinout is drafted by Base Board & Connectors and the board-end column is filled in by I/O & Storage. It carries 16 Gen5 pairs, 2 REFCLKs, per-drive PERST#/CLKREQ#/PEWAKE#, shared SMBus, and about 2.5 A of 12 V with 2x pin margin, with the rest ground or spare.
+Position: J12 at the upper-left stock position (stock frame -35.13, 31.33 mm, axis +46.5 degrees). The pinout is in docs/pinmaps/base-ssd-megarray.csv.
+
+## Power input (2026-10-29 11:48, Aidan, via Base Board & Connectors)
+The SSD board has its own PSU 12 V input on the stock second-D700 GPU feed connector. 12 V no longer goes over J12; its 12 former 12 V pins become GND or spare, and Base Board & Connectors owns the pinmap change. The input eFuse (soft-start, about 4 A limit for board A) sits right at the PSU connector. Estimated board A draw is about 2.0 A typical and 2.9 A worst case at 12 V. Board B would be about 6-7 A, which the stock feed should handle; the rating needs confirming with Power Supply. The connector pinout and position on the face board need Mechanical & Thermal's check.

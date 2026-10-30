@@ -149,3 +149,114 @@ Rules: 4 layers, existing HS/SATA/USB2 untouched (0 skew, 2/2 vias), no rip-up /
 - Refilled the board. Pour to 85R pairs is now >= 0.50 mm and pour to 90R pairs >= 0.40 mm (measured). It was 0.20 mm before (zone clearance only).
 - Fixes: J7 pad 45 GND: 0.2 mm stub plus a GND via at (123.95,131.75).
 - DRC 0 / 0 unconnected. jlc/ regenerated: copper and drill changed, BOM/CPL unchanged. Backup: /workspace/backups/<board>-predru-20261019-1157.tgz
+
+## 2026-10-29 I/O Meg-Array (J13)
+- J13 added: 84501 receptacle (same footprint as J11/J12) at (148.9, 146.8), rot 0.65 deg. Stock field (-1.73,-48.74) shifted +0.63 mm x / ~1.9 mm inward so the worst body corner sits 0.75 mm inside the disc edge and the body clears KO6_S2 by ~0.3 mm. A1 at (130.42, 141.29); row A faces board centre.
+- J7 (M.2 SATA boot DNP placeholder) removed from the PCB (boot NVMe dropped); schematic still has it -> annotate/remove there.
+- 568 track segments/vias under J13 ripped (power-sequencing/standby/interlock nets). Reroute pending.
+- OPEN: J2 (PSU Micro-Fit), J6 (IOB-LINK JST) and ~15 small parts (Q5/Q7/Q8/Q9/D1/D2/U8/JP1/D8/R13/R14/R16/R48/R56/C20) still overlap J13. No free board area outside the Gen5 channel; needs a decision (J2 likely obsolete with CPU-board-only power; J6 functions could fold into J13 spares).
+- J13 pads have no nets yet (schematic symbol not added). Pin map: /workspace/docs/pinmaps/base-iob-megarray.csv base-end column.
+
+## 2026-10-29 09:30 J2/J6 deleted (Aidan approved), J6 folded into J13
+- PCB+schematic: J2, J6 removed; J7 removed from schematic. J13 symbol added (sch at 1234.44,647.70), 300 pads netted from base-iob-megarray.csv.
+- J13 new pins: J7/J8 USB2_SPARE_P/N, J10 HALL_A_N, J11 HALL_B_N, J13/J14/J16/J17 3V3_SB (each beside GND), J19/J20 I2C_SYS_SCL/SDA, J22 SYS_INT_N; C29 -> PWRBTN_IN_N, H29 -> IOB_PRSNT_N (existing IOB rows).
+- Small parts moved off J13 (no courtyard overlaps left).
+- Orphaned by J2/J7 removal (flagged, not deleted): 12V_MAIN_IN has no source (J1 P12V v4 pins not yet in base J1), 11V_SB_IN (D2,D9), PSU_PS_ON_N (Q9), PSU_PWR_OK (R54), 3V3_M2 (Q3,C17,C18), M2_DEVSLP (R10), SATA0_* labels on J1.
+- WARNING: tools/build_sch.py still generates J2/J6/J7; do not rerun it without updating.
+
+## 2026-10-29 ~09:45 [DRAFT: J1 v4 not yet pinned by Aidan] J1 v4, J14 MCIO (CB J3), dead-net cleanup
+- DRAFT: J1 re-pinned to the full v4 draft (108 pins; table docs/J1_v4_applied_20261029.csv). The 12 V rows could not be added alone: A104/B104/A105/B105 carried RSTBTN#, FS_RX6 and PWR_ALERT# in v3. P12V (8 pins A/B103-106) -> EFUSE_IN -> U25 TPS259824L -> 12V_MAIN_IN.
+- 127 J1 fanout segments now on the wrong net were ripped; 85 dead-net segments deleted. SSD-lane fanout from J1 must be rerouted.
+- Deleted D2, D9, Q9, R54, Q3, C17, C18, R10, J9, J10 (sch+pcb). SATA0 labels went with the J1 remap.
+- J14 MCIO-124 RA (base end of CB J3) added to sch, netted from mp62-cb-j3 rev2 (bb_contact column = mirrored side). Mapping: /workspace/docs/pinmaps/base-cbj3-j14-mcio-map.csv. NOT PLACED: staged off-board at (240,100); no front-side space.
+- U27 TCA6408A @0x20 on I2C_SYS (P0 IOB_PLT_RST_N w/ R127 pull-down, P1/P2 USB OC#, P3/P4 LEDs) + R128/R129/C84, placed on B.Cu near (150,141.7).
+- MCU: GPIO38 I2C_BB_SCL, GPIO10 I2C_BB_SDA (PIO target), GPIO20 CB_SMB_ALERT_N.
+
+## 2026-10-29 11:50 [DRAFT J1] J1 v4 rev2, SSD 12 V removed, eFuse resized
+- J1 mirrored to am5-v4 DRAFT rev2: P12V on A/B102-107 (12 pins, A102/B102/A107/B107 added) -> EFUSE_IN; B81/B82/B83/B90 -> GND (USB2_SPARE, BIOS_SEL, duplicate PWRBTN# dropped). PWRBTN to CB now only via J14 (J3 PWR_BTN#).
+- USB2_SPARE_P/N (J13 J7/J8) to be fed from the planned base USB2 hub, not J1.
+- J12 J1-J12 now GND (SSD board has own PSU input). J25 SSD_3V3_SB_OPT kept. 12V_MAIN_IN feeds only U24 + local loads.
+- U25 ILIM R122 249R -> 300R (~5.0 A typ per SLVSEI3D p.9) for ~3.5 A load.
+- 10 stale segments ripped. ERC: 0 errors, 330 dangling-label warnings (erc_report_20261029_1150.txt).
+
+## 2026-10-29 ~13:30-14:10 EDT  J14 placed (Aidan approved top side, 13:26)
+- Backup: /workspace/backups/backplane-v3-pre-J14place.tgz. Script: tools/j14_place.py (build_sch.py NOT run).
+- J14 -> MP62_Placeholders:MP62_MCIO_124P_Vertical_SMT_TE2360189_PLACEHOLDER (SFF-TA-1016 vertical, 0.60 pitch, courtyard 44.75 x 13.81). F.Cu, (150.00, 130.00), rot 180 (A1 at +x as before). Amphenol DS-0002 URL returns 404, so footprint is from TE 2360189 drawing; row pitch / peg positions UNVERIFIED vs G97V24332HR. Sch Footprint field text-edited to match.
+- Pin nets: all 68 rows of /workspace/docs/pinmaps/base-cbj3-j14-mcio-map.csv match; 0 mismatches. SH pegs -> GND.
+- Keep-out cleared: x 127-173, y 123.1-137 (J14 courtyard x 127.58-172.42, y 123.10-136.91). Cable lane toward J1 is above board (plug exits at ~14 mm); only low parts allowed there (0402/0805/SOT-23 placed there).
+- Moved 54 parts:
+  - R100: (175.0, 136.0) -> (175.85, 135.05) [1.3 mm]
+  - R56: (170.5, 135.95) -> (172.6, 144.45) [8.8 mm]
+  - R57: (169.15, 135.6) -> (174.0, 144.65) [10.3 mm]
+  - Q5: (129.72, 134.95) -> (125.05, 130.8) [6.3 mm]
+  - Q11: (133.88, 126.11) -> (129.55, 120.6) [7.0 mm]
+  - Q8: (165.22, 124.95) -> (161.05, 120.65) [6.0 mm]
+  - R12: (164.1, 135.65) -> (173.2, 146.6) [14.2 mm]
+  - R34: (137.15, 122.61) -> (135.9, 117.75) [5.0 mm]
+  - C4: (162.16, 121.88) -> (169.6, 120.9) [7.5 mm]
+  - Q4: (138.38, 137.1) -> (122.9, 144.15) [17.0 mm]
+  - C3: (161.38, 125.66) -> (165.15, 118.3) [8.3 mm]
+  - D8: (161.0, 136.25) -> (176.45, 144.45) [17.5 mm]
+  - R42: (139.15, 122.61) -> (137.9, 117.75) [5.0 mm]
+  - R17: (161.65, 133.1) -> (157.95, 121.7) [12.0 mm]
+  - R15: (139.15, 133.1) -> (144.95, 121.75) [12.8 mm]
+  - J8: (139.28, 128.07) -> (136.3, 105.0) [23.3 mm]
+  - C7: (158.38, 122.66) -> (157.75, 107.4) [15.3 mm]
+  - R9: (141.65, 135.6) -> (126.15, 135.6) [15.5 mm]
+  - C6: (157.66, 126.38) -> (154.05, 106.7) [20.0 mm]
+  - R49: (164.1, 132.65) -> (153.2, 122.0) [15.2 mm]
+  - R51: (143.15, 128.1) -> (149.5, 121.4) [9.2 mm]
+  - R46: (143.15, 125.11) -> (146.9, 117.75) [8.3 mm]
+  - R16: (143.5, 133.45) -> (142.1, 117.75) [15.8 mm]
+  - R11: (143.65, 136.1) -> (149.65, 118.9) [18.2 mm]
+  - D5: (156.1, 133.88) -> (174.0, 149.5) [23.8 mm]
+  - D1: (129.77, 129.03) -> (124.95, 124.65) [6.5 mm]
+  - C29: (155.13, 126.58) -> (153.25, 117.8) [9.0 mm]
+  - C37: (145.13, 122.58) -> (143.9, 117.75) [5.0 mm]
+  - R55: (145.15, 128.6) -> (140.6, 117.75) [11.8 mm]
+  - R60: (145.15, 125.61) -> (151.3, 117.75) [10.0 mm]
+  - Q7: (164.22, 129.45) -> (180.2, 145.65) [22.7 mm]
+  - R13: (153.45, 136.5) -> (155.45, 118.1) [18.5 mm]
+  - R59: (155.15, 129.6) -> (158.25, 117.75) [12.3 mm]
+  - C28: (153.13, 129.59) -> (171.6, 121.3) [20.2 mm]
+  - C26: (153.13, 126.58) -> (151.25, 107.45) [19.2 mm]
+  - C27: (153.13, 123.58) -> (148.9, 107.35) [16.8 mm]
+  - D10: (161.41, 129.66) -> (177.8, 126.15) [16.8 mm]
+  - Q6: (147.1, 134.88) -> (125.45, 118.75) [27.0 mm]
+  - C1: (147.13, 128.09) -> (156.55, 121.5) [11.5 mm]
+  - R63: (147.15, 125.11) -> (145.5, 107.45) [17.7 mm]
+  - R8: (146.6, 131.15) -> (139.1, 122.1) [11.8 mm]
+  - R21: (152.1, 132.65) -> (160.4, 117.8) [17.0 mm]
+  - C36: (132.63, 130.09) -> (124.6, 134.2) [9.0 mm]
+  - C39: (157.13, 130.09) -> (145.45, 117.75) [17.0 mm]
+  - R33: (134.65, 130.1) -> (124.25, 136.55) [12.2 mm]
+  - R58: (159.15, 130.1) -> (169.4, 117.8) [16.0 mm]
+  - C24: (151.13, 123.58) -> (146.9, 107.35) [16.8 mm]
+  - C25: (151.13, 129.59) -> (167.9, 117.8) [20.5 mm]
+  - C23: (151.13, 126.58) -> (143.9, 107.4) [20.5 mm]
+  - R14: (151.0, 135.95) -> (152.1, 157.7) [21.8 mm]
+  - C19: (149.13, 126.58) -> (134.05, 117.75) [17.5 mm]
+  - C21: (149.13, 123.58) -> (141.75, 107.45) [17.7 mm]
+  - C22: (149.13, 129.59) -> (140.0, 107.4) [24.0 mm]
+  - R48: (150.0, 133.45) -> (150.5, 157.7) [24.3 mm]
+- Ripped (NOT rerouted), 47 nets: 3V3_SB (84 seg/27 via), 5V_SBY (33 seg/3 via), AUXP_EN_N (10 seg/5 via), AUXS_EN_N (24 seg/6 via), BP_OTEMP_N (13 seg/0 via), CB_CARRIER_HOT_N (19 seg/1 via), CB_I2C0_SDA (16 seg/2 via), CB_PWRBTN_N (20 seg/0 via), CB_PWR_ALERT_N (10 seg/1 via), CB_SUS_S3_N (31 seg/5 via), CC_PRSNT1_N (12 seg/1 via), CC_PRSNT2_N (5 seg/1 via), FP_PWR_GOOD (4 seg/1 via), FP_THERM_ALERT_N (13 seg/3 via), FS_HOLD (19 seg/1 via), FS_MCIO_PRSNT_N (10 seg/0 via), FS_PERST_N (15 seg/2 via), FS_PRSNT_N (13 seg/1 via), FS_THERM_TRIP_N (7 seg/0 via), GND (109 seg/23 via), HALL_B_N (6 seg/0 via), I2C_SYS_SCL (1 seg/0 via), I2C_SYS_SDA (4 seg/1 via), ILK_A (12 seg/0 via), LED11_K (8 seg/0 via), LED_ST_K (8 seg/0 via), M2_EN_N (10 seg/0 via), MCU_LED_N (24 seg/5 via), MCU_RUN (14 seg/3 via), MCU_SWCLK (15 seg/1 via), MCU_SWDIO (12 seg/1 via), PSON_DRV (2 seg/0 via), PSU_PWR_OK_M (10 seg/1 via), PS_ON_REQ_N (3 seg/1 via), PWRBTN_IN_N (12 seg/1 via), SYS_INT_N (17 seg/0 via), TRIP_N (11 seg/1 via), USB2_MCU_N (13 seg/0 via), USB_DM_M (6 seg/1 via), USB_DP_M (18 seg/1 via), VIN (11 seg/0 via), VIN_F (5 seg/0 via), VIN_OR (2 seg/1 via), VREG_AVDD (17 seg/3 via), XIN (4 seg/1 via), XOUT (8 seg/1 via), XOUT_C (22 seg/3 via)
+- No Gen5 nets, J1/J11/J12/J13/U20-U22 untouched.
+- ERC: 0 errors / 331 warnings (work/erc_j14.txt). Own courtyard check: 0 overlaps involving J14 or moved parts. Full DRC running in background -> work/drc_j14.txt (30 min timeout). Flag: crystal load caps C36/C37 still far from Y1 (pre-existing).
+
+## 2026-10-29 ~17:50-18:15 EDT Fab-push phase 1 (Aidan pt89u "make it fab ready")
+- Backup: /workspace/backups/backplane-v3-pre-fabpush.tgz (whole project, pre-change).
+- **J1 = APPROVED / FINAL** (Aidan 2026-10-29): /workspace/kicad/macpro62-am5-v4/docs/cpulink_224_pinout_am5_v4_PINNED.csv (md5 2379c873..., byte-identical to v4 DRAFT rev2). Base J1 pads checked pin-by-pin: 0 power/GND class mismatches (12x P12V A/B102-107 = EFUSE_IN, B81/B82/B83/B90 = GND, A93/B93 = 3V3_SB); all other differences are naming only (CB_ prefix, PET/PER=TX/RX, SSD1 lanes = FS_TX/RX4-7). Note: A91 RSTBTN_N is unconnected on the base (pad named GND in symbol) - cosmetic, flag.
+- **OpenCore boot drive dropped (Aidan):** M2_EN_N net + its 2 global labels deleted; Q4 (2N7002, only drove M2_EN_N) and R9 (DNP pull-up, only on M2_EN_N) deleted from sch+pcb with their attached labels. AUXP_EN_N / AUXS_EN_N KEPT: they gate Q1/Q2 -> 3V3_AUX_P/S feeding J3/J4 aux headers, not the boot drive.
+- **No NDA parts (Aidan 17:53):** U23 PT5161L_ALT_DNP placeholder (0 pins, no support parts) deleted from sch (instance + lib symbol + note text) and pcb.
+- Dead-part check (NOT deleted, all still on live nets in sch): Q7 (PS_ON_REQ_N/ILK_A/ILK_B), Q8 (THERM_LATCH/ILK_B/PSON_DRV), R12 (PSON_DRV-GND), R15 (PS_ON_REQ_N pull-up), R55 (PSU_PWR_OK_M only pad -> truly dangling). PSON_DRV has no load since J2 was deleted, so the Q7/Q8/R12 interlock chain output is dead; deleting it removes the PS_ON interlock function -> needs Aidan.
+- ERC after edits: 0 errors.
+- Placement legalizer work/legalize.py (log work/legalize.log): courtyard/keep-out/board-edge/Gen5-copper aware spiral search around each part's net centroid (C36/C37 at Y1 pins). Fixed R14,R48 (edge ring), R57,D5,D8,R12 (KO6_S3), C83/U26, C82, C79, R121, J8 (out of J14 lane -> 113.2,138.8 near U1), C36/C37 (now ~1.7 mm from Y1 pins), and pulled most long-moved J14 parts back to <=8 mm of their nets. Q7: no legal spot within 15 mm (left; dead-chain part, see above).
+- J11@KO6_S6 / J12@KO6_S1: courtyard-only intrusion (courtyard edge 2.87 / 2.47 mm from hole centre vs 3.0 mm KO radius; nearest pads 6.4 / 6.0 mm away vs 1.65 mm hole pad radius). Keep-outs are drawn bigger than needed; not real copper conflicts. Connectors not moved.
+- Netclasses: new PWR_HI (EFUSE_IN, 12V_MAIN_IN) 1.5 mm / 0.2 clr / 0.8-0.4 via; PWR 0.6 mm; PWR_FINE (3V3_SB) 0.4 mm.
+- All non-PCIE_85R copper ripped (old routing collided with moved parts); PCIE_85R copper locked; Freerouting 2.1.0 (box-local JRE 21) routing all non-PCIE nets via work/bp.dsn -> bp.ses.
+- **BLOCKER found:** Gen5 is not connected through the redrivers in the schematic netlist. J1 FP_*/FS_* nets have pads only on J1; U20/U21/U22 *_A nets only on the redriver; J11 has no PCIE nets (GPU face pinout open). The 92 J1 Gen5 fanout nets carry stub copper to nowhere (old direct-route remnants, up to 89 mm). The net splice (J1 FS_*/FP_* -> *_A) is a schematic change; not done.
+
+## 2026-10-29 ~19:45 EDT Resume after interruption (executor)
+- State found: Gen5 net splice ALREADY applied (sch + pcb, 18:35; ERC 0 err in work/erc_splice.txt). J1 FP_* <-> U20 A side, J1 FS_* <-> U21/U22 A side, U21/U22 *_B <-> J12. U20 B side (FP_*_B) U20-only, waiting for GPU-face pinout. Dead J1 Gen5 copper already deleted (0 PCIE track length). Freerouting job on work/g5.dsn (non-Gen5 classes) running since 19:12, pass 1 = 491 unrouted.
+- Backup: /workspace/backups/backplane-v3-pre-gen5splice.tgz (19:45, excl. work/v6_*).
+- Step 0 (Aidan 19:44 approved): Q7,Q8,R12,R15,R55 + 12 attached global labels removed from sch. PCB NOT yet updated (pcbnew removal script segfaulted once, retry blocked by Auto-review classifier error); pcb unchanged, backup work/pcb_pre_pson.kicad_pcb. Sch nets gone: PSON_DRV, PSU_PWR_OK_M, ILK_B. ERC: 0 errors (work/erc_pson.txt).

@@ -135,3 +135,5 @@ kicad-cli sch erc --severity-all -o erc_report.txt backplane.kicad_sch
 - J11 (GPU) upper-right (185.04, 68.27) rot −46.7; J12 (SSD) upper-left (114.87, 68.67) rot 46.5. Pulled 0.80/0.85 mm inward from the stock pad-field centres so the 44.2×17.4 body corners sit at r 60.535 (0.5 mm inside the edge, per Aidan).
 - U21 → (129, 90), U22 → (136, 90) with their B.Cu decaps/straps; R117 (132.5, 97.5). Old FS routing to the redrivers/faces is now stale and must be rerouted.
 - KO6_S1..S6 rule areas (Ø6, all Cu) replace CR-BP-1_KO_S*. Conflicts: S2/S3 vs J7 courtyard, S1 vs J12 (1.75), S5 vs J11 (2.14), S6 vs J11 (2.84) — gaps from courtyard to hole centre.
+
+> **DRAFT (2026-10-29):** J1 is wired to the CPU-board J1 v4 DRAFT pinout (P12V on A/B103-106, standby reversed, SSD lanes repacked; see docs/J1_v4_applied_20261029.csv). Aidan has not pinned/signed off v4 yet; treat J1 nets as provisional.

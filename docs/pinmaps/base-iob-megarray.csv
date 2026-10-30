@@ -1,301 +1,301 @@
 row,col,position,signal,diff_pair,direction,source,iob_end_dest_part_pin_function,base_end_pin (CPU&Base Board),notes
-A,1,A1,DPA_HPD,-,IOB->base,GPU (via base),C1 DP-Alt HPD,,
-A,2,A2,GND,-,-,-,GND (SE return),,
-A,3,A3,GND,-,-,-,GND shield,,
-A,4,A4,DPA_ML0_P,DPA_ML0,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 0,,UHBR20 20 Gb/s - keep short both boards
-A,5,A5,DPA_ML0_N,DPA_ML0,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 0,,UHBR20 20 Gb/s - keep short both boards
-A,6,A6,GND,-,-,-,GND shield,,
-A,7,A7,DPA_ML1_P,DPA_ML1,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 1,,UHBR20 20 Gb/s - keep short both boards
-A,8,A8,DPA_ML1_N,DPA_ML1,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 1,,UHBR20 20 Gb/s - keep short both boards
-A,9,A9,GND,-,-,-,GND shield,,
-A,10,A10,DPA_ML2_P,DPA_ML2,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 2,,UHBR20 20 Gb/s - keep short both boards
-A,11,A11,DPA_ML2_N,DPA_ML2,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 2,,UHBR20 20 Gb/s - keep short both boards
-A,12,A12,GND,-,-,-,GND shield,,
-A,13,A13,DPA_ML3_P,DPA_ML3,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 3,,UHBR20 20 Gb/s - keep short both boards
-A,14,A14,DPA_ML3_N,DPA_ML3,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 3,,UHBR20 20 Gb/s - keep short both boards
-A,15,A15,GND,-,-,-,GND shield,,
-A,16,A16,DPA_AUX_P,DPA_AUX,bidir,GPU (via base),USB-C C1 DP-Alt mux AUX,,
-A,17,A17,DPA_AUX_N,DPA_AUX,bidir,GPU (via base),USB-C C1 DP-Alt mux AUX,,
-A,18,A18,GND,-,-,-,GND shield,,
-A,19,A19,DPB_ML0_P,DPB_ML0,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 0,,UHBR20 20 Gb/s - keep short both boards
-A,20,A20,DPB_ML0_N,DPB_ML0,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 0,,UHBR20 20 Gb/s - keep short both boards
-A,21,A21,GND,-,-,-,GND shield,,
-A,22,A22,DPB_ML1_P,DPB_ML1,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 1,,UHBR20 20 Gb/s - keep short both boards
-A,23,A23,DPB_ML1_N,DPB_ML1,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 1,,UHBR20 20 Gb/s - keep short both boards
-A,24,A24,GND,-,-,-,GND shield,,
-A,25,A25,DPB_ML2_P,DPB_ML2,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 2,,UHBR20 20 Gb/s - keep short both boards
-A,26,A26,DPB_ML2_N,DPB_ML2,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 2,,UHBR20 20 Gb/s - keep short both boards
-A,27,A27,GND,-,-,-,GND shield,,
-A,28,A28,GND,-,-,-,GND shield,,
-A,29,A29,GND,-,-,-,GND (SE return),,
-A,30,A30,SLP_S5#,-,base->IOB,PROM21,standby,,
-B,1,B1,DPB_HPD,-,IOB->base,GPU (via base),C2 DP-Alt HPD,,
-B,2,B2,LAN1_CLKREQ#,-,IOB->base,PROM21,i226 #1,,
-B,3,B3,GND,-,-,-,GND shield,,
-B,4,B4,DPB_ML3_P,DPB_ML3,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 3,,UHBR20 20 Gb/s - keep short both boards
-B,5,B5,DPB_ML3_N,DPB_ML3,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 3,,UHBR20 20 Gb/s - keep short both boards
-B,6,B6,GND,-,-,-,GND shield,,
-B,7,B7,DPB_AUX_P,DPB_AUX,bidir,GPU (via base),USB-C C2 DP-Alt mux AUX,,
-B,8,B8,DPB_AUX_N,DPB_AUX,bidir,GPU (via base),USB-C C2 DP-Alt mux AUX,,
-B,9,B9,GND,-,-,-,GND shield,,
-B,10,B10,DPC_ML0_P,DPC_ML0,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 0,,UHBR20 20 Gb/s - keep short both boards
-B,11,B11,DPC_ML0_N,DPC_ML0,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 0,,UHBR20 20 Gb/s - keep short both boards
-B,12,B12,GND,-,-,-,GND shield,,
-B,13,B13,DPC_ML1_P,DPC_ML1,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 1,,UHBR20 20 Gb/s - keep short both boards
-B,14,B14,DPC_ML1_N,DPC_ML1,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 1,,UHBR20 20 Gb/s - keep short both boards
-B,15,B15,GND,-,-,-,GND shield,,
-B,16,B16,DPC_ML2_P,DPC_ML2,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 2,,UHBR20 20 Gb/s - keep short both boards
-B,17,B17,DPC_ML2_N,DPC_ML2,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 2,,UHBR20 20 Gb/s - keep short both boards
-B,18,B18,GND,-,-,-,GND shield,,
-B,19,B19,DPC_ML3_P,DPC_ML3,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 3,,UHBR20 20 Gb/s - keep short both boards
-B,20,B20,DPC_ML3_N,DPC_ML3,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 3,,UHBR20 20 Gb/s - keep short both boards
-B,21,B21,GND,-,-,-,GND shield,,
-B,22,B22,DPC_AUX_P,DPC_AUX,bidir,GPU (via base),HDMI 2.1 FRL retimer in AUX,,
-B,23,B23,DPC_AUX_N,DPC_AUX,bidir,GPU (via base),HDMI 2.1 FRL retimer in AUX,,
-B,24,B24,GND,-,-,-,GND shield,,
-B,25,B25,DPD_ML0_P,DPD_ML0,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 0,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-B,26,B26,DPD_ML0_N,DPD_ML0,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 0,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-B,27,B27,GND,-,-,-,GND shield,,
-B,28,B28,GND,-,-,-,GND shield,,
-B,29,B29,SMB_ALERT#,-,IOB->base,PROM21,IOB SMBus,,
-B,30,B30,PLT_RST#,-,base->IOB,PROM21,hub/retimer reset,,
-C,1,C1,DPC_HPD,-,IOB->base,GPU (via base),HDMI HPD,,
-C,2,C2,LAN2_PERST#,-,base->IOB,PROM21,i226 #2,,
-C,3,C3,GND,-,-,-,GND shield,,
-C,4,C4,DPD_ML1_P,DPD_ML1,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 1,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-C,5,C5,DPD_ML1_N,DPD_ML1,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 1,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-C,6,C6,GND,-,-,-,GND shield,,
-C,7,C7,DPD_ML2_P,DPD_ML2,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 2,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-C,8,C8,DPD_ML2_N,DPD_ML2,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 2,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-C,9,C9,GND,-,-,-,GND shield,,
-C,10,C10,DPD_ML3_P,DPD_ML3,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 3,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-C,11,C11,DPD_ML3_N,DPD_ML3,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 3,,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
-C,12,C12,GND,-,-,-,GND shield,,
-C,13,C13,DPD_AUX_P,DPD_AUX,bidir,GPU (via base),ASM4242 DP-in 1 AUX,,
-C,14,C14,DPD_AUX_N,DPD_AUX,bidir,GPU (via base),ASM4242 DP-in 1 AUX,,
-C,15,C15,GND,-,-,-,GND shield,,
-C,16,C16,SPARE,-,-,-,spare (DP block),,
-C,17,C17,SPARE,-,-,-,spare (DP block),,
-C,18,C18,GND,-,-,-,GND shield,,
-C,19,C19,SPARE,-,-,-,spare (DP block),,
-C,20,C20,SPARE,-,-,-,spare (DP block),,
-C,21,C21,GND,-,-,-,GND shield,,
-C,22,C22,SPARE,-,-,-,spare (DP block),,
-C,23,C23,SPARE,-,-,-,spare (DP block),,
-C,24,C24,GND,-,-,-,GND shield,,
-C,25,C25,SPARE,-,-,-,spare (DP block),,
-C,26,C26,SPARE,-,-,-,spare (DP block),,
-C,27,C27,GND,-,-,-,GND shield,,
-C,28,C28,GND,-,-,-,GND shield,,
-C,29,C29,PWR_BTN#,-,IOB->base,CPU,power button,,
-C,30,C30,USB_OC#_C,-,IOB->base,CPU,USB-C OC,,
-D,1,D1,HDMI_DDC_SCL,-,bidir,GPU (via base),HDMI DDC,,
-D,2,D2,GND,-,-,-,GND (SE return),,
-D,3,D3,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,4,D4,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,5,D5,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,6,D6,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,7,D7,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,8,D8,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,9,D9,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,10,D10,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,11,D11,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,12,D12,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,13,D13,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,14,D14,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,15,D15,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,16,D16,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,17,D17,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,18,D18,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,19,D19,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,20,D20,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,21,D21,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,22,D22,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,23,D23,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,24,D24,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,25,D25,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,26,D26,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,27,D27,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,28,D28,GND,-,-,-,GND row (DP/PCIe isolation),,
-D,29,D29,GND,-,-,-,GND (SE return),,
-D,30,D30,USB_OC#_A,-,IOB->base,CPU,VL822/USB-A OC,,
-E,1,E1,HDMI_DDC_SDA,-,bidir,GPU (via base),HDMI DDC,,
-E,2,E2,LAN2_CLKREQ#,-,IOB->base,PROM21,i226 #2,,
-E,3,E3,GND,-,-,-,GND shield,,
-E,4,E4,ASM_PETX0_P,ASM_PETX0,base->IOB,PROM21 DL1,ASM4242 PCIe RX0,,Gen4
-E,5,E5,ASM_PETX0_N,ASM_PETX0,base->IOB,PROM21 DL1,ASM4242 PCIe RX0,,Gen4
-E,6,E6,GND,-,-,-,GND shield,,
-E,7,E7,ASM_PETX1_P,ASM_PETX1,base->IOB,PROM21 DL1,ASM4242 PCIe RX1,,Gen4
-E,8,E8,ASM_PETX1_N,ASM_PETX1,base->IOB,PROM21 DL1,ASM4242 PCIe RX1,,Gen4
-E,9,E9,GND,-,-,-,GND shield,,
-E,10,E10,ASM_PETX2_P,ASM_PETX2,base->IOB,PROM21 DL1,ASM4242 PCIe RX2,,Gen4
-E,11,E11,ASM_PETX2_N,ASM_PETX2,base->IOB,PROM21 DL1,ASM4242 PCIe RX2,,Gen4
-E,12,E12,GND,-,-,-,GND shield,,
-E,13,E13,ASM_PETX3_P,ASM_PETX3,base->IOB,PROM21 DL1,ASM4242 PCIe RX3,,Gen4
-E,14,E14,ASM_PETX3_N,ASM_PETX3,base->IOB,PROM21 DL1,ASM4242 PCIe RX3,,Gen4
-E,15,E15,GND,-,-,-,GND shield,,
-E,16,E16,ASM_PERX0_P,ASM_PERX0,IOB->base,PROM21 DL1,ASM4242 PCIe TX0,,Gen4
-E,17,E17,ASM_PERX0_N,ASM_PERX0,IOB->base,PROM21 DL1,ASM4242 PCIe TX0,,Gen4
-E,18,E18,GND,-,-,-,GND shield,,
-E,19,E19,ASM_PERX1_P,ASM_PERX1,IOB->base,PROM21 DL1,ASM4242 PCIe TX1,,Gen4
-E,20,E20,ASM_PERX1_N,ASM_PERX1,IOB->base,PROM21 DL1,ASM4242 PCIe TX1,,Gen4
-E,21,E21,GND,-,-,-,GND shield,,
-E,22,E22,ASM_PERX2_P,ASM_PERX2,IOB->base,PROM21 DL1,ASM4242 PCIe TX2,,Gen4
-E,23,E23,ASM_PERX2_N,ASM_PERX2,IOB->base,PROM21 DL1,ASM4242 PCIe TX2,,Gen4
-E,24,E24,GND,-,-,-,GND shield,,
-E,25,E25,ASM_PERX3_P,ASM_PERX3,IOB->base,PROM21 DL1,ASM4242 PCIe TX3,,Gen4
-E,26,E26,ASM_PERX3_N,ASM_PERX3,IOB->base,PROM21 DL1,ASM4242 PCIe TX3,,Gen4
-E,27,E27,GND,-,-,-,GND shield,,
-E,28,E28,GND,-,-,-,GND shield,,
-E,29,E29,PWR_LED,-,base->IOB,PROM21,LED,,
-E,30,E30,SPARE,-,-,-,spare (SE end),,
-F,1,F1,HDMI_CEC,-,bidir,GPU (via base),HDMI CEC (optional),,
-F,2,F2,PCIE_WAKE#,-,IOB->base,PROM21,ASM4242/i226 wired-OR,,
-F,3,F3,GND,-,-,-,GND shield,,
-F,4,F4,ASM_REFCLK_P,ASM_REFCLK,base->IOB,PROM21,ASM4242 REFCLK,,GND both sides
-F,5,F5,ASM_REFCLK_N,ASM_REFCLK,base->IOB,PROM21,ASM4242 REFCLK,,GND both sides
-F,6,F6,GND,-,-,-,GND shield,,
-F,7,F7,LAN1_PETX_P,LAN1_PETX,base->IOB,PROM21 flex x1,i226-V #1 RX,,
-F,8,F8,LAN1_PETX_N,LAN1_PETX,base->IOB,PROM21 flex x1,i226-V #1 RX,,
-F,9,F9,GND,-,-,-,GND shield,,
-F,10,F10,LAN1_PERX_P,LAN1_PERX,IOB->base,PROM21 flex x1,i226-V #1 TX,,
-F,11,F11,LAN1_PERX_N,LAN1_PERX,IOB->base,PROM21 flex x1,i226-V #1 TX,,
-F,12,F12,GND,-,-,-,GND shield,,
-F,13,F13,LAN1_REFCLK_P,LAN1_REFCLK,base->IOB,PROM21,i226-V #1 REFCLK,,GND both sides
-F,14,F14,LAN1_REFCLK_N,LAN1_REFCLK,base->IOB,PROM21,i226-V #1 REFCLK,,GND both sides
-F,15,F15,GND,-,-,-,GND shield,,
-F,16,F16,LAN2_PETX_P,LAN2_PETX,base->IOB,PROM21 flex x1,i226-V #2 RX,,
-F,17,F17,LAN2_PETX_N,LAN2_PETX,base->IOB,PROM21 flex x1,i226-V #2 RX,,
-F,18,F18,GND,-,-,-,GND shield,,
-F,19,F19,LAN2_PERX_P,LAN2_PERX,IOB->base,PROM21 flex x1,i226-V #2 TX,,
-F,20,F20,LAN2_PERX_N,LAN2_PERX,IOB->base,PROM21 flex x1,i226-V #2 TX,,
-F,21,F21,GND,-,-,-,GND shield,,
-F,22,F22,LAN2_REFCLK_P,LAN2_REFCLK,base->IOB,PROM21,i226-V #2 REFCLK,,GND both sides
-F,23,F23,LAN2_REFCLK_N,LAN2_REFCLK,base->IOB,PROM21,i226-V #2 REFCLK,,GND both sides
-F,24,F24,GND,-,-,-,GND shield,,
-F,25,F25,SPARE,-,-,-,spare (PCIe block),,
-F,26,F26,SPARE,-,-,-,spare (PCIe block),,
-F,27,F27,GND,-,-,-,GND shield,,
-F,28,F28,GND,-,-,-,GND shield,,
-F,29,F29,ACT_LED,-,base->IOB,PROM21,LED,,
-F,30,F30,SPARE,-,-,-,spare (SE end),,
-G,1,G1,DPD_HPD,-,IOB->base,GPU (via base),ASM4242 DP-in 1 HPD,,
-G,2,G2,GND,-,-,-,GND (SE return),,
-G,3,G3,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,4,G4,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,5,G5,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,6,G6,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,7,G7,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,8,G8,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,9,G9,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,10,G10,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,11,G11,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,12,G12,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,13,G13,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,14,G14,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,15,G15,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,16,G16,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,17,G17,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,18,G18,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,19,G19,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,20,G20,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,21,G21,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,22,G22,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,23,G23,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,24,G24,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,25,G25,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,26,G26,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,27,G27,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,28,G28,GND,-,-,-,GND row (PCIe/USB isolation),,
-G,29,G29,GND,-,-,-,GND (SE return),,
-G,30,G30,SPARE,-,-,-,spare (SE end),,
-H,1,H1,ASM_PERST#,-,base->IOB,PROM21,ASM4242,,
-H,2,H2,SMB_CLK,-,bidir,PROM21,IOB SMBus,,
-H,3,H3,GND,-,-,-,GND shield,,
-H,4,H4,USB3_1_TX_P,USB3_1_TX,base->IOB,CPU,USB-C C1 DP-Alt mux SS RX,,USB 10G #1
-H,5,H5,USB3_1_TX_N,USB3_1_TX,base->IOB,CPU,USB-C C1 DP-Alt mux SS RX,,USB 10G #1
-H,6,H6,GND,-,-,-,GND shield,,
-H,7,H7,USB3_1_RX_P,USB3_1_RX,IOB->base,CPU,USB-C C1 DP-Alt mux SS TX,,
-H,8,H8,USB3_1_RX_N,USB3_1_RX,IOB->base,CPU,USB-C C1 DP-Alt mux SS TX,,
-H,9,H9,GND,-,-,-,GND shield,,
-H,10,H10,USB3_2_TX_P,USB3_2_TX,base->IOB,CPU,USB-C C2 DP-Alt mux SS RX,,USB 10G #2
-H,11,H11,USB3_2_TX_N,USB3_2_TX,base->IOB,CPU,USB-C C2 DP-Alt mux SS RX,,USB 10G #2
-H,12,H12,GND,-,-,-,GND shield,,
-H,13,H13,USB3_2_RX_P,USB3_2_RX,IOB->base,CPU,USB-C C2 DP-Alt mux SS TX,,
-H,14,H14,USB3_2_RX_N,USB3_2_RX,IOB->base,CPU,USB-C C2 DP-Alt mux SS TX,,
-H,15,H15,GND,-,-,-,GND shield,,
-H,16,H16,USB3_3_TX_P,USB3_3_TX,base->IOB,CPU,USB-C C5 mux SS RX,,USB 10G #3
-H,17,H17,USB3_3_TX_N,USB3_3_TX,base->IOB,CPU,USB-C C5 mux SS RX,,USB 10G #3
-H,18,H18,GND,-,-,-,GND shield,,
-H,19,H19,USB3_3_RX_P,USB3_3_RX,IOB->base,CPU,USB-C C5 mux SS TX,,
-H,20,H20,USB3_3_RX_N,USB3_3_RX,IOB->base,CPU,USB-C C5 mux SS TX,,
-H,21,H21,GND,-,-,-,GND shield,,
-H,22,H22,USB3_4_TX_P,USB3_4_TX,base->IOB,CPU,VL822 upstream SS (USB-A hub) RX,,USB 10G #4
-H,23,H23,USB3_4_TX_N,USB3_4_TX,base->IOB,CPU,VL822 upstream SS (USB-A hub) RX,,USB 10G #4
-H,24,H24,GND,-,-,-,GND shield,,
-H,25,H25,USB3_4_RX_P,USB3_4_RX,IOB->base,CPU,VL822 upstream SS (USB-A hub) TX,,
-H,26,H26,USB3_4_RX_N,USB3_4_RX,IOB->base,CPU,VL822 upstream SS (USB-A hub) TX,,
-H,27,H27,GND,-,-,-,GND shield,,
-H,28,H28,GND,-,-,-,GND shield,,
-H,29,H29,IOB_PRSNT#,-,IOB->base,-,GND strap on IOB,,
-H,30,H30,SPARE,-,-,-,spare (SE end),,
-J,1,J1,ASM_CLKREQ#,-,IOB->base,PROM21,ASM4242,,
-J,2,J2,SMB_DAT,-,bidir,PROM21,IOB SMBus,,
-J,3,J3,GND,-,-,-,GND shield,,
-J,4,J4,USB3_5_TX_P,USB3_5_TX,base->IOB,PROM21,USB-C C6 mux SS RX,,USB 10G #5
-J,5,J5,USB3_5_TX_N,USB3_5_TX,base->IOB,PROM21,USB-C C6 mux SS RX,,USB 10G #5
-J,6,J6,GND,-,-,-,GND shield,,
-J,7,J7,USB3_5_RX_P,USB3_5_RX,IOB->base,PROM21,USB-C C6 mux SS TX,,
-J,8,J8,USB3_5_RX_N,USB3_5_RX,IOB->base,PROM21,USB-C C6 mux SS TX,,
-J,9,J9,GND,-,-,-,GND shield,,
-J,10,J10,USB2_1_P,USB2_1,bidir,CPU,USB-C C5 USB2,,90 ohm
-J,11,J11,USB2_1_N,USB2_1,bidir,CPU,USB-C C5 USB2,,90 ohm
-J,12,J12,GND,-,-,-,GND shield,,
-J,13,J13,USB2_2_P,USB2_2,bidir,PROM21,USB-C C3 (USB4) USB2 via ASM4242 [gap: ASM4242 USB2 handling],,90 ohm
-J,14,J14,USB2_2_N,USB2_2,bidir,PROM21,USB-C C3 (USB4) USB2 via ASM4242 [gap: ASM4242 USB2 handling],,90 ohm
-J,15,J15,GND,-,-,-,GND shield,,
-J,16,J16,USB2_3_P,USB2_3,bidir,PROM21,USB-C C2 (USB4) USB2 via ASM4242 [gap],,90 ohm
-J,17,J17,USB2_3_N,USB2_3,bidir,PROM21,USB-C C2 (USB4) USB2 via ASM4242 [gap],,90 ohm
-J,18,J18,GND,-,-,-,GND shield,,
-J,19,J19,USB2_4_P,USB2_4,bidir,PROM21,USB-C C1 USB2,,90 ohm
-J,20,J20,USB2_4_N,USB2_4,bidir,PROM21,USB-C C1 USB2,,90 ohm
-J,21,J21,GND,-,-,-,GND shield,,
-J,22,J22,USB2_5_P,USB2_5,bidir,PROM21,USB-C C2 USB2,,90 ohm
-J,23,J23,USB2_5_N,USB2_5,bidir,PROM21,USB-C C2 USB2,,90 ohm
-J,24,J24,GND,-,-,-,GND shield,,
-J,25,J25,USB2_6_P,USB2_6,bidir,PROM21,USB-C C6 USB2,,90 ohm
-J,26,J26,USB2_6_N,USB2_6,bidir,PROM21,USB-C C6 USB2,,90 ohm
-J,27,J27,GND,-,-,-,GND shield,,
-J,28,J28,GND,-,-,-,GND shield,,
-J,29,J29,SLP_S3#,-,base->IOB,PROM21,rail sequencing,,
-J,30,J30,SPARE,-,-,-,spare (SE end),,
-K,1,K1,LAN1_PERST#,-,base->IOB,PROM21,i226 #1,,
-K,2,K2,GND,-,-,-,GND (SE return),,
-K,3,K3,GND,-,-,-,GND shield,,
-K,4,K4,USB2_7_P,USB2_7,bidir,PROM21,VL822 USB2 upstream (USB-A 1-4),,90 ohm
-K,5,K5,USB2_7_N,USB2_7,bidir,PROM21,VL822 USB2 upstream (USB-A 1-4),,90 ohm
-K,6,K6,GND,-,-,-,GND shield,,
-K,7,K7,SPARE,-,-,-,spare (USB block),,
-K,8,K8,SPARE,-,-,-,spare (USB block),,
-K,9,K9,GND,-,-,-,GND shield,,
-K,10,K10,SPARE,-,-,-,spare (USB block),,
-K,11,K11,SPARE,-,-,-,spare (USB block),,
-K,12,K12,GND,-,-,-,GND shield,,
-K,13,K13,SPARE,-,-,-,spare (USB block),,
-K,14,K14,SPARE,-,-,-,spare (USB block),,
-K,15,K15,GND,-,-,-,GND shield,,
-K,16,K16,SPARE,-,-,-,spare (USB block),,
-K,17,K17,SPARE,-,-,-,spare (USB block),,
-K,18,K18,GND,-,-,-,GND shield,,
-K,19,K19,SPARE,-,-,-,spare (USB block),,
-K,20,K20,SPARE,-,-,-,spare (USB block),,
-K,21,K21,GND,-,-,-,GND shield,,
-K,22,K22,SPARE,-,-,-,spare (USB block),,
-K,23,K23,SPARE,-,-,-,spare (USB block),,
-K,24,K24,GND,-,-,-,GND shield,,
-K,25,K25,SPARE,-,-,-,spare (USB block),,
-K,26,K26,SPARE,-,-,-,spare (USB block),,
-K,27,K27,GND,-,-,-,GND shield,,
-K,28,K28,GND,-,-,-,GND shield,,
-K,29,K29,GND,-,-,-,GND (SE return),,
-K,30,K30,SPARE,-,-,-,spare (SE end),,
+A,1,A1,DPA_HPD,-,IOB->base,GPU (via base),C1 DP-Alt HPD,J13-A1 IOB_DPA_HPD,
+A,2,A2,GND,-,-,-,GND (SE return),J13-A2 GND,
+A,3,A3,GND,-,-,-,GND shield,J13-A3 GND,
+A,4,A4,DPA_ML0_P,DPA_ML0,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 0,J13-A4 IOB_DPA_ML0_P,UHBR20 20 Gb/s - keep short both boards
+A,5,A5,DPA_ML0_N,DPA_ML0,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 0,J13-A5 IOB_DPA_ML0_N,UHBR20 20 Gb/s - keep short both boards
+A,6,A6,GND,-,-,-,GND shield,J13-A6 GND,
+A,7,A7,DPA_ML1_P,DPA_ML1,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 1,J13-A7 IOB_DPA_ML1_P,UHBR20 20 Gb/s - keep short both boards
+A,8,A8,DPA_ML1_N,DPA_ML1,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 1,J13-A8 IOB_DPA_ML1_N,UHBR20 20 Gb/s - keep short both boards
+A,9,A9,GND,-,-,-,GND shield,J13-A9 GND,
+A,10,A10,DPA_ML2_P,DPA_ML2,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 2,J13-A10 IOB_DPA_ML2_P,UHBR20 20 Gb/s - keep short both boards
+A,11,A11,DPA_ML2_N,DPA_ML2,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 2,J13-A11 IOB_DPA_ML2_N,UHBR20 20 Gb/s - keep short both boards
+A,12,A12,GND,-,-,-,GND shield,J13-A12 GND,
+A,13,A13,DPA_ML3_P,DPA_ML3,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 3,J13-A13 IOB_DPA_ML3_P,UHBR20 20 Gb/s - keep short both boards
+A,14,A14,DPA_ML3_N,DPA_ML3,base->IOB,GPU (via base),USB-C C1 DP-Alt mux lane 3,J13-A14 IOB_DPA_ML3_N,UHBR20 20 Gb/s - keep short both boards
+A,15,A15,GND,-,-,-,GND shield,J13-A15 GND,
+A,16,A16,DPA_AUX_P,DPA_AUX,bidir,GPU (via base),USB-C C1 DP-Alt mux AUX,J13-A16 IOB_DPA_AUX_P,
+A,17,A17,DPA_AUX_N,DPA_AUX,bidir,GPU (via base),USB-C C1 DP-Alt mux AUX,J13-A17 IOB_DPA_AUX_N,
+A,18,A18,GND,-,-,-,GND shield,J13-A18 GND,
+A,19,A19,DPB_ML0_P,DPB_ML0,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 0,J13-A19 IOB_DPB_ML0_P,UHBR20 20 Gb/s - keep short both boards
+A,20,A20,DPB_ML0_N,DPB_ML0,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 0,J13-A20 IOB_DPB_ML0_N,UHBR20 20 Gb/s - keep short both boards
+A,21,A21,GND,-,-,-,GND shield,J13-A21 GND,
+A,22,A22,DPB_ML1_P,DPB_ML1,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 1,J13-A22 IOB_DPB_ML1_P,UHBR20 20 Gb/s - keep short both boards
+A,23,A23,DPB_ML1_N,DPB_ML1,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 1,J13-A23 IOB_DPB_ML1_N,UHBR20 20 Gb/s - keep short both boards
+A,24,A24,GND,-,-,-,GND shield,J13-A24 GND,
+A,25,A25,DPB_ML2_P,DPB_ML2,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 2,J13-A25 IOB_DPB_ML2_P,UHBR20 20 Gb/s - keep short both boards
+A,26,A26,DPB_ML2_N,DPB_ML2,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 2,J13-A26 IOB_DPB_ML2_N,UHBR20 20 Gb/s - keep short both boards
+A,27,A27,GND,-,-,-,GND shield,J13-A27 GND,
+A,28,A28,GND,-,-,-,GND shield,J13-A28 GND,
+A,29,A29,GND,-,-,-,GND (SE return),J13-A29 GND,
+A,30,A30,SLP_S5#,-,base->IOB,PROM21,standby,J13-A30 IOB_SLP_S5_N,
+B,1,B1,DPB_HPD,-,IOB->base,GPU (via base),C2 DP-Alt HPD,J13-B1 IOB_DPB_HPD,
+B,2,B2,LAN1_CLKREQ#,-,IOB->base,PROM21,i226 #1,J13-B2 IOB_LAN1_CLKREQ_N,
+B,3,B3,GND,-,-,-,GND shield,J13-B3 GND,
+B,4,B4,DPB_ML3_P,DPB_ML3,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 3,J13-B4 IOB_DPB_ML3_P,UHBR20 20 Gb/s - keep short both boards
+B,5,B5,DPB_ML3_N,DPB_ML3,base->IOB,GPU (via base),USB-C C2 DP-Alt mux lane 3,J13-B5 IOB_DPB_ML3_N,UHBR20 20 Gb/s - keep short both boards
+B,6,B6,GND,-,-,-,GND shield,J13-B6 GND,
+B,7,B7,DPB_AUX_P,DPB_AUX,bidir,GPU (via base),USB-C C2 DP-Alt mux AUX,J13-B7 IOB_DPB_AUX_P,
+B,8,B8,DPB_AUX_N,DPB_AUX,bidir,GPU (via base),USB-C C2 DP-Alt mux AUX,J13-B8 IOB_DPB_AUX_N,
+B,9,B9,GND,-,-,-,GND shield,J13-B9 GND,
+B,10,B10,DPC_ML0_P,DPC_ML0,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 0,J13-B10 IOB_DPC_ML0_P,UHBR20 20 Gb/s - keep short both boards
+B,11,B11,DPC_ML0_N,DPC_ML0,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 0,J13-B11 IOB_DPC_ML0_N,UHBR20 20 Gb/s - keep short both boards
+B,12,B12,GND,-,-,-,GND shield,J13-B12 GND,
+B,13,B13,DPC_ML1_P,DPC_ML1,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 1,J13-B13 IOB_DPC_ML1_P,UHBR20 20 Gb/s - keep short both boards
+B,14,B14,DPC_ML1_N,DPC_ML1,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 1,J13-B14 IOB_DPC_ML1_N,UHBR20 20 Gb/s - keep short both boards
+B,15,B15,GND,-,-,-,GND shield,J13-B15 GND,
+B,16,B16,DPC_ML2_P,DPC_ML2,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 2,J13-B16 IOB_DPC_ML2_P,UHBR20 20 Gb/s - keep short both boards
+B,17,B17,DPC_ML2_N,DPC_ML2,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 2,J13-B17 IOB_DPC_ML2_N,UHBR20 20 Gb/s - keep short both boards
+B,18,B18,GND,-,-,-,GND shield,J13-B18 GND,
+B,19,B19,DPC_ML3_P,DPC_ML3,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 3,J13-B19 IOB_DPC_ML3_P,UHBR20 20 Gb/s - keep short both boards
+B,20,B20,DPC_ML3_N,DPC_ML3,base->IOB,GPU (via base),HDMI 2.1 FRL retimer in lane 3,J13-B20 IOB_DPC_ML3_N,UHBR20 20 Gb/s - keep short both boards
+B,21,B21,GND,-,-,-,GND shield,J13-B21 GND,
+B,22,B22,DPC_AUX_P,DPC_AUX,bidir,GPU (via base),HDMI 2.1 FRL retimer in AUX,J13-B22 IOB_DPC_AUX_P,
+B,23,B23,DPC_AUX_N,DPC_AUX,bidir,GPU (via base),HDMI 2.1 FRL retimer in AUX,J13-B23 IOB_DPC_AUX_N,
+B,24,B24,GND,-,-,-,GND shield,J13-B24 GND,
+B,25,B25,DPD_ML0_P,DPD_ML0,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 0,J13-B25 IOB_DPD_ML0_P,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+B,26,B26,DPD_ML0_N,DPD_ML0,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 0,J13-B26 IOB_DPD_ML0_N,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+B,27,B27,GND,-,-,-,GND shield,J13-B27 GND,
+B,28,B28,GND,-,-,-,GND shield,J13-B28 GND,
+B,29,B29,SMB_ALERT#,-,IOB->base,PROM21,IOB SMBus,J13-B29 SYS_INT_N,
+B,30,B30,PLT_RST#,-,base->IOB,PROM21,hub/retimer reset,J13-B30 IOB_PLT_RST_N,
+C,1,C1,DPC_HPD,-,IOB->base,GPU (via base),HDMI HPD,J13-C1 IOB_DPC_HPD,
+C,2,C2,LAN2_PERST#,-,base->IOB,PROM21,i226 #2,J13-C2 IOB_LAN2_PERST_N,
+C,3,C3,GND,-,-,-,GND shield,J13-C3 GND,
+C,4,C4,DPD_ML1_P,DPD_ML1,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 1,J13-C4 IOB_DPD_ML1_P,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+C,5,C5,DPD_ML1_N,DPD_ML1,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 1,J13-C5 IOB_DPD_ML1_N,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+C,6,C6,GND,-,-,-,GND shield,J13-C6 GND,
+C,7,C7,DPD_ML2_P,DPD_ML2,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 2,J13-C7 IOB_DPD_ML2_P,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+C,8,C8,DPD_ML2_N,DPD_ML2,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 2,J13-C8 IOB_DPD_ML2_N,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+C,9,C9,GND,-,-,-,GND shield,J13-C9 GND,
+C,10,C10,DPD_ML3_P,DPD_ML3,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 3,J13-C10 IOB_DPD_ML3_P,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+C,11,C11,DPD_ML3_N,DPD_ML3,base->IOB,GPU (via base),ASM4242 DP-in 1 lane 3,J13-C11 IOB_DPD_ML3_N,HBR3 max (ASM4242 DP1.4a); shared by both USB4 ports; DP-in 2 unfed
+C,12,C12,GND,-,-,-,GND shield,J13-C12 GND,
+C,13,C13,DPD_AUX_P,DPD_AUX,bidir,GPU (via base),ASM4242 DP-in 1 AUX,J13-C13 IOB_DPD_AUX_P,
+C,14,C14,DPD_AUX_N,DPD_AUX,bidir,GPU (via base),ASM4242 DP-in 1 AUX,J13-C14 IOB_DPD_AUX_N,
+C,15,C15,GND,-,-,-,GND shield,J13-C15 GND,
+C,16,C16,SPARE,-,-,-,spare (DP block),J13-C16 NC (spare),
+C,17,C17,SPARE,-,-,-,spare (DP block),J13-C17 NC (spare),
+C,18,C18,GND,-,-,-,GND shield,J13-C18 GND,
+C,19,C19,SPARE,-,-,-,spare (DP block),J13-C19 NC (spare),
+C,20,C20,SPARE,-,-,-,spare (DP block),J13-C20 NC (spare),
+C,21,C21,GND,-,-,-,GND shield,J13-C21 GND,
+C,22,C22,SPARE,-,-,-,spare (DP block),J13-C22 NC (spare),
+C,23,C23,SPARE,-,-,-,spare (DP block),J13-C23 NC (spare),
+C,24,C24,GND,-,-,-,GND shield,J13-C24 GND,
+C,25,C25,SPARE,-,-,-,spare (DP block),J13-C25 NC (spare),
+C,26,C26,SPARE,-,-,-,spare (DP block),J13-C26 NC (spare),
+C,27,C27,GND,-,-,-,GND shield,J13-C27 GND,
+C,28,C28,GND,-,-,-,GND shield,J13-C28 GND,
+C,29,C29,PWR_BTN#,-,IOB->base,CPU,power button,J13-C29 PWRBTN_IN_N,
+C,30,C30,USB_OC#_C,-,IOB->base,CPU,USB-C OC,J13-C30 IOB_USB_OC_N_C,
+D,1,D1,HDMI_DDC_SCL,-,bidir,GPU (via base),HDMI DDC,J13-D1 IOB_HDMI_DDC_SCL,
+D,2,D2,GND,-,-,-,GND (SE return),J13-D2 GND,
+D,3,D3,GND,-,-,-,GND row (DP/PCIe isolation),J13-D3 GND,
+D,4,D4,GND,-,-,-,GND row (DP/PCIe isolation),J13-D4 GND,
+D,5,D5,GND,-,-,-,GND row (DP/PCIe isolation),J13-D5 GND,
+D,6,D6,GND,-,-,-,GND row (DP/PCIe isolation),J13-D6 GND,
+D,7,D7,GND,-,-,-,GND row (DP/PCIe isolation),J13-D7 GND,
+D,8,D8,GND,-,-,-,GND row (DP/PCIe isolation),J13-D8 GND,
+D,9,D9,GND,-,-,-,GND row (DP/PCIe isolation),J13-D9 GND,
+D,10,D10,GND,-,-,-,GND row (DP/PCIe isolation),J13-D10 GND,
+D,11,D11,GND,-,-,-,GND row (DP/PCIe isolation),J13-D11 GND,
+D,12,D12,GND,-,-,-,GND row (DP/PCIe isolation),J13-D12 GND,
+D,13,D13,GND,-,-,-,GND row (DP/PCIe isolation),J13-D13 GND,
+D,14,D14,GND,-,-,-,GND row (DP/PCIe isolation),J13-D14 GND,
+D,15,D15,GND,-,-,-,GND row (DP/PCIe isolation),J13-D15 GND,
+D,16,D16,GND,-,-,-,GND row (DP/PCIe isolation),J13-D16 GND,
+D,17,D17,GND,-,-,-,GND row (DP/PCIe isolation),J13-D17 GND,
+D,18,D18,GND,-,-,-,GND row (DP/PCIe isolation),J13-D18 GND,
+D,19,D19,GND,-,-,-,GND row (DP/PCIe isolation),J13-D19 GND,
+D,20,D20,GND,-,-,-,GND row (DP/PCIe isolation),J13-D20 GND,
+D,21,D21,GND,-,-,-,GND row (DP/PCIe isolation),J13-D21 GND,
+D,22,D22,GND,-,-,-,GND row (DP/PCIe isolation),J13-D22 GND,
+D,23,D23,GND,-,-,-,GND row (DP/PCIe isolation),J13-D23 GND,
+D,24,D24,GND,-,-,-,GND row (DP/PCIe isolation),J13-D24 GND,
+D,25,D25,GND,-,-,-,GND row (DP/PCIe isolation),J13-D25 GND,
+D,26,D26,GND,-,-,-,GND row (DP/PCIe isolation),J13-D26 GND,
+D,27,D27,GND,-,-,-,GND row (DP/PCIe isolation),J13-D27 GND,
+D,28,D28,GND,-,-,-,GND row (DP/PCIe isolation),J13-D28 GND,
+D,29,D29,GND,-,-,-,GND (SE return),J13-D29 GND,
+D,30,D30,USB_OC#_A,-,IOB->base,CPU,VL822/USB-A OC,J13-D30 IOB_USB_OC_N_A,
+E,1,E1,HDMI_DDC_SDA,-,bidir,GPU (via base),HDMI DDC,J13-E1 IOB_HDMI_DDC_SDA,
+E,2,E2,LAN2_CLKREQ#,-,IOB->base,PROM21,i226 #2,J13-E2 IOB_LAN2_CLKREQ_N,
+E,3,E3,GND,-,-,-,GND shield,J13-E3 GND,
+E,4,E4,ASM_PETX0_P,ASM_PETX0,base->IOB,PROM21 DL1,ASM4242 PCIe RX0,J13-E4 IOB_ASM_PETX0_P,Gen4
+E,5,E5,ASM_PETX0_N,ASM_PETX0,base->IOB,PROM21 DL1,ASM4242 PCIe RX0,J13-E5 IOB_ASM_PETX0_N,Gen4
+E,6,E6,GND,-,-,-,GND shield,J13-E6 GND,
+E,7,E7,ASM_PETX1_P,ASM_PETX1,base->IOB,PROM21 DL1,ASM4242 PCIe RX1,J13-E7 IOB_ASM_PETX1_P,Gen4
+E,8,E8,ASM_PETX1_N,ASM_PETX1,base->IOB,PROM21 DL1,ASM4242 PCIe RX1,J13-E8 IOB_ASM_PETX1_N,Gen4
+E,9,E9,GND,-,-,-,GND shield,J13-E9 GND,
+E,10,E10,ASM_PETX2_P,ASM_PETX2,base->IOB,PROM21 DL1,ASM4242 PCIe RX2,J13-E10 IOB_ASM_PETX2_P,Gen4
+E,11,E11,ASM_PETX2_N,ASM_PETX2,base->IOB,PROM21 DL1,ASM4242 PCIe RX2,J13-E11 IOB_ASM_PETX2_N,Gen4
+E,12,E12,GND,-,-,-,GND shield,J13-E12 GND,
+E,13,E13,ASM_PETX3_P,ASM_PETX3,base->IOB,PROM21 DL1,ASM4242 PCIe RX3,J13-E13 IOB_ASM_PETX3_P,Gen4
+E,14,E14,ASM_PETX3_N,ASM_PETX3,base->IOB,PROM21 DL1,ASM4242 PCIe RX3,J13-E14 IOB_ASM_PETX3_N,Gen4
+E,15,E15,GND,-,-,-,GND shield,J13-E15 GND,
+E,16,E16,ASM_PERX0_P,ASM_PERX0,IOB->base,PROM21 DL1,ASM4242 PCIe TX0,J13-E16 IOB_ASM_PERX0_P,Gen4
+E,17,E17,ASM_PERX0_N,ASM_PERX0,IOB->base,PROM21 DL1,ASM4242 PCIe TX0,J13-E17 IOB_ASM_PERX0_N,Gen4
+E,18,E18,GND,-,-,-,GND shield,J13-E18 GND,
+E,19,E19,ASM_PERX1_P,ASM_PERX1,IOB->base,PROM21 DL1,ASM4242 PCIe TX1,J13-E19 IOB_ASM_PERX1_P,Gen4
+E,20,E20,ASM_PERX1_N,ASM_PERX1,IOB->base,PROM21 DL1,ASM4242 PCIe TX1,J13-E20 IOB_ASM_PERX1_N,Gen4
+E,21,E21,GND,-,-,-,GND shield,J13-E21 GND,
+E,22,E22,ASM_PERX2_P,ASM_PERX2,IOB->base,PROM21 DL1,ASM4242 PCIe TX2,J13-E22 IOB_ASM_PERX2_P,Gen4
+E,23,E23,ASM_PERX2_N,ASM_PERX2,IOB->base,PROM21 DL1,ASM4242 PCIe TX2,J13-E23 IOB_ASM_PERX2_N,Gen4
+E,24,E24,GND,-,-,-,GND shield,J13-E24 GND,
+E,25,E25,ASM_PERX3_P,ASM_PERX3,IOB->base,PROM21 DL1,ASM4242 PCIe TX3,J13-E25 IOB_ASM_PERX3_P,Gen4
+E,26,E26,ASM_PERX3_N,ASM_PERX3,IOB->base,PROM21 DL1,ASM4242 PCIe TX3,J13-E26 IOB_ASM_PERX3_N,Gen4
+E,27,E27,GND,-,-,-,GND shield,J13-E27 GND,
+E,28,E28,GND,-,-,-,GND shield,J13-E28 GND,
+E,29,E29,PWR_LED,-,base->IOB,PROM21,LED,J13-E29 IOB_PWR_LED,
+E,30,E30,SPARE,-,-,-,spare (SE end),J13-E30 NC (spare),
+F,1,F1,HDMI_CEC,-,bidir,GPU (via base),HDMI CEC (optional),J13-F1 IOB_HDMI_CEC,
+F,2,F2,PCIE_WAKE#,-,IOB->base,PROM21,ASM4242/i226 wired-OR,J13-F2 IOB_PCIE_WAKE_N,
+F,3,F3,GND,-,-,-,GND shield,J13-F3 GND,
+F,4,F4,ASM_REFCLK_P,ASM_REFCLK,base->IOB,PROM21,ASM4242 REFCLK,J13-F4 IOB_ASM_REFCLK_P,GND both sides
+F,5,F5,ASM_REFCLK_N,ASM_REFCLK,base->IOB,PROM21,ASM4242 REFCLK,J13-F5 IOB_ASM_REFCLK_N,GND both sides
+F,6,F6,GND,-,-,-,GND shield,J13-F6 GND,
+F,7,F7,LAN1_PETX_P,LAN1_PETX,base->IOB,PROM21 flex x1,i226-V #1 RX,J13-F7 IOB_LAN1_PETX_P,
+F,8,F8,LAN1_PETX_N,LAN1_PETX,base->IOB,PROM21 flex x1,i226-V #1 RX,J13-F8 IOB_LAN1_PETX_N,
+F,9,F9,GND,-,-,-,GND shield,J13-F9 GND,
+F,10,F10,LAN1_PERX_P,LAN1_PERX,IOB->base,PROM21 flex x1,i226-V #1 TX,J13-F10 IOB_LAN1_PERX_P,
+F,11,F11,LAN1_PERX_N,LAN1_PERX,IOB->base,PROM21 flex x1,i226-V #1 TX,J13-F11 IOB_LAN1_PERX_N,
+F,12,F12,GND,-,-,-,GND shield,J13-F12 GND,
+F,13,F13,LAN1_REFCLK_P,LAN1_REFCLK,base->IOB,PROM21,i226-V #1 REFCLK,J13-F13 IOB_LAN1_REFCLK_P,GND both sides
+F,14,F14,LAN1_REFCLK_N,LAN1_REFCLK,base->IOB,PROM21,i226-V #1 REFCLK,J13-F14 IOB_LAN1_REFCLK_N,GND both sides
+F,15,F15,GND,-,-,-,GND shield,J13-F15 GND,
+F,16,F16,LAN2_PETX_P,LAN2_PETX,base->IOB,PROM21 flex x1,i226-V #2 RX,J13-F16 IOB_LAN2_PETX_P,
+F,17,F17,LAN2_PETX_N,LAN2_PETX,base->IOB,PROM21 flex x1,i226-V #2 RX,J13-F17 IOB_LAN2_PETX_N,
+F,18,F18,GND,-,-,-,GND shield,J13-F18 GND,
+F,19,F19,LAN2_PERX_P,LAN2_PERX,IOB->base,PROM21 flex x1,i226-V #2 TX,J13-F19 IOB_LAN2_PERX_P,
+F,20,F20,LAN2_PERX_N,LAN2_PERX,IOB->base,PROM21 flex x1,i226-V #2 TX,J13-F20 IOB_LAN2_PERX_N,
+F,21,F21,GND,-,-,-,GND shield,J13-F21 GND,
+F,22,F22,LAN2_REFCLK_P,LAN2_REFCLK,base->IOB,PROM21,i226-V #2 REFCLK,J13-F22 IOB_LAN2_REFCLK_P,GND both sides
+F,23,F23,LAN2_REFCLK_N,LAN2_REFCLK,base->IOB,PROM21,i226-V #2 REFCLK,J13-F23 IOB_LAN2_REFCLK_N,GND both sides
+F,24,F24,GND,-,-,-,GND shield,J13-F24 GND,
+F,25,F25,SPARE,-,-,-,spare (PCIe block),J13-F25 NC (spare),
+F,26,F26,SPARE,-,-,-,spare (PCIe block),J13-F26 NC (spare),
+F,27,F27,GND,-,-,-,GND shield,J13-F27 GND,
+F,28,F28,GND,-,-,-,GND shield,J13-F28 GND,
+F,29,F29,ACT_LED,-,base->IOB,PROM21,LED,J13-F29 IOB_ACT_LED,
+F,30,F30,SPARE,-,-,-,spare (SE end),J13-F30 NC (spare),
+G,1,G1,DPD_HPD,-,IOB->base,GPU (via base),ASM4242 DP-in 1 HPD,J13-G1 IOB_DPD_HPD,
+G,2,G2,GND,-,-,-,GND (SE return),J13-G2 GND,
+G,3,G3,GND,-,-,-,GND row (PCIe/USB isolation),J13-G3 GND,
+G,4,G4,GND,-,-,-,GND row (PCIe/USB isolation),J13-G4 GND,
+G,5,G5,GND,-,-,-,GND row (PCIe/USB isolation),J13-G5 GND,
+G,6,G6,GND,-,-,-,GND row (PCIe/USB isolation),J13-G6 GND,
+G,7,G7,GND,-,-,-,GND row (PCIe/USB isolation),J13-G7 GND,
+G,8,G8,GND,-,-,-,GND row (PCIe/USB isolation),J13-G8 GND,
+G,9,G9,GND,-,-,-,GND row (PCIe/USB isolation),J13-G9 GND,
+G,10,G10,GND,-,-,-,GND row (PCIe/USB isolation),J13-G10 GND,
+G,11,G11,GND,-,-,-,GND row (PCIe/USB isolation),J13-G11 GND,
+G,12,G12,GND,-,-,-,GND row (PCIe/USB isolation),J13-G12 GND,
+G,13,G13,GND,-,-,-,GND row (PCIe/USB isolation),J13-G13 GND,
+G,14,G14,GND,-,-,-,GND row (PCIe/USB isolation),J13-G14 GND,
+G,15,G15,GND,-,-,-,GND row (PCIe/USB isolation),J13-G15 GND,
+G,16,G16,GND,-,-,-,GND row (PCIe/USB isolation),J13-G16 GND,
+G,17,G17,GND,-,-,-,GND row (PCIe/USB isolation),J13-G17 GND,
+G,18,G18,GND,-,-,-,GND row (PCIe/USB isolation),J13-G18 GND,
+G,19,G19,GND,-,-,-,GND row (PCIe/USB isolation),J13-G19 GND,
+G,20,G20,GND,-,-,-,GND row (PCIe/USB isolation),J13-G20 GND,
+G,21,G21,GND,-,-,-,GND row (PCIe/USB isolation),J13-G21 GND,
+G,22,G22,GND,-,-,-,GND row (PCIe/USB isolation),J13-G22 GND,
+G,23,G23,GND,-,-,-,GND row (PCIe/USB isolation),J13-G23 GND,
+G,24,G24,GND,-,-,-,GND row (PCIe/USB isolation),J13-G24 GND,
+G,25,G25,GND,-,-,-,GND row (PCIe/USB isolation),J13-G25 GND,
+G,26,G26,GND,-,-,-,GND row (PCIe/USB isolation),J13-G26 GND,
+G,27,G27,GND,-,-,-,GND row (PCIe/USB isolation),J13-G27 GND,
+G,28,G28,GND,-,-,-,GND row (PCIe/USB isolation),J13-G28 GND,
+G,29,G29,GND,-,-,-,GND (SE return),J13-G29 GND,
+G,30,G30,SPARE,-,-,-,spare (SE end),J13-G30 NC (spare),
+H,1,H1,ASM_PERST#,-,base->IOB,PROM21,ASM4242,J13-H1 IOB_ASM_PERST_N,
+H,2,H2,SMB_CLK,-,bidir,PROM21,IOB SMBus,J13-H2 I2C_SYS_SCL,
+H,3,H3,GND,-,-,-,GND shield,J13-H3 GND,
+H,4,H4,USB3_1_TX_P,USB3_1_TX,base->IOB,CPU,USB-C C1 DP-Alt mux SS RX,J13-H4 IOB_USB3_1_TX_P,USB 10G #1
+H,5,H5,USB3_1_TX_N,USB3_1_TX,base->IOB,CPU,USB-C C1 DP-Alt mux SS RX,J13-H5 IOB_USB3_1_TX_N,USB 10G #1
+H,6,H6,GND,-,-,-,GND shield,J13-H6 GND,
+H,7,H7,USB3_1_RX_P,USB3_1_RX,IOB->base,CPU,USB-C C1 DP-Alt mux SS TX,J13-H7 IOB_USB3_1_RX_P,
+H,8,H8,USB3_1_RX_N,USB3_1_RX,IOB->base,CPU,USB-C C1 DP-Alt mux SS TX,J13-H8 IOB_USB3_1_RX_N,
+H,9,H9,GND,-,-,-,GND shield,J13-H9 GND,
+H,10,H10,USB3_2_TX_P,USB3_2_TX,base->IOB,CPU,USB-C C2 DP-Alt mux SS RX,J13-H10 IOB_USB3_2_TX_P,USB 10G #2
+H,11,H11,USB3_2_TX_N,USB3_2_TX,base->IOB,CPU,USB-C C2 DP-Alt mux SS RX,J13-H11 IOB_USB3_2_TX_N,USB 10G #2
+H,12,H12,GND,-,-,-,GND shield,J13-H12 GND,
+H,13,H13,USB3_2_RX_P,USB3_2_RX,IOB->base,CPU,USB-C C2 DP-Alt mux SS TX,J13-H13 IOB_USB3_2_RX_P,
+H,14,H14,USB3_2_RX_N,USB3_2_RX,IOB->base,CPU,USB-C C2 DP-Alt mux SS TX,J13-H14 IOB_USB3_2_RX_N,
+H,15,H15,GND,-,-,-,GND shield,J13-H15 GND,
+H,16,H16,USB3_3_TX_P,USB3_3_TX,base->IOB,CPU,USB-C C5 mux SS RX,J13-H16 IOB_USB3_3_TX_P,USB 10G #3
+H,17,H17,USB3_3_TX_N,USB3_3_TX,base->IOB,CPU,USB-C C5 mux SS RX,J13-H17 IOB_USB3_3_TX_N,USB 10G #3
+H,18,H18,GND,-,-,-,GND shield,J13-H18 GND,
+H,19,H19,USB3_3_RX_P,USB3_3_RX,IOB->base,CPU,USB-C C5 mux SS TX,J13-H19 IOB_USB3_3_RX_P,
+H,20,H20,USB3_3_RX_N,USB3_3_RX,IOB->base,CPU,USB-C C5 mux SS TX,J13-H20 IOB_USB3_3_RX_N,
+H,21,H21,GND,-,-,-,GND shield,J13-H21 GND,
+H,22,H22,USB3_4_TX_P,USB3_4_TX,base->IOB,CPU,VL822 upstream SS (USB-A hub) RX,J13-H22 IOB_USB3_4_TX_P,USB 10G #4
+H,23,H23,USB3_4_TX_N,USB3_4_TX,base->IOB,CPU,VL822 upstream SS (USB-A hub) RX,J13-H23 IOB_USB3_4_TX_N,USB 10G #4
+H,24,H24,GND,-,-,-,GND shield,J13-H24 GND,
+H,25,H25,USB3_4_RX_P,USB3_4_RX,IOB->base,CPU,VL822 upstream SS (USB-A hub) TX,J13-H25 IOB_USB3_4_RX_P,
+H,26,H26,USB3_4_RX_N,USB3_4_RX,IOB->base,CPU,VL822 upstream SS (USB-A hub) TX,J13-H26 IOB_USB3_4_RX_N,
+H,27,H27,GND,-,-,-,GND shield,J13-H27 GND,
+H,28,H28,GND,-,-,-,GND shield,J13-H28 GND,
+H,29,H29,IOB_PRSNT#,-,IOB->base,-,GND strap on IOB,J13-H29 IOB_PRSNT_N,
+H,30,H30,SPARE,-,-,-,spare (SE end),J13-H30 NC (spare),
+I,1,I1,ASM_CLKREQ#,-,IOB->base,PROM21,ASM4242,J13-I1 IOB_ASM_CLKREQ_N,
+I,2,I2,SMB_DAT,-,bidir,PROM21,IOB SMBus,J13-I2 I2C_SYS_SDA,
+I,3,I3,GND,-,-,-,GND shield,J13-I3 GND,
+I,4,I4,USB3_5_TX_P,USB3_5_TX,base->IOB,PROM21,USB-C C6 mux SS RX,J13-I4 IOB_USB3_5_TX_P,USB 10G #5
+I,5,I5,USB3_5_TX_N,USB3_5_TX,base->IOB,PROM21,USB-C C6 mux SS RX,J13-I5 IOB_USB3_5_TX_N,USB 10G #5
+I,6,I6,GND,-,-,-,GND shield,J13-I6 GND,
+I,7,I7,USB3_5_RX_P,USB3_5_RX,IOB->base,PROM21,USB-C C6 mux SS TX,J13-I7 IOB_USB3_5_RX_P,
+I,8,I8,USB3_5_RX_N,USB3_5_RX,IOB->base,PROM21,USB-C C6 mux SS TX,J13-I8 IOB_USB3_5_RX_N,
+I,9,I9,GND,-,-,-,GND shield,J13-I9 GND,
+I,10,I10,USB2_1_P,USB2_1,bidir,CPU,USB-C C5 USB2,J13-I10 IOB_USB2_1_P,90 ohm
+I,11,I11,USB2_1_N,USB2_1,bidir,CPU,USB-C C5 USB2,J13-I11 IOB_USB2_1_N,90 ohm
+I,12,I12,GND,-,-,-,GND shield,J13-I12 GND,
+I,13,I13,USB2_2_P,USB2_2,bidir,PROM21,USB-C C3 (USB4) USB2 via ASM4242 [gap: ASM4242 USB2 handling],J13-I13 IOB_USB2_2_P,90 ohm
+I,14,I14,USB2_2_N,USB2_2,bidir,PROM21,USB-C C3 (USB4) USB2 via ASM4242 [gap: ASM4242 USB2 handling],J13-I14 IOB_USB2_2_N,90 ohm
+I,15,I15,GND,-,-,-,GND shield,J13-I15 GND,
+I,16,I16,USB2_3_P,USB2_3,bidir,PROM21,USB-C C2 (USB4) USB2 via ASM4242 [gap],J13-I16 IOB_USB2_3_P,90 ohm
+I,17,I17,USB2_3_N,USB2_3,bidir,PROM21,USB-C C2 (USB4) USB2 via ASM4242 [gap],J13-I17 IOB_USB2_3_N,90 ohm
+I,18,I18,GND,-,-,-,GND shield,J13-I18 GND,
+I,19,I19,USB2_4_P,USB2_4,bidir,PROM21,USB-C C1 USB2,J13-I19 IOB_USB2_4_P,90 ohm
+I,20,I20,USB2_4_N,USB2_4,bidir,PROM21,USB-C C1 USB2,J13-I20 IOB_USB2_4_N,90 ohm
+I,21,I21,GND,-,-,-,GND shield,J13-I21 GND,
+I,22,I22,USB2_5_P,USB2_5,bidir,PROM21,USB-C C2 USB2,J13-I22 IOB_USB2_5_P,90 ohm
+I,23,I23,USB2_5_N,USB2_5,bidir,PROM21,USB-C C2 USB2,J13-I23 IOB_USB2_5_N,90 ohm
+I,24,I24,GND,-,-,-,GND shield,J13-I24 GND,
+I,25,I25,USB2_6_P,USB2_6,bidir,PROM21,USB-C C6 USB2,J13-I25 IOB_USB2_6_P,90 ohm
+I,26,I26,USB2_6_N,USB2_6,bidir,PROM21,USB-C C6 USB2,J13-I26 IOB_USB2_6_N,90 ohm
+I,27,I27,GND,-,-,-,GND shield,J13-I27 GND,
+I,28,I28,GND,-,-,-,GND shield,J13-I28 GND,
+I,29,I29,SLP_S3#,-,base->IOB,PROM21,rail sequencing,J13-I29 IOB_SLP_S3_N,
+I,30,I30,SPARE,-,-,-,spare (SE end),J13-I30 NC (spare),
+J,1,J1,LAN1_PERST#,-,base->IOB,PROM21,i226 #1,J13-J1 IOB_LAN1_PERST_N,
+J,2,J2,GND,-,-,-,GND (SE return),J13-J2 GND,
+J,3,J3,GND,-,-,-,GND shield,J13-J3 GND,
+J,4,J4,USB2_7_P,USB2_7,bidir,PROM21,VL822 USB2 upstream (USB-A 1-4),J13-J4 IOB_USB2_7_P,90 ohm
+J,5,J5,USB2_7_N,USB2_7,bidir,PROM21,VL822 USB2 upstream (USB-A 1-4),J13-J5 IOB_USB2_7_N,90 ohm
+J,6,J6,GND,-,-,-,GND shield,J13-J6 GND,
+J,7,J7,USB2_SPARE_P,USB2_SPARE,bidir,base,IOB hub USB2 (ex IOB-LINK 13),"J13-J7 USB2_SPARE_P (base USB2 hub port, planned; not J1)",
+J,8,J8,USB2_SPARE_N,USB2_SPARE,bidir,base,IOB hub USB2 (ex IOB-LINK 14),"J13-J8 USB2_SPARE_N (base USB2 hub port, planned; not J1)",
+J,9,J9,GND,-,-,-,GND shield,J13-J9 GND,
+J,10,J10,HALL_A_N,-,IOB->base,IOB,lid Hall A (ex IOB-LINK 5),J13-J10 HALL_A_N,
+J,11,J11,HALL_B_N,-,IOB->base,IOB,lid Hall B (ex IOB-LINK 6),J13-J11 HALL_B_N,
+J,12,J12,GND,-,-,-,GND shield,J13-J12 GND,
+J,13,J13,3V3_SB,-,base->IOB,base,IOB standby power 1/4 (0.6 A total),J13-J13 3V3_SB,
+J,14,J14,3V3_SB,-,base->IOB,base,IOB standby power 2/4,J13-J14 3V3_SB,
+J,15,J15,GND,-,-,-,GND shield,J13-J15 GND,
+J,16,J16,3V3_SB,-,base->IOB,base,IOB standby power 3/4,J13-J16 3V3_SB,
+J,17,J17,3V3_SB,-,base->IOB,base,IOB standby power 4/4,J13-J17 3V3_SB,
+J,18,J18,GND,-,-,-,GND shield,J13-J18 GND,
+J,19,J19,I2C_SYS_SCL,-,bidir,base,system I2C (ex IOB-LINK 8),J13-J19 I2C_SYS_SCL,
+J,20,J20,I2C_SYS_SDA,-,bidir,base,system I2C (ex IOB-LINK 9),J13-J20 I2C_SYS_SDA,
+J,21,J21,GND,-,-,-,GND shield,J13-J21 GND,
+J,22,J22,SYS_INT_N,-,IOB->base,IOB,system interrupt (ex IOB-LINK 10),J13-J22 SYS_INT_N,
+J,23,J23,SPARE,-,-,-,spare (USB block),J13-J23 NC (spare),
+J,24,J24,GND,-,-,-,GND shield,J13-J24 GND,
+J,25,J25,SPARE,-,-,-,spare (USB block),J13-J25 NC (spare),
+J,26,J26,SPARE,-,-,-,spare (USB block),J13-J26 NC (spare),
+J,27,J27,GND,-,-,-,GND shield,J13-J27 GND,
+J,28,J28,GND,-,-,-,GND shield,J13-J28 GND,
+J,29,J29,GND,-,-,-,GND (SE return),J13-J29 GND,
+J,30,J30,SPARE,-,-,-,spare (SE end),J13-J30 NC (spare),

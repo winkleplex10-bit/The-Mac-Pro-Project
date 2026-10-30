@@ -25,16 +25,16 @@ A12,B12,I226B_CLKREQ#,BB->CB,OD,CHANGED
 B12,A12,BB_HS_PRSNT0#,BB->CB,base board ties to GND,CHANGED
 A13,B13,GND,,,SAME
 B13,A13,GND,,,SAME
-A14,B14,USB3_C3_SS_RX_P,BB->CB,CPU native USB 3.2 Gen2 port 2 -> USB-C C3 (non-USB4) RX (AC caps far end),CHANGED
-B14,A14,USB3_C3_SS_TX_P,CB->BB,CPU native USB 3.2 Gen2 port 2 -> USB-C C3 (non-USB4) TX (AC caps on CB),CHANGED
-A15,B15,USB3_C3_SS_RX_N,BB->CB,CPU native USB 3.2 Gen2 port 2 -> USB-C C3 (non-USB4) RX (AC caps far end),CHANGED
-B15,A15,USB3_C3_SS_TX_N,CB->BB,CPU native USB 3.2 Gen2 port 2 -> USB-C C3 (non-USB4) TX (AC caps on CB),CHANGED
+A14,B14,USB3_C5_SS_RX_P,BB->CB,CPU native USB 3.2 Gen2 port 2 -> USB-C C5 (I/O numbering; non-USB4) RX (AC caps far end),CHANGED
+B14,A14,USB3_C5_SS_TX_P,CB->BB,CPU native USB 3.2 Gen2 port 2 -> USB-C C5 (I/O numbering; non-USB4) TX (AC caps on CB),CHANGED
+A15,B15,USB3_C5_SS_RX_N,BB->CB,CPU native USB 3.2 Gen2 port 2 -> USB-C C5 (I/O numbering; non-USB4) RX (AC caps far end),CHANGED
+B15,A15,USB3_C5_SS_TX_N,CB->BB,CPU native USB 3.2 Gen2 port 2 -> USB-C C5 (I/O numbering; non-USB4) TX (AC caps on CB),CHANGED
 A16,B16,GND,,,SAME
 B16,A16,GND,,,SAME
-A17,B17,USB3_C4_SS_RX_P,BB->CB,CPU native USB 3.2 Gen2 port 3 -> USB-C C4 (non-USB4) RX (AC caps far end),CHANGED
-B17,A17,USB3_C4_SS_TX_P,CB->BB,CPU native USB 3.2 Gen2 port 3 -> USB-C C4 (non-USB4) TX (AC caps on CB),CHANGED
-A18,B18,USB3_C4_SS_RX_N,BB->CB,CPU native USB 3.2 Gen2 port 3 -> USB-C C4 (non-USB4) RX (AC caps far end),CHANGED
-B18,A18,USB3_C4_SS_TX_N,CB->BB,CPU native USB 3.2 Gen2 port 3 -> USB-C C4 (non-USB4) TX (AC caps on CB),CHANGED
+A17,B17,USB3_C6_SS_RX_P,BB->CB,CPU native USB 3.2 Gen2 port 3 -> USB-C C6 (I/O numbering; non-USB4) RX (AC caps far end),CHANGED
+B17,A17,USB3_C6_SS_TX_P,CB->BB,CPU native USB 3.2 Gen2 port 3 -> USB-C C6 (I/O numbering; non-USB4) TX (AC caps on CB),CHANGED
+A18,B18,USB3_C6_SS_RX_N,BB->CB,CPU native USB 3.2 Gen2 port 3 -> USB-C C6 (I/O numbering; non-USB4) RX (AC caps far end),CHANGED
+B18,A18,USB3_C6_SS_TX_N,CB->BB,CPU native USB 3.2 Gen2 port 3 -> USB-C C6 (I/O numbering; non-USB4) TX (AC caps on CB),CHANGED
 A19,B19,GND,,,SAME
 B19,A19,GND,,,SAME
 A20,B20,USB3_HUBUP_SS_RX_P,BB->CB,PROM21 USB 3.2 Gen2 port -> base-board path to USB-A hub upstream RX (AC caps far end),CHANGED
