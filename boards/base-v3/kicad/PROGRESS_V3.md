@@ -260,3 +260,9 @@ Rules: 4 layers, existing HS/SATA/USB2 untouched (0 skew, 2/2 vias), no rip-up /
 - State found: Gen5 net splice ALREADY applied (sch + pcb, 18:35; ERC 0 err in work/erc_splice.txt). J1 FP_* <-> U20 A side, J1 FS_* <-> U21/U22 A side, U21/U22 *_B <-> J12. U20 B side (FP_*_B) U20-only, waiting for GPU-face pinout. Dead J1 Gen5 copper already deleted (0 PCIE track length). Freerouting job on work/g5.dsn (non-Gen5 classes) running since 19:12, pass 1 = 491 unrouted.
 - Backup: /workspace/backups/backplane-v3-pre-gen5splice.tgz (19:45, excl. work/v6_*).
 - Step 0 (Aidan 19:44 approved): Q7,Q8,R12,R15,R55 + 12 attached global labels removed from sch. PCB NOT yet updated (pcbnew removal script segfaulted once, retry blocked by Auto-review classifier error); pcb unchanged, backup work/pcb_pre_pson.kicad_pcb. Sch nets gone: PSON_DRV, PSU_PWR_OK_M, ILK_B. ERC: 0 errors (work/erc_pson.txt).
+
+## 2026-11-05 14:38 EST – Freerouting hung job stopped
+- work/fp2 Freerouting (pid 304970, ls_v2.dsn, started 2026-10-29 21:46) was still running after the box came back, at ~100% of one core with zero log/IO since 2026-10-30 10:05.
+- Last logged result: pass #8 best score 879.79 (276 unrouted); pass #9 restored that board then scored 879.11 (277 unrouted). Plateau since pass #5.
+- No ls.ses was ever written. Input boards (pre_fr / clk2 / nokeep / ls_v2.dsn) unchanged. Process killed; nothing durable lost.
+- Still open for Aidan: how to finish the ~276 remaining low-speed nets (hand-route vs new Freerouting setup). Gen5/PCIE_85R stays locked. U20 B-side still waits on GPU-face pinout.
